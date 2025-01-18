@@ -1,0 +1,10 @@
+[
+  {
+    "key": "Dashboard",
+    "url": "/dashboard"
+  },
+  {
+    "key": "Logout",
+    "url": "/login"
+  }
+]

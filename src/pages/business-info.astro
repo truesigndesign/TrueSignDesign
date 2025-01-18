@@ -1,0 +1,32 @@
+---
+import DashLayout2 from "src/layouts/DashLayout2.astro";
+import CTA from "@components/CTA.astro";
+import FAQ from "@components/FAQ.astro";
+
+// Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
+import {getOptimizedImage} from "@js/utils"
+import landingImage from "@assets/images/landing.jpg" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+const optimizedImage = await getOptimizedImage(landingImage)
+
+
+
+
+---
+
+<DashLayout2
+title="Business Info"
+  description="We Specialise In Service Based Websites"
+  preloadedImage = {optimizedImage}>
+
+  <iframe data-tally-src="https://tally.so/embed/woKNjP?alignLeft=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="1044" frameborder="0" marginheight="0" marginwidth="0" title="Simply Complete Your Form"></iframe>
+  <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+
+
+</DashLayout2>
+
+
+
+
+
+
+
