@@ -1,16 +1,16 @@
 ---
-import BaseLayout from "src/layouts/BaseLayout.astro";
-import client from "@data/client.json";
-import Landing from "@components/Landing.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import client from "../data/client.json";
+import Landing from "../components/Landing.astro";
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
-import {getOptimizedImage} from "@js/utils"
-import landingImage from "@assets/images/landing.jpg" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+import {getOptimizedImage} from "../js/utils"
+import landingImage from "../assets/images/landing.jpg" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
 const optimizedImage = await getOptimizedImage(landingImage)
 ---
 
 <BaseLayout
-  title="Contact"
+  title="About"
   description="Meta description for the page"
   preloadedImage = {optimizedImage}
 >
@@ -18,448 +18,365 @@ const optimizedImage = await getOptimizedImage(landingImage)
   <!--                    LANDING                   -->
   <!-- ============================================ -->
 
-  <Landing 
-    title="Contact"
+  <!-- <Landing 
+    title="Projects"
     image={optimizedImage}
-  />
+  /> -->
 
-  <!-- ============================================ -->
-  <!--                Contact Form                  -->
-  <!-- ============================================ -->
+   <!-- ============================================ -->
+<!--                    Hero                      -->
+<!-- ============================================ -->
 
-  <section id="cs-contact">
+
+
+    <!-- ============================================ -->
+<!--                 Contact Form                 -->
+<!-- ============================================ -->
+<section id="cs-contact-549">
     <div class="cs-container">
-      <form id="cs-form" name="Contact Form" method="post">
         <div class="cs-content">
-          <span class="cs-topper">Contact</span>
-          <h2 class="cs-title">Get in Touch</h2>
-          <p class="cs-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ridiculus
-            elementum ullamcorper ipsum porttitor aliquam. Id magna urna
-            ultrices odio pulvinar. Sed ut.
-          </p>
+            <span class="cs-topper">Contact Us</span>
+            <h2 class="cs-title">Ready To Get Your Website Started?</h2>
+            <p class="cs-text">
+                Reach out to us, and we’ll guide you every step of the way to a website built for success. 
+            </p>
         </div>
-        <label>
-          Name
-          <input
-            required
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Name"
-          />
-        </label>
-        <label>
-          Email
-          <input
-            required
-            type="text"
-            id="email"
-            name="email"
-            placeholder="Email"
-          />
-        </label>
-        <label>
-          Phone
-          <input
-            required
-            type="text"
-            id="phone"
-            name="phone"
-            placeholder="Phone"
-          />
-        </label>
-        <label>
-          How Did You Find Us
-          <input
-            type="text"
-            id="find"
-            name="find-us"
-            placeholder="How did you find us?"
-          />
-        </label>
-        <label class="cs-label-message">
-          Message
-          <textarea
-            required
-            name="Message"
-            id="message"
-            placeholder="Write message..."></textarea>
-        </label>
-        <button class="cs-button-solid" type="submit">Submit Message</button>
-      </form>
-      <div class="cs-right-section">
-        <!--Email-->
-        <span class="cs-header">Email</span>
-        <a class="cs-link" href={`mailto:${client.email}`}>{client.email}</a>
-        <!--Phone-->
-        <span class="cs-header">Phone</span>
-        <a class="cs-link" href={`tel:${client.phoneForTel}`}
-          >{client.phoneFormatted}</a
-        >
-        <!--Address-->
-        <span class="cs-header">Address</span>
-        <a class="cs-link" href={client.address.mapLink}>
-          {client.address.lineOne},
-          <br />
-          {client.address.lineTwo},
-          <br />
-          <span class="cs-block">
-            {client.address.city}
-            {client.address.state}
-            {client.address.zip}
-          </span>
-        </a>
-
-        <!-- Background Image-->
-        <picture class="cs-bg-picture">
-          <source
-            media="(min-width: 601px)"
-            srcset="/assets/images/skyscraper.jpg"
-          />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src="/assets/images/skyscraper.jpg"
-            alt="building"
-            loading="lazy"
-            width="2500"
-            height="1667"
-          />
-        </picture>
-      </div>
+        
+        <!-- Form -->
+        <form class="cs-form" id="cs-form-549" name="Contact Form" method="post" netlify>
+            <!-- Hidden form-name field for Netlify -->
+            <input type="hidden" name="form-name" value="Contact Form" />
+            
+            <label class="cs-label">
+                 Name
+                <input class="cs-input" required type="text" id="name-549" name="name" placeholder="First & Second Name">
+                <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Contact-Page/person-gold.svg" alt="person icon" width="32" height="32">
+            </label>
+            
+            <label class="cs-label cs-email">
+                Email
+                <input class="cs-input" required type="email" id="email-549" name="email" placeholder="Email">
+                <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Contact-Page/mail-gold.svg" alt="mail icon" width="32" height="32">
+            </label>
+            
+            <label class="cs-label cs-phone">
+                Phone
+                <input class="cs-input" required type="text" id="phone-549" name="phone" placeholder="Phone">
+                <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Contact-Page/phone-golden.svg" alt="phone icon" width="32" height="32">
+            </label>
+            
+            <!-- Business Name field - fixed ID and name -->
+            <label class="cs-label cs-phone">
+                Business Name
+                <input class="cs-input" required type="text" id="business-name-549" name="business-name" placeholder="Business Name">
+                <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Contact-Page/refer.svg" alt="talking icon" width="32" height="32">
+            </label>
+            
+            <label class="cs-label cs-textarea-label">
+                Message
+                <textarea class="cs-textarea" required name="Message" id="message-549" placeholder="Write message..."></textarea>
+            </label>
+            
+            <button class="cs-submit" type="submit">Send</button>
+        </form>
     </div>
-  </section>
-</BaseLayout>
+</section>
 
-<style lang="less">
-  /* PAGE-SPECIFIC STYLES FOR THE CONTACT PAGE */
+                 
 
+<style>
   /*-- -------------------------- -->
-<---          Contact           -->
+<---       Contact Form         -->
 <--- -------------------------- -*/
 
-  /* Mobile - 360px */
-  @media only screen and (min-width: 0em) {
-    :root {
-      /* 13px - 16px */
-      --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
-      /* 31px - 49px */
-      --headerFontSize: clamp(1.9375rem, 4.5vw, 3.0625rem);
-      --bodyFontSize: 1rem;
-
-      /* 60px - 100px top and bottom */
-      --sectionPadding: clamp(3.75em, 7.82vw, 6.25em) 1rem;
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    @keyframes scaleFade {
+        0% {
+            transform: translate(-50%, -50%) scale(0);
+        }
+        50% {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.4);
+        }
+        100% {
+            transform: translate(-50%, -50%) scale(1.7);
+            opacity: 0;
+        }
     }
-
-    #cs-contact {
-      font-family: "Roboto", "Arial", sans-serif;
-      padding: var(--sectionPadding);
-
-      .cs-container {
+    #cs-contact-549 {
+        padding: var(--sectionPadding);
+        padding-top: 11.9rem;
+        background-color: #f9f9f9;
+    }
+    #cs-contact-549 .cs-container {
         width: 100%;
-        /* changes to 1280px at desktop */
-        max-width: (800/16rem);
+        max-width: 80rem;
         margin: auto;
-      }
-
-      .cs-content {
-        width: 100%;
-      }
-
-      .cs-topper {
-        text-align: left;
-        /* 8px - 12px */
-        margin-bottom: clamp(0.5rem, 1.4vw, 0.75rem);
-      }
-
-      .cs-title {
-        text-align: left;
-        max-width: (800/16rem);
-      }
-
-      .cs-text {
-        text-align: left;
-        /* 404px - 522px */
-        max-width: clamp(25.25rem, 30vw, 32.625rem);
-        margin: 0 auto 0 0;
-        /* 40px - 48px */
-        margin-bottom: clamp(2.5rem, 6.3vw, 3rem);
-      }
-
-      #cs-form {
-        margin-bottom: (40/16rem);
-        label {
-          font-size: (16/16rem);
-          font-weight: 700;
-          line-height: 1.5em;
-          /* 12px - 20px */
-          margin-bottom: clamp(0.75rem, 1.3em, 1.25rem);
-          color: var(--headerColor);
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: flex-start;
-        }
-
-        .cs-label-message {
-          /* 32px - 48px */
-          margin-bottom: clamp(2rem, 6.3vw, 3rem);
-        }
-
-        input,
-        textarea {
-          font-size: (16/16rem);
-          width: 100%;
-          height: (64/16rem);
-          margin-top: (4/16rem);
-          /* prevents border & padding from affecting height */
-          box-sizing: border-box;
-          padding-left: (20/16rem);
-          border: 1px solid #b4b2c7;
-          border-radius: (8/16rem);
-          transition: border 0.3s;
-
-          &:hover {
-            border: 1px solid var(--primary);
-          }
-        }
-
-        textarea {
-          font-family: inherit;
-          min-height: (120/16rem);
-          padding-top: (20/16rem);
-        }
-
-        .cs-button-solid {
-          width: 100%;
-          border: none;
-        }
-      }
-
-      .cs-right-section {
-        height: (320/16rem);
-        /* 24px - 40px top & bottom */
-        /* 20px - 40px left & right */
-        padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.25rem, 3vw, 2.5rem);
-        border-radius: (8/16rem);
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
-        align-items: flex-start;
-        position: relative;
-        /* cuts off corners on img tag */
-        overflow: hidden;
-      }
-
-      .cs-header {
-        /* 16px - 20px */
-        font-size: clamp(1rem, 3vw, 1.25rem);
-        font-weight: 700;
-        line-height: 1.2em;
-        margin-bottom: (8/16rem);
-        color: var(--bodyTextColorWhite);
-        display: block;
-      }
-
-      .cs-link {
-        /* 16px - 20px */
-        font-size: clamp(1rem, 3vw, 1.25rem);
-        line-height: 1.2em;
-        text-decoration: none;
-        margin-bottom: (20/16rem);
-        color: var(--bodyTextColorWhite);
-        display: block;
-        position: relative;
-
-        &:before {
-          /* Animated underline */
-          content: "";
-          width: 0%;
-          height: 2px;
-          /* current color of the parent */
-          background: currentColor;
-          opacity: 1;
-          display: block;
-          position: absolute;
-          bottom: (-2/16rem);
-          left: 0;
-          transition: width 0.3s;
-        }
-
-        &:hover {
-          &:before {
-            width: 100%;
-          }
-        }
-
-        &:last-of-type {
-          margin-bottom: 0;
-        }
-      }
-
-      .cs-block {
-        /* sends second address line to the bottom on its own line */
-        display: block;
-      }
-
-      .cs-bg-picture {
+        align-items: center;
+        /* 48px - 64px */
+        gap: clamp(3rem, 6vw, 4rem);
+    }
+    #cs-contact-549 .cs-content {
+        /* set text aling to left if content needs to be left aligned */
+        text-align: center;
         width: 100%;
-        height: 100%;
+        display: flex;
+        flex-direction: column;
+        /* centers content horizontally, set to flex-start to left align */
+        align-items: center;
+    }
+    #cs-contact-549 .cs-topper {
+        font-size: var(--topperFontSize);
+        line-height: 1.2em;
+        text-transform: uppercase;
+        text-align: inherit;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 0.25rem;
         display: block;
+    }
+    #cs-contact-549 .cs-title {
+        font-size: var(--headerFontSize);
+        font-weight: 900;
+        line-height: 1.2em;
+        text-align: inherit;
+        /* max width of 24 characters including spaces */
+        max-width: 24ch;
+        margin: 0 0 1rem 0;
+        color: var(--headerColor);
+        position: relative;
+    }
+    #cs-contact-549 .cs-text {
+        font-size: var(--bodyFontSize);
+        line-height: 1.5em;
+        text-align: inherit;
+        width: 100%;
+        max-width: 40.625rem;
+        margin: 0;
+        color: var(--bodyTextColor);
+    }
+    #cs-contact-549 .cs-background {
+        width: 100%;
+        height: 19.5rem;
+        display: block;
+        position: relative;
+    }
+    #cs-contact-549 .cs-background:before {
+        /* yellow dot */
+        content: "";
+        width: 1.125rem;
+        height: 1.125rem;
+        background: var(--primary);
+        border-radius: 50%;
+        opacity: 1;
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+    }
+    #cs-contact-549 .cs-background:after {
+        /* yellow animated ring */
+        content: "";
+        width: 1.125rem;
+        height: 1.125rem;
+        background: transparent;
+        border-radius: 50%;
+        border: 1px solid var(--primary);
+        opacity: 1;
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        z-index: 10;
+        transition:
+            transform 0.4s,
+            opacity 0.4s;
+        animation-name: scaleFade;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+    }
+    #cs-contact-549 .cs-background img {
         position: absolute;
         top: 0;
         left: 0;
-        z-index: -1;
-        transition: transform 0.6s;
-
-        &:before {
-          /* background color overlay */
-          content: "";
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(
-            180deg,
-            rgba(0, 0, 0, 0) 0%,
-            rgba(0, 0, 0, 0.8) 100%
-          );
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 0;
-          z-index: 1;
-        }
-
-        img {
-          width: 100%;
-          height: 100%;
-          /* Makes img tag act as a background image */
-          object-fit: cover;
-          position: absolute;
-          top: 0;
-          left: 0;
-        }
-      }
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
     }
-  }
-
-  /* Tablet - 700px */
-  @media only screen and (min-width: 43.75em) {
-    #cs-contact {
-      #cs-form {
+    #cs-contact-549 .cs-form {
+        width: 100%;
+        max-width: 66.5rem;
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+    #cs-contact-549 .cs-label {
+        /* 16px - 20px */
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        line-height: 1.5em;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
         align-items: flex-start;
+        gap: 0.75rem;
+        position: relative;
+    }
+    #cs-contact-549 .cs-input,
+    #cs-contact-549 .cs-textarea,
+    #cs-contact-549 select,
+    #cs-contact-549 .cs-select {
+        /* added options for the select tag in case you add it, that way it will also have the same styles, add the cs-select class for better specificity when targeting it */
+        /* 16px - 20px */
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        font-family: inherit;
+        margin: 0;
+        /* 24px - 40px */
+        padding: 0 clamp(1.5rem, 5vw, 2.5rem) 0;
+        width: 100%;
+        /* 70px - 90px */
+        height: clamp(4.375rem, 7vw, 5.625rem);
+        background-color: #f1f1f4;
+        /* prevents border and padding from affecting height and width */
+        box-sizing: border-box;
+        border: 3px solid transparent;
+        display: block;
+        position: relative;
+        transition: border-color 0.3s;
+    }
+    #cs-contact-549 .cs-input:hover,
+    #cs-contact-549 .cs-textarea:hover,
+    #cs-contact-549 select:hover,
+    #cs-contact-549 .cs-select:hover,
+    #cs-contact-549 .cs-input:focus,
+    #cs-contact-549 .cs-textarea:focus,
+    #cs-contact-549 select:focus,
+    #cs-contact-549 .cs-select:focus {
+        /* focus has a black outline, we override it here */
+        outline: none;
+        border-color: var(--primaryLight);
+    }
+    #cs-contact-549 .cs-textarea {
+        width: 100%;
+        margin: 0;
+        padding-top: 1rem;
+        /* changes at tablet */
+        min-height: 12.5rem;
+    }
+    #cs-contact-549 .cs-icon {
+        width: 1.875rem;
+        height: auto;
+        position: absolute;
+        /* 24px - 40px, matches the padding left and right of input */
+        right: clamp(1.5rem, 5vw, 2.5rem);
+        /* these two center the icon inside the label */
+        bottom: 50%;
+        transform: translateY(115%);
+    }
+    #cs-contact-549 .cs-submit {
+    /* 20px - 25px */
+    font-size: clamp(1.25rem, 2vw, 1.5625rem);
+    /* Adjusted line height for better button shape */
+    line-height: normal;
+    /* Improved padding for balanced spacing inside the button */
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: clamp(1.75rem, 6vw, 2.75rem) auto 0;
+    color: #1a1a1a;
+    border: none;
+    /* Button color */
+    background-color: #EC9C52; /* Example: vibrant orange */
+    border-radius: 0.25rem;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+#cs-contact-549 .cs-submit:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: #000;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 0.25rem;
+    transition: width 0.3s;
+}
+
+#cs-contact-549 .cs-submit:hover {
+    color: #fff;
+    background-color: #e67300; /* Slightly darker hover color for contrast */
+    cursor: pointer;
+}
+
+#cs-contact-549 .cs-submit:hover:before {
+    width: 100%;
+}
+
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #cs-contact-549 .cs-background {
+        /* 310px - 568px */
+        height: clamp(19.375rem, 43vw, 35.5rem);
+    }
+    #cs-contact-549 .cs-form {
+        flex-direction: row;
         flex-wrap: wrap;
-
-        label {
-          width: 48%;
-        }
-
-        .cs-label-message {
-          width: 100%;
-        }
-      }
+        justify-content: space-between;
     }
-  }
-
-  /* Small Desktop - 1024px */
-  @media only screen and (min-width: 64em) {
-    #cs-contact {
-      .cs-container {
-        max-width: (1280/16rem);
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-start;
-        gap: (80/16rem);
-      }
-
-      #cs-form {
-        max-width: (630/16rem);
-        label {
-          width: 100%;
-        }
-      }
-
-      .cs-right-section {
-        width: 40%;
-        max-width: (542/16rem);
-        /* changes to 578px at 1300px wide */
-        height: (686/16rem);
-        /* prevents flexbox from squishing it */
-        flex: none;
-
-        &:hover {
-          .cs-bg-picture {
-            transform: scale(1.1);
-          }
-        }
-      }
-
-      .cs-block {
-        /* goes back to inline so it stays "in line" with the rest of the text */
-        display: inline-block;
-      }
+    #cs-contact-549 .cs-label {
+        width: 48%;
     }
-  }
-
-  /* Small Desktop - 1300px */
-  @media only screen and (min-width: 81.25em) {
-    #cs-contact {
-      #cs-form {
-        column-gap: (0/16rem);
-        label {
-          width: 48%;
-          max-width: (305/16rem);
-        }
-
-        .cs-label-message {
-          max-width: 100%;
-        }
-      }
-
-      .cs-right-section {
-        height: (578/16rem);
-      }
+    #cs-contact-549 .cs-textarea-label {
+        width: 100%;
     }
-  }
-
-  /* Dark Mode */
-  @media only screen and (min-width: 0em) {
-    body.dark-mode {
-      #cs-contact {
-        .cs-text,
-        .cs-title {
-          color: var(--bodyTextColorWhite);
-        }
-
-        .cs-topper {
-          color: var(--primaryLight);
-        }
-
-        #cs-form {
-          label,
-          input,
-          textarea {
-            color: var(--bodyTextColorWhite);
-            background-color: transparent;
-
-            &::placeholder {
-              /* lighten up the color of the text by 40%*/
-              filter: brightness(1.4);
-            }
-          }
-        }
-
-        .cs-bg-picture {
-          background-color: #000;
-
-          img {
-            /* lets parent background-color bleed through and darken it */
-            opacity: 0.5;
-          }
-        }
-      }
+    #cs-contact-549 .cs-textarea {
+        /* 280px - 358px */
+        min-height: clamp(17.5rem, 28vw, 22.375rem);
     }
-  }
+}
+
+                                
 </style>
+
+<script>
+    document.querySelector('#cs-form-549').addEventListener('submit', function(event) {
+       event.preventDefault(); // Prevent immediate form submission for now
+ 
+       var formData = new FormData(this);
+       // Send data to Zapier webhook
+       fetch('https://hooks.zapier.com/hooks/catch/21299686/2kovrrk/', {
+          method: 'POST',
+          body: formData
+       })
+       .then(response => response.json())
+       .then(data => {
+          // Submit the form to Netlify after sending data to Zapier
+          this.submit();
+       })
+       .catch(error => {
+          console.error('Error sending data to Zapier:', error);
+          // Continue form submission if Zapier fails
+          this.submit();
+       });
+    });
+ </script>
+
+
+</BaseLayout>

@@ -1,0 +1,1780 @@
+---
+import BaseLayout from "..//layouts/BaseLayout.astro";
+import CTA from "../components/CTA.astro";
+import Landing from "../components/Landing.astro";
+
+// Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
+import {getOptimizedImage} from "../js/utils"
+import landingImage from "../assets/images/landing.jpg" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+const optimizedImage = await getOptimizedImage(landingImage)
+---
+
+<BaseLayout
+  title="Our Process"
+  description="Meta description for the page"
+  preloadedImage = {optimizedImage}
+>
+  <!-- ============================================ -->
+  <!--                    LANDING                   -->
+  <!-- ============================================ -->
+
+  <!-- <Landing 
+    title="Our Process"
+    image={optimizedImage}
+  /> -->
+
+  <!-- ============================================ -->
+<!--                    Hero                      -->
+<!-- ============================================ -->
+
+
+<section id="hero-1115">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Our Process</span>
+            <h1 class="cs-title">
+                Working With Us <br>Is Stress Free
+
+              </h1>
+            <p class="cs-text">
+                Our process is simple and straightforward, ensuring a <br>smooth journey to your new website.
+              </p>
+            <a href="/contact" class="cs-button-solid">Get Started   </a>
+        </div>
+        <!--Hero Image-->
+        <!--We need a wrapper div around the image group so the volunteer box can be relatively positioned on mobile to make stacking the design easier -->
+        <div class="cs-image-group-wrapper">
+            <div class="cs-image-group" aria-hidden="true">
+               
+                <!--Non Masked Image-->
+                <picture class="cs-picture cs-picture1">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="/assets/svgs/completed-task-13.svg">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="/assets/svgs/completed-task-13.svg">
+                    <img decoding="async" fetchpriority="high" src="/assets/svgs/completed-task-13.svg" alt="people" width="651" height="523">
+                </picture>
+               
+                <!--Floating Icon-->
+                <!-- <picture class="cs-floater" aria-hidden="true">
+                    <img class="cs-floater-icon" decoding="async" fetchpriority="high" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/charity2.svg" alt="icon" width="52" height="52">
+                </picture> -->
+                
+             
+                <!--Top Graphic-->
+                <!-- <img class="cs-graphic cs-graphic1" aria-hidden="true" decoding="async" fetchpriority="high" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/yellow-graphic.svg" alt="icon" width="586" height="356"> -->
+                <!--Bottom Graphic-->
+                <!-- <img class="cs-graphic cs-graphic2" aria-hidden="true" decoding="async" fetchpriority="high" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/green-graphic.svg" alt="icon" width="586" height="356"> -->
+            </div>
+        
+        
+           
+        </div>
+        </div>
+    </div>
+</section>
+                                
+
+<style lang="less">
+    /*-- -------------------------- -->
+<---            Hero            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #hero-1115 {
+        /* 200px - 300px top */
+        padding: clamp(12.5rem, 14vw, 12.5rem) (16/16rem) (100/16rem);
+
+        background-color: #ffffff;
+        /* clips the svg wave from overflowing */
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+
+        &:before {
+            /* textured pattern */
+            content: "";
+            position: absolute;
+            display: block;
+            height: 100%;
+            width: 100%;
+            /* changes to a desktop image at tablet */
+            background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+            background-size: auto;
+            background-position: center;
+            background-repeat: repeat;
+            filter: blur(2px);
+            opacity: 1;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            /* prevents the mouse from interacting with itand also in dev tool mode */
+            pointer-events: none;
+        }
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: (48/16rem);
+        }
+
+        .cs-content {
+            max-width: (630/16rem);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .cs-tick {
+    color: #EC9C52;
+}
+
+
+        .cs-topper {
+            font-size: (16/16rem);
+            line-height: 1.2em;
+            text-transform: uppercase;
+            text-align: inherit;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+            color: #767676;
+            margin-bottom: (4/16rem);
+            display: block;
+        }
+
+        .cs-title {
+            /* 39px - 61px */
+            font-size: clamp(2.4375rem, 5vw, 3.8125rem);
+            font-weight: 900;
+            line-height: 1.2em;
+            text-align: center;
+            /* 23 characters including spaces wide */
+            max-width: 23ch;
+            margin: 0 0 (16/16rem) 0;
+            color: var(--headerColor);
+            position: relative;
+        }
+
+        .cs-text {
+            /* 16px - 20px */
+            font-size: clamp(1rem, 1.5vw, 1.25rem);
+            line-height: 1.5em;
+            text-align: center;
+            width: 100%;
+            max-width: (531/16rem);
+            /* 28px - 40px */
+            margin: 0 0 clamp(1.75rem, 3.92vw, 2.5rem) 0;
+            color: var(--bodyTextColor);
+        }
+
+        .cs-button-solid {
+            font-size: (16/16rem);
+            /* 46px - 56px */
+            line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+            text-decoration: none;
+            font-weight: 700;
+            text-align: center;
+            margin: 0;
+            color: #fff;
+            min-width: (150/16rem);
+            padding: 0 (24/16rem);
+            background-color: var(--primary);
+            border-radius: (4/16rem);
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            /* prevents padding from adding to the width */
+            box-sizing: border-box;
+
+            &:before {
+                content: "";
+                position: absolute;
+                height: 100%;
+                width: 0%;
+                background: #000;
+                opacity: 1;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                border-radius: (4/16rem);
+                transition: width 0.3s;
+            }
+
+            &:hover {
+                &:before {
+                    width: 100%;
+                }
+            }
+        }
+
+        .cs-image-group-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: (20/16rem);
+            position: relative;
+        }
+
+        .cs-image-group {
+            /* we use ems for everything inside the cs-image-group so they pull their value for em from the cs-image-group container that we set.  This min-max property lets us tie the font size to the view width of the screen and grows proportionally with every pixel wide the screen gets until the value the view width units = .75em, resets at small desktop */
+            font-size: ~"min(2.2vw, .75em)";
+            width: (653/16em);
+            height: (618/16em);
+            position: relative;
+            z-index: 2;
+        }
+
+        .cs-floater {
+            /* 50px - 120px */
+            width: clamp(3.125rem, 8vw, 7.5rem);
+            height: clamp(3.125rem, 8vw, 7.5rem);
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: (130/16em);
+            /* changes to -74px at large desktop */
+            left: (-35/16em);
+            transform: rotate(-15deg);
+        }
+
+        .cs-floater-icon {
+            width: (52/16em);
+            height: auto;
+        }
+
+        .cs-picture {
+    width: (651/16em);
+    height: (523/16em);
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    position: absolute;
+    left: 50%;
+    top: (95/16em);
+    transform: translateX(-50%);
+
+    img {
+        width: 100%;
+        height: auto; // Adjust height to preserve aspect ratio
+        object-fit: contain; // Ensure the full image fits without cropping
+        object-position: center; // Center the image within the container
+    }
+
+
+        }
+
+        .cs-picture1 {
+            /* we set a height on the top image to cut off the bottom of it and hide it with overflow:hidden where the curved bottom picture meets it. The top image is what overlaps the "curve" of the bottom image.  */
+            height: 100%;
+            transform: translateX(-50%);
+            /* clips the bottom left corner of the top image to match the curve of the bottom one because it was too long */
+            border-radius: 0 0 0 25%;
+        }
+
+        .cs-picture2 {
+            border-radius: 0 0 55% 55%;
+        }
+
+        .cs-graphic {
+            width: (586/16em);
+            height: auto;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .cs-graphic1 {
+            top: 0;
+            right: 0;
+        }
+
+        .cs-graphic2 {
+            bottom: 0;
+            left: 0;
+        }
+
+        .cs-donations {
+            /* 12px - 20px */
+            padding: clamp(0.75rem, 2.5vw, 1.25rem);
+            /* prevent padding from affecting height and width */
+            box-sizing: border-box;
+            background-color: #fff;
+            box-shadow: 0px 8px 100px 0px rgba(0, 0, 0, 0.08);
+            border-radius: (12/16rem);
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            /* 8px - 12px */
+            gap: clamp(0.5rem, 1.5vw, 0.75rem);
+            position: absolute;
+            top: (-10/16em);
+            right: 0;
+        }
+
+        .cs-donations-icon {
+            /* 12px - 20px */
+            width: clamp(0.75rem, 2vw, 1.25rem);
+            height: auto;
+        }
+
+        .cs-donations-icon-wrapper {
+            /* 32px - 48px */
+            width: clamp(2rem, 4vw, 3rem);
+            height: clamp(2rem, 4vw, 3rem);
+            background-color: var(--primaryLight);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cs-donations-flex {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: (4/16rem);
+        }
+
+        .cs-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* 4px - 8px */
+            gap: clamp(0.25rem, 1vw, 0.5rem);
+        }
+
+        .cs-progress {
+            /* 100px - 160px */
+            width: clamp(6.25rem, 8vw, 10rem);
+            /* 4px - 8px */
+            height: clamp(0.25rem, 1vw, 0.5rem);
+            border-radius: (8/16rem);
+            overflow: hidden;
+            background-color: #e8e8e8;
+        }
+
+        .cs-progress-bar {
+            width: var(--progress);
+            height: 100%;
+            background-color: var(--secondary);
+            border-radius: (8/16rem);
+            display: block;
+        }
+
+        .cs-percentage {
+            font-size: (12/16rem);
+            line-height: 1.2em;
+            font-weight: 700;
+            margin: 0;
+            color: #4e4b66;
+            display: block;
+        }
+
+        .cs-volunteer {
+            /* 20px - 24px tpo & bottom */
+            /* 16px - 20px left & right */
+            padding: clamp(1rem, 2vw, 1.25rem) clamp(1.25rem, 2.5vw, 1.5rem);
+            /* prevents padding and border from affecting height and width */
+            box-sizing: border-box;
+            background-color: #fff;
+            border-radius: (12/16rem);
+            box-shadow: 0px 8px 100px 0px rgba(0, 0, 0, 0.08);
+
+            display: inline-flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+            /* 8px - 16px */
+            gap: clamp(0.5rem, 2vw, 1rem);
+            position: relative;
+            z-index: -1;
+        }
+
+        .cs-volunteer-flex {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .cs-header {
+            /* 12px - 20px */
+            font-size: clamp(0.75rem, 2vw, 1.25rem);
+            line-height: 1.2em;
+            font-weight: 700;
+            margin: 0;
+            color: var(--headerColor);
+        }
+
+        .cs-volunteer-img {
+            /* 36px 48px */
+            width: clamp(2.25rem, 3vw, 3rem);
+            height: auto;
+            margin: 0 (-16/16rem) 0 0;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            background-color: #fff;
+        }
+
+        .cs-volunteer-number {
+            /* 12px - 16px */
+            font-size: clamp(0.75rem, 2vw, 1rem);
+            font-weight: 700;
+            /* 36px 48px */
+            width: clamp(2.25rem, 3vw, 3rem);
+            height: clamp(2.25rem, 3vw, 3rem);
+            background-color: var(--secondary);
+            color: var(--headerColor);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cs-arrow {
+            /* 60px - 130px */
+            width: clamp(3.75rem, 10.5vw, 8.125rem);
+            height: auto;
+            position: absolute;
+            bottom: 110%;
+            left: (-10/16rem);
+            transform: rotate(-66deg);
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #hero-1115 {
+        .cs-image-group {
+            font-size: ~"min(1.13vw, 1em)";
+            /* pushes down to create the space for the cs-volunteer to drop down 68px, since its positioned relative to the cs-image-group-wrapper div at bottom 0, the marign-bottom on the cs-image-group pushes down on the wrapper div, making the cs-volunteer drop down with it since it is positioned to the bottom of the wrapper div */
+            margin-bottom: (68/16rem);
+        }
+
+        .cs-donations {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .cs-volunteer {
+            position: absolute;
+            bottom: 0;
+            left: (-115/16rem);
+            bottom: 0;
+            z-index: 10;
+        }
+
+        .cs-arrow {
+            bottom: 95%;
+            left: (38/16rem);
+            transform: rotate(0);
+            z-index: -1;
+        }
+
+        
+        .cs-picture {
+            width: 43vw; /* Base size */
+            max-width: 42rem; /* Cap the size on larger screens */
+            height: auto; /* Maintain aspect ratio */
+            position: absolute; /* Allow free positioning */
+            top: 50%; /* Center vertically */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Keep it perfectly centered */
+        }
+    }
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #hero-1115 {
+        text-align: left;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .cs-container {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .cs-content {
+            width: 40vw;
+            flex: none;
+            align-items: flex-start;
+        }
+
+        .cs-title {
+            max-width: 15ch; /* Ensure the title stays on one line */
+        }
+
+        .cs-title,
+        .cs-text {
+            text-align: left;
+        }
+
+        .cs-picture {
+            width: 47vw; /* Base size */
+            max-width: 45rem; /* Cap the size on larger screens */
+            height: auto; /* Maintain aspect ratio */
+            position: absolute; /* Allow free positioning */
+            top: 50%; /* Center vertically */
+            left: 40%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Keep it perfectly centered */
+        }
+    }
+}
+
+
+/* Large Desktop - 1400px */
+@media only screen and (min-width: 87.5rem) {
+    #hero-1115 {
+        height: 100vh; /* Full viewport height */
+        display: flex; /* Enable Flexbox */
+        flex-direction: column; /* Stack items vertically */
+        justify-content: center; /* Center content vertically */
+        
+        .cs-image-group-wrapper {
+            /* 48px - 160px */
+            right: ~"calc(clamp(2rem, 3vw, 10rem)*-1)";
+        }
+
+        .cs-image-group {
+            margin: 0;
+            z-index: 10;
+        }
+
+        .cs-floater {
+            left: (-74/16rem);
+        }
+
+        .cs-volunteer {
+            left: (-321/16rem);
+            bottom: (20/16rem);
+            z-index: -1;
+        }
+
+        .cs-arrow {
+            left: (200/16rem);
+        }
+        
+    }
+}
+
+/* Large Desktop - 1900px and up */
+@media only screen and (min-width: 93rem) {
+    #hero-1115 {
+        .cs-title {
+            font-size: clamp(3rem, 5.5vw, 4.5rem); /* Slightly increase title size */
+        }
+    }
+}
+
+                             
+    
+</style>
+
+  
+
+<!-- ============================================ -->
+<!--                 STEP 1               -->
+<!-- ============================================ -->
+
+<section id="sbs-867">
+  <div class="cs-container">
+      <picture class="cs-picture">
+          <!--Mobile Image-->
+          <source media="(max-width: 600px)" srcset="/assets/svgs/decision-removed.svg">
+          <!--Tablet and above Image-->
+          <source media="(min-width: 601px)" srcset="/assets/svgs/decision-removed.svg">
+          <img loading="lazy" decoding="async" src="/assets/svgs/decision-removed.svg" alt="therapy" width="630" height="775">
+      </picture>
+      <div class="cs-content">
+          <span class="cs-topper">Step 1</span>
+          <h2 class="cs-title">Choose Your Subscription</h2>
+          <p class="cs-text">
+            At True Sign Design, we keep things simple with two subscription plans, each on a month-to-month basis for 24 months. We understand that committing can feel like a leap, which is why we offer a 30-day money-back guarantee. 
+          </p>
+          <p class="cs-text">
+            Within these 30 days, our goal is to complete your project, giving you a clear look at how your website will turn out. If you’re not fully satisfied, you can cancel your subscription & get your money back anytime within the first 30 days — risk-free.
+          </p>
+          <a href="/contact" class="cs-button-solid">Get Started</a>
+      </div>
+  </div>
+</section>
+                              
+
+<style>
+  /*-- -------------------------- -->
+<---      STEP 1      -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #sbs-867 {
+        padding: var(--sectionPadding);
+        background-color: #f9f9f9;
+        overflow: hidden; /* Prevent overflow at the section level */
+    }
+    #sbs-867 .cs-container {
+        width: 100%;
+        max-width: 34.375rem; /* Ensure container fits within the viewport */
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(3rem, 7vw, 4rem);
+        box-sizing: border-box;
+        overflow: hidden; /* Prevent child elements from overflowing */
+    }
+    #sbs-867 .cs-content {
+        text-align: left;
+        width: 100%;
+        max-width: 33.875rem;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #sbs-867 .cs-title {
+        max-width: 100%; /* Allow full width usage */
+        white-space: normal; /* Allow text to wrap */
+        overflow: visible; /* Prevent cropping */
+        text-overflow: clip; /* Disable ellipsis */
+    }
+    #sbs-867 .cs-text {
+        margin-bottom: 1rem;
+    }
+    #sbs-867 .cs-text:last-of-type {
+        margin-bottom: 2rem;
+    }
+    #sbs-867 .cs-button-solid {
+        font-size: 1rem;
+        line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+        text-decoration: none;
+        font-weight: 700;
+        text-align: center;
+        margin: 0;
+        color: #fff;
+        min-width: 9.375rem;
+        padding: 0 1.5rem;
+        background-color: var(--primary);
+        border-radius: 0.25rem;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        box-sizing: border-box;
+    }
+    #sbs-867 .cs-button-solid:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        background: #000;
+        opacity: 1;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 0.25rem;
+        transition: width 0.3s;
+    }
+    #sbs-867 .cs-button-solid:hover:before {
+        width: 100%;
+    }
+    #sbs-867 .cs-picture {
+        display: block;
+        position: relative;
+        width: 100%;
+        max-width: 100%; /* Ensure container width respects parent */
+        height: clamp(25rem, 70vw, 48.4375rem);
+        overflow: hidden; /* Prevent image from exceeding container */
+        border-radius: 0; /* Keep corners straight */
+        box-sizing: border-box;
+    }
+
+    #sbs-867 .cs-picture img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%; /* Image fills the container width */
+        height: 100%; /* Image fills the container height */
+        object-fit: contain; /* Ensure the image stays within the container */
+        object-position: center; /* Center the image */
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 64rem) {
+    #sbs-867 {
+        padding: var(--sectionPadding);
+        overflow: hidden; /* Ensure nothing exceeds the viewport */
+    }
+    #sbs-867 .cs-container {
+        flex-direction: row;
+        max-width: 80rem;
+        justify-content: space-between;
+        box-sizing: border-box;
+    }
+    #sbs-867 .cs-content {
+        width: 53%;
+        padding: 0;
+    }
+    #sbs-867 .cs-title {
+        max-width: 100%; /* Allow full width usage */
+        white-space: normal; /* Allow text to wrap */
+        overflow: visible; /* Prevent cropping */
+        text-overflow: clip; /* Disable ellipsis */
+    }
+    #sbs-867 .cs-picture {
+        width: 47%;
+        position: relative;
+        overflow: hidden; /* Prevent overflow */
+        border-radius: 0; /* Keep corners straight */
+        box-sizing: border-box;
+    }
+
+    #sbs-867 .cs-picture img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%; /* Image fills the container width */
+        height: 100%; /* Image fills the container height */
+        object-fit: contain; /* Ensure the image stays within the container */
+        object-position: center; /* Center the image */
+    }
+}
+
+
+
+
+
+</style>
+
+
+<!-- ============================================ -->
+<!--            STEP 2         -->
+<!-- ============================================ -->
+
+<section id="sbs-r-870">
+  <div class="cs-container">
+      <picture class="cs-picture">
+          <!--Mobile Image-->
+          <source media="(max-width: 600px)" srcset="/assets/svgs/user-profile-97.svg">
+          <!--Tablet and above Image-->
+          <source media="(min-width: 601px)" srcset="/assets/svgs/user-profile-97.svg">
+          <img loading="lazy" decoding="async" src="/assets/svgs/user-profile-97.svg" alt="therapy" width="630" height="775">
+      </picture>
+      <div class="cs-content">
+          <span class="cs-topper">STEP 2</span>
+          <h2 class="cs-title">Sign Up with Ease</h2>
+          <p class="cs-text">
+            We’ve designed a simple and seamless sign-up process to get you started in just a few clicks. You’ll begin by reviewing and signing a straightforward contract, followed by entering your billing information on the next page.  
+
+
+          </p>
+          <p class="cs-text">
+            Once completed, you’ll be all set to move on to the next step—it’s that effortless.
+          </p>
+          <a href="/contact" class="cs-button-solid">Get Started</a>
+      </div>
+  </div>
+</section>
+                              
+<style>
+  /*-- -------------------------- -->
+<---    STEP 2    -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #sbs-r-870 {
+        padding: var(--sectionPadding);
+       
+        overflow: hidden; /* Prevent overflow at the section level */
+    }
+    #sbs-r-870 .cs-container {
+        width: 100%;
+        max-width: 34.375rem; /* Ensure container fits within the viewport */
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(3rem, 7vw, 4rem);
+        box-sizing: border-box; /* Include padding in width */
+    }
+    #sbs-r-870 .cs-content {
+        text-align: left;
+        width: 100%;
+        max-width: 33.875rem;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #sbs-r-870 .cs-topper {
+        font-size: var(--topperFontSize);
+        line-height: 1.2em;
+        text-transform: uppercase;
+        text-align: inherit;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 0.25rem;
+        display: block;
+    }
+    #sbs-r-870 .cs-title {
+        font-size: var(--headerFontSize);
+        font-weight: 900;
+        line-height: 1.2em;
+        text-align: inherit;
+        max-width: 100%; /* Allow full width */
+        margin: 0 0 1rem 0;
+        color: var(--headerColor);
+        white-space: normal; /* Allow text to wrap */
+        overflow: visible; /* Prevent cropping */
+        text-overflow: clip; /* Disable ellipsis */
+    }
+    #sbs-r-870 .cs-text {
+        font-size: var(--bodyFontSize);
+        line-height: 1.5em;
+        text-align: inherit;
+        width: 100%;
+        max-width: 40.625rem;
+        margin: 0;
+        color: var(--bodyTextColor);
+        margin-bottom: 1rem;
+    }
+    #sbs-r-870 .cs-text:last-of-type {
+        margin-bottom: 2rem;
+    }
+    #sbs-r-870 .cs-button-solid {
+        font-size: 1rem;
+        line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+        text-decoration: none;
+        font-weight: 700;
+        text-align: center;
+        margin: 0;
+        color: #fff;
+        min-width: 9.375rem;
+        padding: 0 1.5rem;
+        background-color: var(--primary);
+        border-radius: 0.25rem;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        box-sizing: border-box;
+    }
+    #sbs-r-870 .cs-button-solid:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        background: #000;
+        opacity: 1;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 0.25rem;
+        transition: width 0.3s;
+    }
+    #sbs-r-870 .cs-button-solid:hover:before {
+        width: 100%;
+    }
+    #sbs-r-870 .cs-picture {
+        display: block;
+        position: relative;
+        width: 100%;
+        max-width: 39.375rem; /* Ensure consistent size with other steps */
+        height: clamp(25rem, 70vw, 48.4375rem); /* Maintain proportional height */
+        border-radius: 0; /* Keep corners straight */
+        overflow: hidden; /* Prevent overflow */
+        box-sizing: border-box;
+    }
+
+    #sbs-r-870 .cs-picture img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%; /* Image fills the container width */
+        height: 100%; /* Image fills the container height */
+        object-fit: contain; /* Ensure the image stays within the container */
+        object-position: center; /* Center the image */
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #sbs-r-870 {
+        padding: var(--sectionPadding);
+        overflow: hidden; /* Ensure nothing exceeds the viewport */
+    }
+    #sbs-r-870 .cs-container {
+        flex-direction: row;
+        max-width: 80rem; /* Consistent container width */
+        justify-content: space-between;
+        box-sizing: border-box;
+    }
+    #sbs-r-870 .cs-content {
+        width: 53%;
+        padding: 0;
+        order: -1; /* Reverse content and image */
+    }
+    #sbs-r-870 .cs-title {
+        max-width: 100%; /* Allow full width */
+        white-space: normal; /* Allow text to wrap */
+        overflow: visible; /* Prevent cropping */
+        text-overflow: clip; /* Disable ellipsis */
+    }
+    #sbs-r-870 .cs-picture {
+        width: 47vw; /* Maintain similar size as Step 1 */
+        position: relative;
+        overflow: hidden; /* Prevent overflow */
+        border-radius: 0; /* Keep corners straight */
+        box-sizing: border-box;
+        min-height: 50vw; /* Set a min-height based on the container width */
+    }
+
+    #sbs-r-870 .cs-picture img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%; /* Image fills the container width */
+        height: 100%; /* Image fills the container height */
+        object-fit: contain; /* Ensure the image stays within the container */
+        object-position: center; /* Center the image */
+    }
+}
+
+</style>
+
+
+
+
+<!-- ============================================ -->
+<!--                 STEP 3             -->
+<!-- ============================================ -->
+
+<section id="sbs-867">
+  <div class="cs-container">
+      <picture class="cs-picture">
+          <!--Mobile Image-->
+          <source media="(max-width: 600px)" srcset="/assets/svgs/personal-data-71-2.svg">
+          <!--Tablet and above Image-->
+          <source media="(min-width: 601px)" srcset="/assets/svgs/personal-data-71-2.svg">
+          <img loading="lazy" decoding="async" src="/assets/svgs/personal-data-71-2.svg" alt="therapy" width="630" height="775">
+      </picture>
+      <div class="cs-content">
+          <span class="cs-topper">Step 3</span>
+          <h2 class="cs-title">Upload Business Details</h2>
+          <p class="cs-text">
+            Once the contract and billing information are submitted, you’re ready for the final step in our onboarding process. In your Dashboard, you’ll find a simple form to fill out with details about your business. You can also upload any photos or assets you'd like to share, helping us to create a website that reflects your brand.
+          </p>
+          <p class="cs-text">
+            Congratulations—you’ve completed the onboarding process, and we’re ready to bring your vision to life!
+          </p>
+          <a href="/contact" class="cs-button-solid">Get Started</a>
+      </div>
+  </div>
+</section>
+                              
+
+<style>
+  /*-- -------------------------- -->
+<---       STEP 3      -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #sbs-867 {
+        padding: var(--sectionPadding);
+    }
+    #sbs-867 .cs-container {
+        width: 100%;
+        max-width: 34.375rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(3rem, 7vw, 4rem);
+    }
+    #sbs-867 .cs-content {
+        text-align: left;
+        width: 100%;
+        max-width: 33.875rem;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #sbs-867 .cs-title {
+        max-width: 17ch;
+        white-space: nowrap; /* Prevent text from wrapping */
+        overflow: hidden;    /* Ensure no overflowing content */
+        text-overflow: ellipsis; /* Add ellipsis if the title is too long */
+    }
+    #sbs-867 .cs-text {
+        margin-bottom: 1rem;
+    }
+    #sbs-867 .cs-text:last-of-type {
+        margin-bottom: 2rem;
+    }
+    #sbs-867 .cs-button-solid {
+        font-size: 1rem;
+        line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+        text-decoration: none;
+        font-weight: 700;
+        text-align: center;
+        margin: 0;
+        color: #fff;
+        min-width: 9.375rem;
+        padding: 0 1.5rem;
+        background-color: var(--primary);
+        border-radius: 0.25rem;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        box-sizing: border-box;
+    }
+    #sbs-867 .cs-button-solid:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        background: #000;
+        opacity: 1;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 0.25rem;
+        transition: width 0.3s;
+    }
+    #sbs-867 .cs-button-solid:hover:before {
+        width: 100%;
+    }
+    #sbs-867 .cs-picture {
+        display: block;
+        position: relative;
+        width: 100%;
+        max-width: 39.375rem;
+        height: clamp(25rem, 70vw, 48.4375rem);
+        box-shadow: none; /* Removed shadow */
+        border-radius: 0; /* Removed rounded corners */
+        overflow: visible; /* No clipping */
+    }
+    #sbs-867 .cs-picture img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 64rem) {
+    #sbs-867 {
+        padding: var(--sectionPadding);
+    }
+    #sbs-867 .cs-container {
+        flex-direction: row;
+        max-width: 80rem;
+        justify-content: space-between;
+    }
+    #sbs-867 .cs-content {
+        width: 53%;
+        padding: 0;
+    }
+    #sbs-867 .cs-title {
+        max-width: 100%; /* Ensure full width usage on desktop */
+        white-space: nowrap; /* Prevent text from wrapping */
+        overflow: hidden;    /* Prevent overflow */
+        text-overflow: ellipsis; /* Add ellipsis if necessary */
+    }
+    #sbs-867 .cs-picture {
+        width: 47vw;
+        position: relative;
+        box-shadow: none; /* Removed shadow */
+        border-radius: 0; /* Removed rounded corners */
+        overflow: visible; /* No clipping */
+    }
+}
+</style>
+
+
+<!-- ============================================ -->
+<!--             STEP 4           -->
+<!-- ============================================ -->
+
+<section id="sbs-r-870">
+  <div class="cs-container">
+      <picture class="cs-picture">
+          <!--Mobile Image-->
+          <source media="(max-width: 600px)" srcset="/assets/svgs/css-24.svg">
+          <!--Tablet and above Image-->
+          <source media="(min-width: 601px)" srcset="/assets/svgs/css-24.svg">
+          <img loading="lazy" decoding="async" src="/assets/svgs/css-24.svg" alt="therapy" width="630" height="775">
+      </picture>
+      <div class="cs-content">
+          <span class="cs-topper">STEP 4</span>
+          <h2 class="cs-title">Design & Development</h2>
+          <p class="cs-text">
+            This is the stage where you can kick back and relax whilst we bring your website to life. Our team will carefully design and hand-code your site, focusing on speed, functionality, and a clean, modern look. 
+          </p>
+          <p class="cs-text">
+            We’ll ensure every element is optimized to deliver the best experience for your customers and design it to keep them engaged. Trust that your project is in expert hands as we work behind the scenes to create something truly exceptional.
+          </p>
+          <a href="/contact" class="cs-button-solid">Get Started</a>
+      </div>
+  </div>
+</section>
+                              
+<style>
+  /*-- -------------------------- -->
+<---   STEP 4   -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #sbs-r-870 {
+        padding: var(--sectionPadding);
+    }
+    #sbs-r-870 .cs-container {
+        width: 100%;
+        max-width: 34.375rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(3rem, 7vw, 4rem);
+    }
+    #sbs-r-870 .cs-content {
+        text-align: left;
+        width: 100%;
+        max-width: 33.875rem;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #sbs-r-870 .cs-topper {
+        font-size: var(--topperFontSize);
+        line-height: 1.2em;
+        text-transform: uppercase;
+        text-align: inherit;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 0.25rem;
+        display: block;
+    }
+    #sbs-r-870 .cs-title {
+        font-size: var(--headerFontSize);
+        font-weight: 900;
+        line-height: 1.2em;
+        text-align: inherit;
+        max-width: 43.75rem;
+        margin: 0 0 1rem 0;
+        color: var(--headerColor);
+        position: relative;
+        white-space: nowrap; /* Force title to stay on one line */
+        overflow: hidden;    /* Prevent overflow */
+        text-overflow: ellipsis; /* Add ellipsis if the title is too long */
+    }
+    #sbs-r-870 .cs-text {
+        font-size: var(--bodyFontSize);
+        line-height: 1.5em;
+        text-align: inherit;
+        width: 100%;
+        max-width: 40.625rem;
+        margin: 0;
+        color: var(--bodyTextColor);
+        margin-bottom: 1rem;
+    }
+    #sbs-r-870 .cs-text:last-of-type {
+        margin-bottom: 2rem;
+    }
+    #sbs-r-870 .cs-button-solid {
+        font-size: 1rem;
+        line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+        text-decoration: none;
+        font-weight: 700;
+        text-align: center;
+        margin: 0;
+        color: #fff;
+        min-width: 9.375rem;
+        padding: 0 1.5rem;
+        background-color: var(--primary);
+        border-radius: 0.25rem;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        box-sizing: border-box;
+    }
+    #sbs-r-870 .cs-button-solid:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        background: #000;
+        opacity: 1;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 0.25rem;
+        transition: width 0.3s;
+    }
+    #sbs-r-870 .cs-button-solid:hover:before {
+        width: 100%;
+    }
+    #sbs-r-870 .cs-picture {
+        display: block;
+        position: relative;
+        width: 100%;
+        max-width: 39.375rem;
+        height: clamp(25rem, 70vw, 48.4375rem);
+        box-shadow: none; /* Removed shadow */
+        border-radius: 0; /* Removed rounded corners */
+        overflow: visible; /* No clipping */
+    }
+    #sbs-r-870 .cs-picture img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #sbs-r-870 {
+        padding: var(--sectionPadding);
+    }
+    #sbs-r-870 .cs-container {
+        flex-direction: row;
+        max-width: 80rem;
+        justify-content: space-between;
+    }
+    #sbs-r-870 .cs-content {
+        width: 53%;
+        padding: 0;
+        order: -1; /* Reverse content and image */
+    }
+    #sbs-r-870 .cs-title {
+        max-width: 100%; /* Allow full width on desktop */
+        white-space: nowrap; /* Prevent title from wrapping */
+        overflow: hidden; /* Prevent overflow */
+        text-overflow: ellipsis; /* Add ellipsis if necessary */
+    }
+    #sbs-r-870 .cs-picture {
+        width: 47vw;
+        position: relative;
+        box-shadow: none; /* Removed shadow */
+        border-radius: 0; /* Removed rounded corners */
+        overflow: visible; /* No clipping */
+    }
+}
+</style>
+
+<!-- ============================================ -->
+<!--                 STEP 5              -->
+<!-- ============================================ -->
+
+<section id="sbs-867">
+  <div class="cs-container">
+      <picture class="cs-picture">
+          <!--Mobile Image-->
+          <source media="(max-width: 600px)" srcset="/assets/svgs/user-interface-73.svg">
+          <!--Tablet and above Image-->
+          <source media="(min-width: 601px)" srcset="/assets/svgs/user-interface-73.svg">
+          <img loading="lazy" decoding="async" src="/assets/svgs/user-interface-73.svg" alt="therapy" width="630" height="775">
+      </picture>
+      <div class="cs-content">
+          <span class="cs-topper">Step 5</span>
+          <h2 class="cs-title">Refine Your New Website</h2>
+          <p class="cs-text">
+            It’s an exciting moment—your brand-new website is ready! With its clean, modern design and carefully planned structure, you can feel confident that it’s built to drive results and bring in more customers.
+          </p>
+          <p class="cs-text">
+            We’re positive you’ll love what you see, but if there’s anything specific you’d like to share, feel free to leave us a note. At this stage, your site is polished and ready to shine.
+          </p>
+          <a href="/contact" class="cs-button-solid">Get Started</a>
+      </div>
+  </div>
+</section>
+                              
+
+<style>
+  /*-- -------------------------- -->
+<---       STEP 5      -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #sbs-867 {
+        padding: var(--sectionPadding);
+    }
+    #sbs-867 .cs-container {
+        width: 100%;
+        max-width: 34.375rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(3rem, 7vw, 4rem);
+    }
+    #sbs-867 .cs-content {
+        text-align: left;
+        width: 100%;
+        max-width: 33.875rem;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #sbs-867 .cs-title {
+        max-width: 17ch;
+        white-space: nowrap; /* Prevent text from wrapping */
+        overflow: hidden;    /* Ensure no overflowing content */
+        text-overflow: ellipsis; /* Add ellipsis if the title is too long */
+    }
+    #sbs-867 .cs-text {
+        margin-bottom: 1rem;
+    }
+    #sbs-867 .cs-text:last-of-type {
+        margin-bottom: 2rem;
+    }
+    #sbs-867 .cs-button-solid {
+        font-size: 1rem;
+        line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+        text-decoration: none;
+        font-weight: 700;
+        text-align: center;
+        margin: 0;
+        color: #fff;
+        min-width: 9.375rem;
+        padding: 0 1.5rem;
+        background-color: var(--primary);
+        border-radius: 0.25rem;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        box-sizing: border-box;
+    }
+    #sbs-867 .cs-button-solid:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        background: #000;
+        opacity: 1;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 0.25rem;
+        transition: width 0.3s;
+    }
+    #sbs-867 .cs-button-solid:hover:before {
+        width: 100%;
+    }
+    #sbs-867 .cs-picture {
+        display: block;
+        position: relative;
+        width: 100%;
+        max-width: 39.375rem;
+        height: clamp(25rem, 70vw, 48.4375rem);
+        box-shadow: none; /* Removed shadow */
+        border-radius: 0; /* Removed rounded corners */
+        overflow: visible; /* No clipping */
+    }
+    #sbs-867 .cs-picture img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 64rem) {
+    #sbs-867 {
+        padding: var(--sectionPadding);
+    }
+    #sbs-867 .cs-container {
+        flex-direction: row;
+        max-width: 80rem;
+        justify-content: space-between;
+    }
+    #sbs-867 .cs-content {
+        width: 53%;
+        padding: 0;
+    }
+    #sbs-867 .cs-title {
+        max-width: 100%; /* Ensure full width usage on desktop */
+        white-space: nowrap; /* Prevent text from wrapping */
+        overflow: hidden;    /* Prevent overflow */
+        text-overflow: ellipsis; /* Add ellipsis if necessary */
+    }
+    #sbs-867 .cs-picture {
+        width: 47vw;
+        position: relative;
+        box-shadow: none; /* Removed shadow */
+        border-radius: 0; /* Removed rounded corners */
+        overflow: visible; /* No clipping */
+    }
+}
+</style>
+
+
+<!-- ============================================ -->
+<!--             STEP 6                -->
+<!-- ============================================ -->
+
+<section id="sbs-r-870">
+  <div class="cs-container">
+      <picture class="cs-picture">
+          <!--Mobile Image-->
+          <source media="(max-width: 600px)" srcset="/assets/svgs/marketing-campaign-70.svg">
+          <!--Tablet and above Image-->
+          <source media="(min-width: 601px)" srcset="/assets/svgs/marketing-campaign-70.svg">
+          <img loading="lazy" decoding="async" src="/assets/svgs/marketing-campaign-70.svg" alt="therapy" width="630" height="775">
+      </picture>
+      <div class="cs-content">
+          <span class="cs-topper">STEP 6</span>
+          <h2 class="cs-title">Launch Day Success</h2>
+          <p class="cs-text">
+            Your website is ready to go live and be seen by the world. We take care of everything to ensure a smooth launch, making sure your site is fully optimized for Google and designed to find your audience. 
+          </p>
+          <p class="cs-text">
+            With everything in place, your website is set to make a strong first impression and help your business grow online.
+          </p>
+          <a href="/contact" class="cs-button-solid">Get Started</a>
+      </div>
+  </div>
+</section>
+                              
+<style>
+  /*-- -------------------------- -->
+<---   STEP 6          -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #sbs-r-870 {
+        padding: var(--sectionPadding);
+    }
+    #sbs-r-870 .cs-container {
+        width: 100%;
+        max-width: 34.375rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(3rem, 7vw, 4rem);
+    }
+    #sbs-r-870 .cs-content {
+        text-align: left;
+        width: 100%;
+        max-width: 33.875rem;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #sbs-r-870 .cs-topper {
+        font-size: var(--topperFontSize);
+        line-height: 1.2em;
+        text-transform: uppercase;
+        text-align: inherit;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 0.25rem;
+        display: block;
+    }
+    #sbs-r-870 .cs-title {
+        font-size: var(--headerFontSize);
+        font-weight: 900;
+        line-height: 1.2em;
+        text-align: inherit;
+        max-width: 43.75rem;
+        margin: 0 0 1rem 0;
+        color: var(--headerColor);
+        position: relative;
+        white-space: nowrap; /* Force title to stay on one line */
+        overflow: hidden;    /* Prevent overflow */
+        text-overflow: ellipsis; /* Add ellipsis if the title is too long */
+    }
+    #sbs-r-870 .cs-text {
+        font-size: var(--bodyFontSize);
+        line-height: 1.5em;
+        text-align: inherit;
+        width: 100%;
+        max-width: 40.625rem;
+        margin: 0;
+        color: var(--bodyTextColor);
+        margin-bottom: 1rem;
+    }
+    #sbs-r-870 .cs-text:last-of-type {
+        margin-bottom: 2rem;
+    }
+    #sbs-r-870 .cs-button-solid {
+        font-size: 1rem;
+        line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+        text-decoration: none;
+        font-weight: 700;
+        text-align: center;
+        margin: 0;
+        color: #fff;
+        min-width: 9.375rem;
+        padding: 0 1.5rem;
+        background-color: var(--primary);
+        border-radius: 0.25rem;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        box-sizing: border-box;
+    }
+    #sbs-r-870 .cs-button-solid:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        background: #000;
+        opacity: 1;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 0.25rem;
+        transition: width 0.3s;
+    }
+    #sbs-r-870 .cs-button-solid:hover:before {
+        width: 100%;
+    }
+    #sbs-r-870 .cs-picture {
+        display: block;
+        position: relative;
+        width: 100%;
+        max-width: 39.375rem;
+        height: clamp(25rem, 70vw, 48.4375rem);
+        box-shadow: none; /* Removed shadow */
+        border-radius: 0; /* Removed rounded corners */
+        overflow: visible; /* No clipping */
+    }
+    #sbs-r-870 .cs-picture img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #sbs-r-870 {
+        padding: var(--sectionPadding);
+    }
+    #sbs-r-870 .cs-container {
+        flex-direction: row;
+        max-width: 80rem;
+        justify-content: space-between;
+    }
+    #sbs-r-870 .cs-content {
+        width: 53%;
+        padding: 0;
+        order: -1; /* Reverse content and image */
+    }
+    #sbs-r-870 .cs-title {
+        max-width: 100%; /* Allow full width on desktop */
+        white-space: nowrap; /* Prevent title from wrapping */
+        overflow: hidden; /* Prevent overflow */
+        text-overflow: ellipsis; /* Add ellipsis if necessary */
+    }
+    #sbs-r-870 .cs-picture {
+        width: 47vw;
+        position: relative;
+        box-shadow: none; /* Removed shadow */
+        border-radius: 0; /* Removed rounded corners */
+        overflow: visible; /* No clipping */
+    }
+}
+</style>
+
+<!-- ============================================ -->
+<!--                 STEP 7                  -->
+<!-- ============================================ -->
+
+<section id="sbs-867">
+    <div class="cs-container">
+        <picture class="cs-picture">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="/assets/svgs/office-work-15.svg">
+            <!--Tablet and above Image-->
+            <source media="(min-width: 601px)" srcset="/assets/svgs/office-work-15.svg">
+            <img loading="lazy" decoding="async" src="/assets/svgs/office-work-15.svg" alt="therapy" width="630" height="775">
+        </picture>
+        <div class="cs-content">
+            <span class="cs-topper">Step 7</span>
+            <h2 class="cs-title">Ongoing Security, <br>Support & More</h2>
+            <p class="cs-text">
+                You’re never on your own with True Sign Design. <br>From the moment your site goes live, we’re working behind the scenes to keep everything running smoothly. Your subscription includes secure hosting, regular updates to protect your site from hacking, behind the scenes optimization to keep it relevant for Google and our customer support.
+            </p>
+            <p class="cs-text">
+                 If you ever need help or have questions, our support is just an email away.<br> Our entire package is designed to take care of the technical details so you can focus on running your business stress free.
+            </p>
+            <a href="/contact" class="cs-button-solid">Get Started</a>
+        </div>
+    </div>
+  </section>
+                                
+  
+  <style>
+    /*-- -------------------------- -->
+  <---       STEP 5      -->
+  <--- -------------------------- -*/
+  
+  /* Mobile - 360px */
+  @media only screen and (min-width: 0rem) {
+      #sbs-867 {
+          padding: var(--sectionPadding);
+      }
+      #sbs-867 .cs-container {
+          width: 100%;
+          max-width: 34.375rem;
+          margin: auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: clamp(3rem, 7vw, 4rem);
+      }
+      #sbs-867 .cs-content {
+          text-align: left;
+          width: 100%;
+          max-width: 33.875rem;
+          box-sizing: border-box;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+      }
+  
+      #sbs-867 .cs-title {
+          max-width: 17ch;
+          white-space: nowrap; /* Prevent text from wrapping */
+          overflow: hidden;    /* Ensure no overflowing content */
+          text-overflow: ellipsis; /* Add ellipsis if the title is too long */
+      }
+      #sbs-867 .cs-text {
+          margin-bottom: 1rem;
+      }
+      #sbs-867 .cs-text:last-of-type {
+          margin-bottom: 2rem;
+      }
+      #sbs-867 .cs-button-solid {
+          font-size: 1rem;
+          line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+          text-decoration: none;
+          font-weight: 700;
+          text-align: center;
+          margin: 0;
+          color: #fff;
+          min-width: 9.375rem;
+          padding: 0 1.5rem;
+          background-color: var(--primary);
+          border-radius: 0.25rem;
+          display: inline-block;
+          position: relative;
+          z-index: 1;
+          box-sizing: border-box;
+      }
+      #sbs-867 .cs-button-solid:before {
+          content: "";
+          position: absolute;
+          height: 100%;
+          width: 0%;
+          background: #000;
+          opacity: 1;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          border-radius: 0.25rem;
+          transition: width 0.3s;
+      }
+      #sbs-867 .cs-button-solid:hover:before {
+          width: 100%;
+      }
+      #sbs-867 .cs-picture {
+          display: block;
+          position: relative;
+          width: 100%;
+          max-width: 39.375rem;
+          height: clamp(25rem, 70vw, 48.4375rem);
+          box-shadow: none; /* Removed shadow */
+          border-radius: 0; /* Removed rounded corners */
+          overflow: visible; /* No clipping */
+      }
+      #sbs-867 .cs-picture img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+      }
+  }
+  
+  /* Tablet - 768px */
+  @media only screen and (min-width: 64rem) {
+      #sbs-867 {
+          padding: var(--sectionPadding);
+      }
+      #sbs-867 .cs-container {
+          flex-direction: row;
+          max-width: 80rem;
+          justify-content: space-between;
+      }
+      #sbs-867 .cs-content {
+          width: 53%;
+          padding: 0;
+      }
+      #sbs-867 .cs-title {
+          max-width: 100%; /* Ensure full width usage on desktop */
+          white-space: nowrap; /* Prevent text from wrapping */
+          overflow: hidden;    /* Prevent overflow */
+          text-overflow: ellipsis; /* Add ellipsis if necessary */
+      }
+      #sbs-867 .cs-picture {
+          width: 47vw;
+          position: relative;
+          box-shadow: none; /* Removed shadow */
+          border-radius: 0; /* Removed rounded corners */
+          overflow: visible; /* No clipping */
+      }
+  }
+  </style>
+  
+
+                              
+
+
+
+
+<CTA />
+</BaseLayout>

@@ -14,15 +14,14 @@ const currentYear = getCurrentYear()
         ><img
           loading="lazy"
           decoding="async"
-          src="/assets/svgs/logo-white.svg"
+          src="/assets/svgs/truesign4larger-white-original.svg"
           alt="logo"
           width="264"
           height="78"
         /></a
       >
       <p>
-        Extra content if you need it, if not you can delete this whole p tag. I
-        usually do.
+        
       </p>
     </div>
     <div class="right-section">
@@ -31,24 +30,32 @@ const currentYear = getCurrentYear()
           <li>
             <h2>Information</h2>
           </li>
-          {
-            navData.map((entry) => (
-              <li class="cs-li">
-                <a href={entry.url}>
-                  {entry.key}
-                </a>
-              </li>
-            ))
-          }
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/why-us">Why Us</a>
+          </li>
+          <li>
+            <a href="/our-process">Our Process</a>
+          </li>
+          <li>
+            <a href="/portfolio">Portfolio</a>
+          </li>
+          <li>
+            <a href="/pricing">Pricing</a>
+          </li>
         </ul>
         <ul>
           <li>
             <h2>Services</h2>
           </li>
-          <li>Service1</li>
-          <li>Service2</li>
-          <li>Service4</li>
-          <li>Service5</li>
+          <li>Design, Develop</li>
+          
+          <li>Hosting</li>
+          <li>Maintence</li>
+          <li>Support</li>
+          <li>SEO</li>
         </ul>
         <ul>
           <li>
@@ -59,16 +66,15 @@ const currentYear = getCurrentYear()
               {client.address.lineOne}<br />
               {client.address.lineTwo}<br />
               {client.address.city}
-              {client.address.state}
-              {client.address.zip}
+             
             </a>
           </li>
-          <li>
+          <!-- <li>
             <a href={`tel:${client.phoneForTel}`}>
               T:
               {client.phoneFormatted}
             </a>
-          </li>
+          </li> -->
           <li>
             <a href={`mailto:${client.email}`}>Click to Email</a>
           </li>
@@ -79,8 +85,8 @@ const currentYear = getCurrentYear()
 
   <div class="credit">
     <span>Designed and Hand Coded by</span>
-    <a href="/" target="_blank" rel="noopener">Your Company Name</a>
-    <span class="copyright"> Copyright {currentYear} - Present</span>
+    <a href="/" target="_blank" rel="noopener">True Sign Design</a>
+    <span class="copyright"> Copyright 2023 - Present</span>
   </div>
 </footer>
 
@@ -97,19 +103,20 @@ const currentYear = getCurrentYear()
       margin: auto;
       margin-bottom: (50/16rem);
       .logo {
-        text-align: center;
-        width: auto;
-        height: (32/16em);
-        margin: auto;
-        margin-bottom: (30/16em);
-        display: inline-block;
+  text-align: center;
+  width: auto;
+  height: (64/16em); /* Increased from 32/16em to 64/16em */
+  margin: auto;
+  margin-bottom: (30/16em);
+  display: inline-block;
 
-        img {
-          width: auto;
-          height: 100%;
-          display: block;
-        }
-      }
+  img {
+    width: auto;
+    height: 100%; /* Ensures the image scales with the .logo height */
+    display: block;
+  }
+}
+
 
       p {
         font-size: (14/16rem);
@@ -256,7 +263,7 @@ const currentYear = getCurrentYear()
 
       .logo {
         text-align: left;
-        height: (40/16rem);
+        height: (80/16rem);
         margin-left: 0;
       }
 
@@ -326,12 +333,12 @@ const currentYear = getCurrentYear()
 }
 
 /* Dark Mode */
-@media only screen and (min-width: 0em) {
-  body.dark-mode {
-    #footer {
-      background: #061623;
-    }
-  }
-}
+// @media only screen and (min-width: 0em) {
+//   body.dark-mode {
+//     #footer {
+//       background: #061623;
+//     }
+//   }
+// }
 
 </style>

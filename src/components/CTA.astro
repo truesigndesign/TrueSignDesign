@@ -5,139 +5,138 @@ import mobileImage from "@assets/images/CTA/construction-m.jpg"
 import desktopImage from "@assets/images/CTA/cabinets2.jpg"
 import fallbackImage from "@assets/images/CTA/cabinets2.jpg"
 ---
+<!-- ============================================ -->
+<!--                     CTA                      -->
+<!-- ============================================ -->
 
-<section id="cta">
-  <div class="container">
-    <h2 class="title">
-      Get It Done
-      <br />
-       With Us Today
-    </h2>
-    <p>
-      Say something catchy, informative, and encouraging to click the button to
-      go to the contact page. I like to add these to the bottom of all pages.
-    </p>
-    <a href="/contact" class="cs-button-solid">Get an Estimate Now</a>
+<section id="cta-51">
+  <div class="cs-container">
+      <div class="cs-content">
+          <span class="cs-topper">Contact Us</span>
+          <h2 class="cs-title">Your Sign For Success <br>Starts Here</h2>
+          <p class="cs-text">
+            We’re here to help you every step of the way
+          </p>
+          <a href="/contact" class="cs-button-solid">Contact</a>
+      </div>
   </div>
-  <CSPicture
-    mobileImgUrl={mobileImage}
-    mobileMediaWidth="600px"
-    desktopImgUrl={desktopImage}
-    desktopMediaWidth="601px"
-    fallbackImgUrl={fallbackImage}
-    alt=""
-  />
-  <!-- <picture>
-    <source
-      media="(max-width: 600px)"
-      srcset="/assets/images/cabinets2-m.jpg"
-    />
-    <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg" />
-    <img
-      aria-hidden="true"
-      decoding="async"
-      src="/assets/images/cabinets2.jpg"
-      alt="kitchen cabinets"
-      loading="lazy"
-      width="2500"
-      height="1667"
-    />
-  </picture> -->
+  <!-- Background Image-->
+  <picture class="cs-picture">
+      <source media="(max-width: 600px)" srcset="/assets/images/cta-picture.jpg">
+      <source media="(min-width: 601px)" srcset="/assets/images/cta-picture.jpg">
+      <img loading="lazy" decoding="async" src="/assets/images/cta-picture.jpg" alt="cabinets" width="1920" height="1280" aria-hidden="true">
+  </picture>
 </section>
 
-<style lang="less">
-  
-/* Mobile */
-@media only screen and (min-width: 0em) {
-  #cta {
-    padding: (50/16rem) 0;
-    position: relative;
+<style>
+/*-- -------------------------- -->
+<---            CTA             -->
+<--- -------------------------- -*/
 
-    &:before {
-      content: "";
-      width: 100%;
-      height: 100%;
-      background: #000;
-      opacity: 0.7;
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #cta-51 {
+        padding: var(--sectionPadding);
+        position: relative;
+        /* border-top-left-radius: 10rem; 
+        border-top-right-radius: 10rem;  */
+        overflow: hidden; /* Ensure content respects the curve */
+    }
+    #cta-51 .cs-container {
+        width: 100%;
+        max-width: 80rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* 48px - 64px */
+        gap: clamp(3rem, 6vw, 4rem);
+    }
+    #cta-51 .cs-content {
+        /* set text align to left if content needs to be left aligned */
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        /* centers content horizontally, set to flex-start to left align */
+        align-items: center;
     }
 
-    .container {
-      text-align: center;
+    #cta-51 .cs-title {
+        color: #fff;
     }
-
-    .title {
-      font-size: ~"min(9vw, 3rem)";
-      font-weight: 900;
-      line-height: 58/48;
-      text-align: center;
-      margin-bottom: (36/16rem);
-      color: #fff;
-      position: relative;
+    #cta-51 .cs-text {
+        margin-bottom: 1rem;
+        color: #fff;
+        opacity: 0.8;
     }
-
-    p {
-      text-align: center;
-      width: 96%;
-      max-width: (598/16rem);
-      margin: auto;
-      margin-bottom: (36/16rem);
-      color: #fff;
-      opacity: 1;
+    #cta-51 .cs-text:last-of-type {
+        margin-bottom: 2rem;
     }
-  }
-}
-
-/* Small Desktop */
-@media only screen and (min-width: 64em) {
-  #cta {
-    padding: (168/16rem) 0;
-  }
-}
-
-/* Large Desktop */
-@media only screen and (min-width: 1300px) {
-  #cta {
-    margin-top: (100/16rem);
-    position: relative;
-    &:before {
-      display: none;
+    #cta-51 .cs-button-solid {
+        font-size: 1rem;
+        /* 46px - 56px */
+        line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+        text-decoration: none;
+        font-weight: 700;
+        text-align: center;
+        margin: 0;
+        color: #fff;
+        min-width: 9.375rem;
+        padding: 0 1.5rem;
+        background-color: var(--primary);
+        border-radius: 0.25rem;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        /* prevents padding from adding to the width */
+        box-sizing: border-box;
     }
-    &:after {
-      content: "";
-      width: (2000/16rem);
-      height: (1108/16rem);
-      background: url("/assets/svgs/cta-squares.svg");
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
-      opacity: 1;
-      display: block;
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      z-index: -3;
-      transform: translateX(-50%);
+    #cta-51 .cs-button-solid:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        background: #000;
+        opacity: 1;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 0.25rem;
+        transition: width 0.3s;
     }
-    .container {
-      width: 90.0625%;
-      margin: auto;
+    #cta-51 .cs-button-solid:hover:before {
+        width: 100%;
     }
-  }
-}
-
-/* Dark Mode */
-@media only screen and (min-width: 0em) {
-  body.dark-mode {
-    #cta {
-      &:after {
-        display: none;
-      }
+    #cta-51 .cs-picture {
+        height: 100%;
+        width: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
     }
-  }
+    #cta-51 .cs-picture:before {
+        /* black color overlay */
+        content: "";
+        position: absolute;
+        display: block;
+        height: 100%;
+        width: 100%;
+        background: #000;
+        opacity: 0.8;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+    #cta-51 .cs-picture img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
 }
 </style>

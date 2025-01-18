@@ -1,0 +1,1258 @@
+---
+import BaseLayout from "..//layouts/BaseLayout.astro";
+import CTA from "../components/CTA.astro";
+import Landing from "../components/Landing.astro";
+
+// Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
+import {getOptimizedImage} from "../js/utils"
+import landingImage from "../assets/images/landing.jpg" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+const optimizedImage = await getOptimizedImage(landingImage)
+---
+
+<BaseLayout
+  title="About"
+  description="Meta description for the page"
+  preloadedImage = {optimizedImage}
+>
+  <!-- ============================================ -->
+  <!--                    LANDING                   -->
+  <!-- ============================================ -->
+
+  <!-- <Landing 
+    title="Projects"
+    image={optimizedImage}
+  /> -->
+
+  <!-- ============================================ -->
+<!--                    Hero                      -->
+<!-- ============================================ -->
+
+
+<section id="hero-1115">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Pricing</span>
+            <h1 class="cs-title">
+                Clear And<br>Affordable Costs
+
+              </h1>
+              <p class="cs-text">
+                You’ll always know what to expect, with transparent prices designed to fit your budget perfectly.
+               </p>
+            <a href="/contact" class="cs-button-solid">Get Started   </a>
+        </div>
+        <!--Hero Image-->
+        <!--We need a wrapper div around the image group so the volunteer box can be relatively positioned on mobile to make stacking the design easier -->
+        <div class="cs-image-group-wrapper">
+            <div class="cs-image-group" aria-hidden="true">
+               
+                <!--Non Masked Image-->
+                <picture class="cs-picture cs-picture1">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="/assets/svgs/team-work-3-37.svg">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="/assets/svgs/team-work-3-37.svg">
+                    <img decoding="async" fetchpriority="high" src="/assets/svgs/team-work-3-37.svg" alt="people" width="651" height="523">
+                </picture>
+               
+                <!--Floating Icon-->
+                <!-- <picture class="cs-floater" aria-hidden="true">
+                    <img class="cs-floater-icon" decoding="async" fetchpriority="high" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/charity2.svg" alt="icon" width="52" height="52">
+                </picture> -->
+                
+             
+                <!--Top Graphic-->
+                <!-- <img class="cs-graphic cs-graphic1" aria-hidden="true" decoding="async" fetchpriority="high" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/yellow-graphic.svg" alt="icon" width="586" height="356"> -->
+                <!--Bottom Graphic-->
+                <!-- <img class="cs-graphic cs-graphic2" aria-hidden="true" decoding="async" fetchpriority="high" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/green-graphic.svg" alt="icon" width="586" height="356"> -->
+            </div>
+        
+        
+           
+        </div>
+        </div>
+    </div>
+</section>
+                                
+
+<style lang="less">
+    /*-- -------------------------- -->
+<---            Hero            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #hero-1115 {
+        /* 200px - 300px top */
+        padding: clamp(12.5rem, 14vw, 12.5rem) (16/16rem) (100/16rem);
+
+        background-color: #ffffff;
+        /* clips the svg wave from overflowing */
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+
+        &:before {
+            /* textured pattern */
+            content: "";
+            position: absolute;
+            display: block;
+            height: 100%;
+            width: 100%;
+            /* changes to a desktop image at tablet */
+            background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+            background-size: auto;
+            background-position: center;
+            background-repeat: repeat;
+            filter: blur(2px);
+            opacity: 1;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            /* prevents the mouse from interacting with itand also in dev tool mode */
+            pointer-events: none;
+        }
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: (48/16rem);
+        }
+
+        .cs-content {
+            max-width: (630/16rem);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .cs-tick {
+    color: #EC9C52;
+}
+
+
+        .cs-topper {
+            font-size: (16/16rem);
+            line-height: 1.2em;
+            text-transform: uppercase;
+            text-align: inherit;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+            color: #767676;
+            margin-bottom: (4/16rem);
+            display: block;
+        }
+
+        .cs-title {
+            /* 39px - 61px */
+            font-size: clamp(2.4375rem, 5vw, 3.8125rem);
+            font-weight: 900;
+            line-height: 1.2em;
+            text-align: center;
+            /* 23 characters including spaces wide */
+            max-width: 23ch;
+            margin: 0 0 (16/16rem) 0;
+            color: var(--headerColor);
+            position: relative;
+        }
+
+        .cs-text {
+            /* 16px - 20px */
+            font-size: clamp(1rem, 1.5vw, 1.25rem);
+            line-height: 1.5em;
+            text-align: center;
+            width: 100%;
+            max-width: (531/16rem);
+            /* 28px - 40px */
+            margin: 0 0 clamp(1.75rem, 3.92vw, 2.5rem) 0;
+            color: var(--bodyTextColor);
+        }
+
+        .cs-button-solid {
+            font-size: (16/16rem);
+            /* 46px - 56px */
+            line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+            text-decoration: none;
+            font-weight: 700;
+            text-align: center;
+            margin: 0;
+            color: #fff;
+            min-width: (150/16rem);
+            padding: 0 (24/16rem);
+            background-color: var(--primary);
+            border-radius: (4/16rem);
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            /* prevents padding from adding to the width */
+            box-sizing: border-box;
+
+            &:before {
+                content: "";
+                position: absolute;
+                height: 100%;
+                width: 0%;
+                background: #000;
+                opacity: 1;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                border-radius: (4/16rem);
+                transition: width 0.3s;
+            }
+
+            &:hover {
+                &:before {
+                    width: 100%;
+                }
+            }
+        }
+
+        .cs-image-group-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: (20/16rem);
+            position: relative;
+        }
+
+        .cs-image-group {
+            /* we use ems for everything inside the cs-image-group so they pull their value for em from the cs-image-group container that we set.  This min-max property lets us tie the font size to the view width of the screen and grows proportionally with every pixel wide the screen gets until the value the view width units = .75em, resets at small desktop */
+            font-size: ~"min(2.2vw, .75em)";
+            width: (653/16em);
+            height: (618/16em);
+            position: relative;
+            z-index: 2;
+        }
+
+        .cs-floater {
+            /* 50px - 120px */
+            width: clamp(3.125rem, 8vw, 7.5rem);
+            height: clamp(3.125rem, 8vw, 7.5rem);
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: (130/16em);
+            /* changes to -74px at large desktop */
+            left: (-35/16em);
+            transform: rotate(-15deg);
+        }
+
+        .cs-floater-icon {
+            width: (52/16em);
+            height: auto;
+        }
+
+        .cs-picture {
+    width: (651/16em);
+    height: (523/16em);
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    position: absolute;
+    left: 50%;
+    top: (95/16em);
+    transform: translateX(-50%);
+
+    img {
+        width: 100%;
+        height: auto; // Adjust height to preserve aspect ratio
+        object-fit: contain; // Ensure the full image fits without cropping
+        object-position: center; // Center the image within the container
+    }
+
+
+        }
+
+        .cs-picture1 {
+            /* we set a height on the top image to cut off the bottom of it and hide it with overflow:hidden where the curved bottom picture meets it. The top image is what overlaps the "curve" of the bottom image.  */
+            height: 100%;
+            transform: translateX(-50%);
+            /* clips the bottom left corner of the top image to match the curve of the bottom one because it was too long */
+            border-radius: 0 0 0 25%;
+        }
+
+        .cs-picture2 {
+            border-radius: 0 0 55% 55%;
+        }
+
+        .cs-graphic {
+            width: (586/16em);
+            height: auto;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .cs-graphic1 {
+            top: 0;
+            right: 0;
+        }
+
+        .cs-graphic2 {
+            bottom: 0;
+            left: 0;
+        }
+
+        .cs-donations {
+            /* 12px - 20px */
+            padding: clamp(0.75rem, 2.5vw, 1.25rem);
+            /* prevent padding from affecting height and width */
+            box-sizing: border-box;
+            background-color: #fff;
+            box-shadow: 0px 8px 100px 0px rgba(0, 0, 0, 0.08);
+            border-radius: (12/16rem);
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            /* 8px - 12px */
+            gap: clamp(0.5rem, 1.5vw, 0.75rem);
+            position: absolute;
+            top: (-10/16em);
+            right: 0;
+        }
+
+        .cs-donations-icon {
+            /* 12px - 20px */
+            width: clamp(0.75rem, 2vw, 1.25rem);
+            height: auto;
+        }
+
+        .cs-donations-icon-wrapper {
+            /* 32px - 48px */
+            width: clamp(2rem, 4vw, 3rem);
+            height: clamp(2rem, 4vw, 3rem);
+            background-color: var(--primaryLight);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cs-donations-flex {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: (4/16rem);
+        }
+
+        .cs-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* 4px - 8px */
+            gap: clamp(0.25rem, 1vw, 0.5rem);
+        }
+
+        .cs-progress {
+            /* 100px - 160px */
+            width: clamp(6.25rem, 8vw, 10rem);
+            /* 4px - 8px */
+            height: clamp(0.25rem, 1vw, 0.5rem);
+            border-radius: (8/16rem);
+            overflow: hidden;
+            background-color: #e8e8e8;
+        }
+
+        .cs-progress-bar {
+            width: var(--progress);
+            height: 100%;
+            background-color: var(--secondary);
+            border-radius: (8/16rem);
+            display: block;
+        }
+
+        .cs-percentage {
+            font-size: (12/16rem);
+            line-height: 1.2em;
+            font-weight: 700;
+            margin: 0;
+            color: #4e4b66;
+            display: block;
+        }
+
+        .cs-volunteer {
+            /* 20px - 24px tpo & bottom */
+            /* 16px - 20px left & right */
+            padding: clamp(1rem, 2vw, 1.25rem) clamp(1.25rem, 2.5vw, 1.5rem);
+            /* prevents padding and border from affecting height and width */
+            box-sizing: border-box;
+            background-color: #fff;
+            border-radius: (12/16rem);
+            box-shadow: 0px 8px 100px 0px rgba(0, 0, 0, 0.08);
+
+            display: inline-flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+            /* 8px - 16px */
+            gap: clamp(0.5rem, 2vw, 1rem);
+            position: relative;
+            z-index: -1;
+        }
+
+        .cs-volunteer-flex {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .cs-header {
+            /* 12px - 20px */
+            font-size: clamp(0.75rem, 2vw, 1.25rem);
+            line-height: 1.2em;
+            font-weight: 700;
+            margin: 0;
+            color: var(--headerColor);
+        }
+
+        .cs-volunteer-img {
+            /* 36px 48px */
+            width: clamp(2.25rem, 3vw, 3rem);
+            height: auto;
+            margin: 0 (-16/16rem) 0 0;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            background-color: #fff;
+        }
+
+        .cs-volunteer-number {
+            /* 12px - 16px */
+            font-size: clamp(0.75rem, 2vw, 1rem);
+            font-weight: 700;
+            /* 36px 48px */
+            width: clamp(2.25rem, 3vw, 3rem);
+            height: clamp(2.25rem, 3vw, 3rem);
+            background-color: var(--secondary);
+            color: var(--headerColor);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cs-arrow {
+            /* 60px - 130px */
+            width: clamp(3.75rem, 10.5vw, 8.125rem);
+            height: auto;
+            position: absolute;
+            bottom: 110%;
+            left: (-10/16rem);
+            transform: rotate(-66deg);
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #hero-1115 {
+        .cs-image-group {
+            font-size: ~"min(1.13vw, 1em)";
+            /* pushes down to create the space for the cs-volunteer to drop down 68px, since its positioned relative to the cs-image-group-wrapper div at bottom 0, the marign-bottom on the cs-image-group pushes down on the wrapper div, making the cs-volunteer drop down with it since it is positioned to the bottom of the wrapper div */
+            margin-bottom: (68/16rem);
+        }
+
+        .cs-donations {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .cs-volunteer {
+            position: absolute;
+            bottom: 0;
+            left: (-115/16rem);
+            bottom: 0;
+            z-index: 10;
+        }
+
+        .cs-arrow {
+            bottom: 95%;
+            left: (38/16rem);
+            transform: rotate(0);
+            z-index: -1;
+        }
+
+        
+        .cs-picture {
+            width: 43vw; /* Base size */
+            max-width: 42rem; /* Cap the size on larger screens */
+            height: auto; /* Maintain aspect ratio */
+            position: absolute; /* Allow free positioning */
+            top: 50%; /* Center vertically */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Keep it perfectly centered */
+        }
+    }
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #hero-1115 {
+        text-align: left;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .cs-container {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .cs-content {
+            width: 40vw;
+            flex: none;
+            align-items: flex-start;
+        }
+
+        .cs-title {
+            max-width: 16ch; /* Ensure the title stays on one line */
+        }
+
+        .cs-title,
+        .cs-text {
+            text-align: left;
+        }
+
+        .cs-picture {
+            width: 40vw; /* Base size */
+            max-width: 38rem; /* Cap the size on larger screens */
+            height: auto; /* Maintain aspect ratio */
+            position: absolute; /* Allow free positioning */
+            top: 40%; /* Center vertically */
+            left: 40%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Keep it perfectly centered */
+        }
+    }
+}
+
+
+/* Large Desktop - 1400px */
+@media only screen and (min-width: 87.5rem) {
+    #hero-1115 {
+        height: 100vh; /* Full viewport height */
+        display: flex; /* Enable Flexbox */
+        flex-direction: column; /* Stack items vertically */
+        justify-content: center; /* Center content vertically */
+        
+        .cs-image-group-wrapper {
+            /* 48px - 160px */
+            right: ~"calc(clamp(2rem, 3vw, 10rem)*-1)";
+        }
+
+        .cs-image-group {
+            margin: 0;
+            z-index: 10;
+        }
+
+        .cs-floater {
+            left: (-74/16rem);
+        }
+
+        .cs-volunteer {
+            left: (-321/16rem);
+            bottom: (20/16rem);
+            z-index: -1;
+        }
+
+        .cs-arrow {
+            left: (200/16rem);
+        }
+        
+    }
+}
+
+/* Large Desktop - 1900px and up */
+@media only screen and (min-width: 93rem) {
+    #hero-1115 {
+        .cs-title {
+            font-size: clamp(3rem, 5.5vw, 4.5rem); /* Slightly increase title size */
+        }
+    }
+}
+
+                             
+    
+</style>
+
+
+
+<!-- ============================================ -->
+<!--                  Pricing                     -->
+<!-- ============================================ -->
+
+<section id="pricing-357">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Pricing Plans</span>
+            <h2 class="cs-title">Affordable & Simple</h2>
+            <p class="cs-text">
+               An All-In-One Solution for all things technical. <br>Our 24-month plan includes hosting, maintenance, updates, support & more, all at no extra cost.
+            </p>
+           <br> <h3>30-Day-Back-Guarantee</h3>
+        </div>
+        <ul class="cs-card-group">
+             <!-- Option 1 -->
+             <li class="cs-item">
+                <h3 class="cs-h3">Standard</h3>
+                <p class="cs-item-text">
+                    All-In-One Package
+                </p>
+                <div class="cs-option-group">
+                    <span class="cs-price">£140<span class="cs-small">/month</span></span>
+                </div>
+                <span class="cs-included">Package Includes</span>
+                <ul class="cs-ul">
+                    <li class="cs-li">
+                        <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                        Design & Development
+                    </li>
+                    <li class="cs-li ">
+                        <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                        5-Page Static Website
+                    <li class="cs-li">
+                        <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                        Secure Hosting & Protection
+                    </li>
+                    <li class="cs-li">
+                        <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                        Unlimited Stock Images
+                    </li>
+                    <li class="cs-li ">
+                        <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                        On-Page Updates 
+                    </li>
+                    <li class="cs-li ">
+                        <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                        Google Optimisation
+                    </li>
+                    <li class="cs-li ">
+                        <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                        Google Business Profile Set Up
+                    </li>
+                   
+                    
+                    <li class="cs-li cs-disabled">
+                        <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                        Blog Included
+                    </li>
+                </ul>
+                <a href="/contact" class="cs-button-solid">Get Started</a>
+            </li>
+            
+            <!-- Option 2 -->
+            <li class="cs-item cs-popular">
+                <h3 class="cs-h3">Premium</h3>
+                <p class="cs-item-text">
+                    All-In-One Package
+                </p>
+                <div class="cs-option-group">
+                    <span class="cs-price">£180<span class="cs-small">/month</span></span>
+                </div>
+                <span class="cs-included">Package Includes</span>
+                <ul class="cs-ul">
+                    <li class="cs-li">
+                        <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                        Design & Development
+                    </li>
+                    <li class="cs-li ">
+                        <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                        8-Page Static Website
+                    </li>
+                    <li class="cs-li">
+                        <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                        Secure Hosting & Protection
+                    </li>
+                    <li class="cs-li">
+                        <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                        On-Page Updates 
+                    </li>
+                    <li class="cs-li">
+                        <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                        Google Optimisation
+                    </li>
+                    <li class="cs-li ">
+                        <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                        Google Business Profile Set Up
+                    </li>
+                   
+                    
+                    
+                
+                    <li class="cs-li ">
+                        <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                        Blog Included
+                    </li>
+                </ul>
+                <a href="/contact" class="cs-button-solid">Get Started</a>
+            </li>
+           
+            
+        </ul>
+        
+       
+    </div>
+</section>
+                                
+
+<style>
+    /*-- -------------------------- -->
+/*          Pricing           -->
+/* -------------------------- -*/
+
+/* Mobile */
+@media only screen and (min-width: 0rem) {
+    #pricing-357 {
+        padding: var(--sectionPadding);
+        background-color: #f7f7f7;
+        position: relative;
+        z-index: 1;
+    }
+
+    #pricing-357:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        
+        background-repeat: repeat;
+        background-size: auto;
+        filter: blur(1px); /* Apply the 1px blur */
+        z-index: -1;
+        opacity: 1;
+        pointer-events: none;
+    }
+
+
+    #pricing-357 .cs-container {
+        width: 100%;
+        max-width: 80rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* 48px - 64px */
+        gap: clamp(3rem, 6vw, 4rem);
+    }
+    #pricing-357 .cs-content {
+        /* set text align to left if content needs to be left aligned */
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        /* centers content horizontally, set to flex-start to left align */
+        align-items: center;
+    }
+
+    #pricing-357 .cs-card-group {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center;
+        gap: 2rem; /* Consistent spacing between cards */
+    }
+    #pricing-357 .cs-item {
+        list-style: none;
+        /* 20px - 32px top & bottom */
+        /* 16px - 32px left & right */
+        padding: clamp(1.25rem, 3vw, 2rem) clamp(1rem, 2.4vw, 2rem);
+        width: 100%;
+        max-width: 25.8125rem;
+        border-radius: 1rem;
+        background: #fff;
+        border: 1px solid #e8e8e8;
+        /* prevents padding from adding to height and width */
+        box-sizing: border-box;
+    }
+    #pricing-357 .cs-popular {
+        background: var(--primary);
+        position: relative;
+        /* clips the popular tag */
+        overflow: hidden;
+        /* send to the top */
+        order: 0;
+    }
+    #pricing-357 .cs-popular:before {
+        /* Most Popular Tag */
+        content: "Popular";
+        font-size: 0.875rem;
+        text-align: center;
+        line-height: 1.8125em;
+        font-weight: 700;
+        width: 10.625rem;
+        padding: 0 0.75rem;
+        color: var(--bodyTextColorWhite);
+        background-color: var(--secondary);
+        position: absolute;
+        display: block;
+        top: 1.25rem;
+        right: -3.75rem;
+        transform: rotate(42deg);
+    }
+    #pricing-357 .cs-popular .cs-h3,
+    #pricing-357 .cs-popular .cs-item-text,
+    #pricing-357 .cs-popular .cs-price,
+    #pricing-357 .cs-popular .cs-included,
+    #pricing-357 .cs-popular .cs-li,
+    #pricing-357 .cs-popular .cs-small {
+        color: var(--bodyTextColorWhite);
+    }
+    #pricing-357 .cs-popular .cs-button-solid {
+        background-color: #fff;
+        color: var(--primary);
+        transition: color 0.3s;
+    }
+    #pricing-357 .cs-popular .cs-button-solid:before {
+        background-color: black;
+    }
+    #pricing-357 .cs-popular .cs-button-solid:hover {
+        color: #fff;
+    }
+    #pricing-357 .cs-popular .cs-li-img {
+        /* turns the check mark white */
+        filter: brightness(900%);
+    }
+    #pricing-357 .cs-h3 {
+        font-size: 1.25rem;
+        line-height: 1.2em;
+        font-weight: 700;
+        margin: 0 0 0.25rem;
+        padding: 0;
+        color: var(--headerColor);
+    }
+    #pricing-357 .cs-item-text {
+        font-size: 0.875rem;
+        line-height: 1.5em;
+        /* 16px - 24px */
+        margin: 0 0 clamp(1rem, 2vw, 1.5rem);
+        padding: 0;
+        color: var(--bodyTextColor);
+    }
+    #pricing-357 .cs-option-group {
+        position: relative;
+    }
+    #pricing-357 .cs-option-group:after {
+        /* top right box */
+        content: "";
+        width: 100%;
+        height: 1px;
+        /* 32px - 40px */
+        margin-bottom: clamp(2rem, 4vw, 2.5rem);
+        background: linear-gradient(
+            90deg,
+            rgba(232, 232, 232, 0.2) 0%,
+            #e8e8e8 53.78%,
+            rgba(232, 232, 232, 0.2) 100%
+        );
+        opacity: 1;
+        position: relative;
+        display: block;
+    }
+    #pricing-357 .cs-price {
+        font-size: 3.0625rem;
+        line-height: 1.2em;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: var(--headerColor);
+        /* spans are inline, need to add block for margin to work */
+        display: block;
+    }
+    #pricing-357 .cs-small {
+        font-size: 0.875rem;
+        font-weight: 400;
+        color: #4e4b66;
+    }
+    #pricing-357 .cs-included {
+        font-size: 1rem;
+        line-height: 1.5em;
+        font-weight: 700;
+        /* 16px - 24px */
+        margin-bottom: clamp(1rem, 3vw, 1.5rem);
+        color: var(--headerColor);
+        display: block;
+    }
+    #pricing-357 .cs-ul {
+        padding: 0;
+        margin: 0;
+        /* 32px - 40px */
+        margin-bottom: clamp(2rem, 4vw, 2.5rem);
+    }
+    #pricing-357 .cs-li {
+        /* 14px - 16px */
+        font-size: clamp(0.875rem, 1.5vw, 1rem);
+        line-height: 1.5em;
+        list-style: none;
+        padding: 0;
+        margin: 0 0 0.75rem;
+        color: var(--bodyTextColor);
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    #pricing-357 .cs-li:last-of-type {
+        margin-bottom: 0;
+    }
+    #pricing-357 .cs-disabled {
+        /* fades out list items that are disabled from the price tier */
+        filter: grayscale(1);
+        opacity: 0.3;
+    }
+    #pricing-357 .cs-li-img {
+        width: 1.25rem;
+        height: auto;
+        margin-top: 0.1875rem;
+        margin-right: 0.5rem;
+    }
+    #pricing-357 .cs-button-solid {
+        font-size: 1rem;
+        /* 46px - 56px */
+        line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+        text-decoration: none;
+        font-weight: 700;
+        text-align: center;
+        margin: 0;
+        color: #fff;
+        min-width: 9.375rem;
+        padding: 0 1.5rem;
+        background-color: var(--primary);
+        border-radius: 0.25rem;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        /* prevents padding from adding to the width */
+        box-sizing: border-box;
+    }
+    #pricing-357 .cs-button-solid:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        background: #000;
+        opacity: 1;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 0.25rem;
+        transition: width 0.3s;
+    }
+    #pricing-357 .cs-button-solid:hover:before {
+        width: 100%;
+    }
+    #pricing-357 .cs-button-solid {
+        /* cs-button-solid override */
+        width: 100%;
+        margin: 0 0 1rem 0;
+    }
+}
+/* Tablet 768px */
+@media only screen and (min-width: 48rem) {
+    #pricing-357 .cs-card-group {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-evenly; /* Ensure even spacing */
+    }
+    #pricing-357 .cs-item {
+        width: 100%;
+        max-width: 30rem; /* Ensure consistent card width */
+        flex: 1; /* Equal width for both cards */
+        margin: 0 1rem; /* Add space between cards */
+    }
+    #pricing-357 .cs-popular {
+        order: unset;
+    }
+}
+
+</style>
+
+
+<!-- ============================================ -->
+<!--                    FAQ                       -->
+<!-- ============================================ -->
+
+<section id="faq-326">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">FAQ’s</span>
+            <h2 class="cs-title">Frequently Asked Questions</h2>
+        </div>
+        <div class="cs-flex-group">
+            <ul class="cs-faq-group">
+                <!-- Active class added as default -->
+                <li class="cs-faq-item active">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            Why True Sign Design?
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                        We offer an All-in-One Solution for Home & Local Businesses. Its a service that handles all things technical every month, so  you can focus on your new customers worry free. <br><br>  Design, Development, Ongoing Support, Updates/Optimisation for Google, Online Hosting & Security from Hacking, all inside of One Package.
+                    </p>
+                </li>
+              
+                <li class="cs-faq-item">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                           Do you offer Money Back Guarantee?
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                       Yes you can request your money back for any reason within the first 30 days
+                    </p>
+                </li>
+                <li class="cs-faq-item">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            How long does it take to get my website up and running?
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                        While many companies take up to three months, after onboarding we can have your site up and running within just 30 days 
+                    </p>
+                </li>
+                <li class="cs-faq-item">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                          Can you give me a quick rundown of how the subscription works?
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                        You’ll pay a small monthly fee every month for 24 months, but your site and benefits will start from day one.  </p>
+                </li>
+               
+                <li class="cs-faq-item">
+                  <button class="cs-button">
+                      <span class="cs-button-text">
+                          Do I own the website?
+                      </span>
+                  </button>
+                  <p class="cs-item-p">
+                   Yes. After 24 months we can send you the files of code if you want. <br><br> We recommend continuing with our affordable support package , this allows us to take care of everything technical and leave you worry free.
+              </li>
+               <li class="cs-faq-item">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            What is the support package?
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                        We offer this to our customers that have completed their inital 24 months. <br><br> It offers the same value but at a lower price & it allows us to make sure everything is running smoothly every month. If you stay with this package for 24 months, it includes a free complete redesign, keeping your website fresh for clients.
+                </li>
+              
+            <li class="cs-faq-item">
+                <button class="cs-button">
+                    <span class="cs-button-text">
+                        Do you offer E-Commerce?
+                    </span>
+                </button>
+                <p class="cs-item-p">
+                    We don't currently offer E-Commerce at this time, however we're looking to add this to our services in the future. <br><br>Our main goal is to create user friendly sites to help local businesses grow and thrive.
+            </li>
+        </div>
+    </div>
+  </section>
+                                
+  
+  <style>
+    /*-- -------------------------- -->
+  <---            FAQ             -->
+  <--- -------------------------- -*/
+  
+  /* Mobile - 360px */
+  @media only screen and (min-width: 0rem) {
+      #faq-326 {
+          padding: var(--sectionPadding);
+          
+      }
+      #faq-326 .cs-container {
+          width: 100%;
+          max-width: 43.75rem;
+          margin: auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          /* 48px - 64px */
+          gap: clamp(3rem, 6vw, 4rem);
+      }
+      #faq-326 .cs-content {
+          /* set text align to left if content needs to be left aligned */
+          text-align: center;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          /* centers content horizontally, set to flex-start to left align */
+          align-items: center;
+      }
+  
+      #faq-326 .cs-title {
+          margin: 0;
+      }
+      #faq-326 .cs-faq-group {
+          padding: 0;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          gap: 0.75rem;
+      }
+      #faq-326 .cs-faq-item {
+          list-style: none;
+          width: 100%;
+          background-color: #f7f7f7;
+          /* clips all corners of the button that overlap the rounded border */
+          overflow: hidden;
+          border-radius: 0.75rem;
+          transition: border-bottom 0.3s;
+      }
+      #faq-326 .cs-faq-item.active .cs-button {
+    background-color: var(--primary); /* Existing style */
+    color: #ffffff; /* Change text to white */
+}
+
+      #faq-326 .cs-faq-item.active .cs-button:before {
+          background-color: var(--secondaryLight);
+          transform: rotate(315deg);
+      }
+      #faq-326 .cs-faq-item.active .cs-button:after {
+          background-color: var(--secondaryLight);
+          transform: rotate(-315deg);
+      }
+      #faq-326 .cs-faq-item.active .cs-item-p {
+          height: auto;
+          /* 20px - 24px top & bottom */
+          /* 16px - 24px left & right */
+          padding: clamp(1.25rem, 1.3vw, 1.5rem) clamp(1rem, 2vw, 1.5rem);
+          opacity: 1;
+      }
+      #faq-326 .cs-button {
+          font-size: 1rem;
+          line-height: 1.2em;
+          text-align: left;
+          font-weight: bold;
+          /* 16px - 20px */
+          padding: clamp(1rem, 1.3vw, 1.25rem);
+          background-color: #f7f7f7;
+          border: none;
+          color: var(--headerColor);
+          display: block;
+          width: 100%;
+          position: relative;
+          transition:
+              background-color 0.3s,
+              color 0.3s;
+      }
+      #faq-326 .cs-button:hover {
+          cursor: pointer;
+      }
+      #faq-326 .cs-button:before {
+          /* left line */
+          content: "";
+          width: 0.5rem;
+          height: 0.125rem;
+          background-color: var(--headerColor);
+          opacity: 1;
+          border-radius: 50%;
+          position: absolute;
+          display: block;
+          top: 50%;
+          right: 1.5rem;
+          transform: rotate(45deg);
+          /* animate the transform from the left side of the x axis, and the center of the y */
+          transform-origin: left center;
+          transition: transform 0.5s;
+      }
+      #faq-326 .cs-button:after {
+          /* right line */
+          content: "";
+          width: 0.5rem;
+          height: 0.125rem;
+          background-color: var(--headerColor);
+          opacity: 1;
+          border-radius: 50%;
+          position: absolute;
+          display: block;
+          top: 50%;
+          right: 1.3125rem;
+          transform: rotate(-45deg);
+          /* animate the transform from the right side of the x axis, and the center of the y */
+          transform-origin: right center;
+          transition: transform 0.5s;
+      }
+      #faq-326 .cs-button-text {
+          width: 80%;
+          display: block;
+      }
+      #faq-326 .cs-item-p {
+          /* 14px - 16px */
+          font-size: clamp(0.875rem, 1.5vw, 1rem);
+          line-height: 1.5em;
+          width: 90%;
+          height: 0;
+          margin: 0;
+          /* 16px - 24px */
+          padding: 0 clamp(1rem, 2vw, 1.5rem);
+          opacity: 0;
+          color: var(--bodyTextColor);
+          /* clips the text so it doesn't show up */
+          overflow: hidden;
+          transition:
+              opacity 0.3s,
+              padding-bottom 0.3s;
+      }
+  }
+  
+                                  
+  </style>
+  
+  <section id="faq-326">
+    ...
+</section>
+
+<script>
+    function initializeFAQ() {
+      const faqItems = Array.from(document.querySelectorAll('.cs-faq-item'));
+  
+      faqItems.forEach((item) => {
+        const onClick = () => {
+          faqItems.forEach((otherItem) => {
+            if (otherItem !== item) {
+              otherItem.classList.remove('active');
+            }
+          });
+          item.classList.toggle('active');
+        };
+  
+        // Remove any existing event listeners to avoid duplicates
+        item.removeEventListener('click', item._onClick);
+        item._onClick = onClick; // Store the function reference for future removal
+        item.addEventListener('click', onClick);
+      });
+    }
+  
+    // Initialize on first load
+    initializeFAQ();
+  
+    // Reinitialize on navigation
+    document.addEventListener('astro:after-swap', initializeFAQ);
+  </script>
+
+  
+
+
+
+  <CTA />
+</BaseLayout>
+
