@@ -17,6 +17,9 @@
     "astro-icon": "^1.1.1",
     "autoprefixer": "^10.4.20",
     "decap-server": "^3.1.2",
+    "firebase-admin": "^12.7.0",
+    "firebase-functions": "^4.9.0",
+    "googleapis": "^144.0.0",
     "less": "^4.2.0",
     "typescript": "^5.6.3"
   },

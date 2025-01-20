@@ -1,0 +1,13 @@
+{
+  "universe_domain": "googleapis.com",
+  "type": "external_account",
+  "audience": "//iam.googleapis.com/projects/131427590984/locations/global/workloadIdentityPools/driveaccesspool/providers/driveaccessprovider",
+  "subject_token_type": "urn:ietf:params:oauth:token-type:jwt",
+  "token_url": "https://sts.googleapis.com/v1/token",
+  "credential_source": {
+    "file": "oidc-token.json",
+    "format": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,258 @@
+[debug] [2025-01-19T17:18:23.955Z] ----------------------------------------------------------------------
+[debug] [2025-01-19T17:18:23.955Z] Command:       /Users/christheo/.nvm/versions/node/v18.20.5/bin/node /Users/christheo/.nvm/versions/node/v18.20.5/bin/firebase functions:shell
+[debug] [2025-01-19T17:18:23.956Z] CLI Version:   13.29.1
+[debug] [2025-01-19T17:18:23.956Z] Platform:      darwin
+[debug] [2025-01-19T17:18:23.956Z] Node Version:  v18.20.5
+[debug] [2025-01-19T17:18:23.959Z] Time:          Sun Jan 19 2025 17:18:23 GMT+0000 (Greenwich Mean Time)
+[debug] [2025-01-19T17:18:23.959Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-01-19T17:18:23.993Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-01-19T17:18:23.993Z] > authorizing via signed-in user (contact@truesigndesign.com)
+[debug] [2025-01-19T17:18:23.993Z] [iam] checking project truesignauth-b7dcd for permissions ["firebase.projects.get"]
+[debug] [2025-01-19T17:18:23.994Z] Checked if tokens are valid: true, expires at: 1737308324435
+[debug] [2025-01-19T17:18:23.994Z] Checked if tokens are valid: true, expires at: 1737308324435
+[debug] [2025-01-19T17:18:23.994Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/truesignauth-b7dcd:testIamPermissions [none]
+[debug] [2025-01-19T17:18:23.994Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/truesignauth-b7dcd:testIamPermissions x-goog-quota-user=projects/truesignauth-b7dcd
+[debug] [2025-01-19T17:18:23.994Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/truesignauth-b7dcd:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2025-01-19T17:18:24.684Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/truesignauth-b7dcd:testIamPermissions 200
+[debug] [2025-01-19T17:18:24.684Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/truesignauth-b7dcd:testIamPermissions {"permissions":["firebase.projects.get"]}
+[warn] ⚠  functions: Functions Emulator unable to start on port 5000, starting on 5001 instead. {"metadata":{"emulator":{"name":"functions"},"message":"Functions Emulator unable to start on port 5000, starting on 5001 instead."}}
+[debug] [2025-01-19T17:18:24.759Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[warn] ⚠  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to /absolute/path/to/clientLibraryConfig-firebase-oidc.json. Non-emulated services will access production using these credentials. Be careful! {"metadata":{"emulator":{"name":"functions"},"message":"Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to /absolute/path/to/clientLibraryConfig-firebase-oidc.json. Non-emulated services will access production using these credentials. Be careful!"}}
+[debug] [2025-01-19T17:18:24.760Z] Checked if tokens are valid: true, expires at: 1737308324435
+[debug] [2025-01-19T17:18:24.760Z] Checked if tokens are valid: true, expires at: 1737308324435
+[debug] [2025-01-19T17:18:24.760Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/truesignauth-b7dcd/adminSdkConfig [none]
+[debug] [2025-01-19T17:18:24.994Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/truesignauth-b7dcd/adminSdkConfig 200
+[debug] [2025-01-19T17:18:24.994Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/truesignauth-b7dcd/adminSdkConfig {"projectId":"truesignauth-b7dcd","storageBucket":"truesignauth-b7dcd.firebasestorage.app"}
+[debug] [2025-01-19T17:18:25.011Z] [functions] Watching "/Users/christheo/Code/truesign-base-2/Intermediate-Astro-Decap-CMS/functions" for Cloud Functions...
+[debug] [2025-01-19T17:18:25.017Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] ⚠  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2025-01-19T17:18:25.500Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^12.7.0",
+    "firebase-functions": "^4.9.0",
+    "googleapis": "^144.0.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-01-19T17:18:25.500Z] Building nodejs source
+[debug] [2025-01-19T17:18:25.501Z] Failed to find version of module node: reached end of search path /Users/christheo/Code/truesign-base-2/Intermediate-Astro-Decap-CMS/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[info] i  functions: You are using a version of firebase-functions SDK (4.9.0) that does not have support for the newest Firebase Extensions features. Please update firebase-functions SDK to >=5.1.0 to use them correctly 
+[debug] [2025-01-19T17:18:25.502Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-01-19T17:18:25.506Z] Found firebase-functions binary at '/Users/christheo/Code/truesign-base-2/Intermediate-Astro-Decap-CMS/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8015
+
+[debug] [2025-01-19T17:18:26.273Z] Got response from /__/functions.yaml {"endpoints":{"createDriveFolder":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"eventTrigger":{"eventType":"providers/firebase.auth/eventTypes/user.create","eventFilters":{"resource":"projects/truesignauth-b7dcd"},"retry":false},"labels":{},"entryPoint":"createDriveFolder"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2025-01-19T17:18:26.289Z] [functions] Loaded functions definitions from source: createDriveFolder.
+[debug] [2025-01-19T17:18:26.289Z] addAuthTrigger {"eventTrigger":{"eventType":"providers/firebase.auth/eventTypes/user.create","resource":"projects/truesignauth-b7dcd"}}
+[debug] [2025-01-19T17:18:26.289Z] [functions[us-central1-createDriveFolder]] auth function initialized.
+[info] i  functions: Loaded functions: createDriveFolder 
+[warn] ⚠  functions: The following emulators are not running, calls to these services will affect production: firestore, database, pubsub, storage, eventarc, tasks 
+[debug] [2025-01-19T18:02:12.326Z] DEBUG: File /Users/christheo/Code/truesign-base-2/Intermediate-Astro-Decap-CMS/functions/index.js changed, reloading triggers
+[debug] [2025-01-19T18:02:13.356Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] ⚠  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2025-01-19T18:02:14.020Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^12.7.0",
+    "firebase-functions": "^4.9.0",
+    "googleapis": "^144.0.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-01-19T18:02:14.021Z] Building nodejs source
+[debug] [2025-01-19T18:02:14.021Z] Failed to find version of module node: reached end of search path /Users/christheo/Code/truesign-base-2/Intermediate-Astro-Decap-CMS/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[info] i  functions: You are using a version of firebase-functions SDK (4.9.0) that does not have support for the newest Firebase Extensions features. Please update firebase-functions SDK to >=5.1.0 to use them correctly 
+[debug] [2025-01-19T18:02:14.024Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-01-19T18:02:14.028Z] Found firebase-functions binary at '/Users/christheo/Code/truesign-base-2/Intermediate-Astro-Decap-CMS/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8716
+
+[debug] [2025-01-19T18:02:14.899Z] Got response from /__/functions.yaml {"endpoints":{"createDriveFolder":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"eventTrigger":{"eventType":"providers/firebase.auth/eventTypes/user.create","eventFilters":{"resource":"projects/truesignauth-b7dcd"},"retry":false},"labels":{},"entryPoint":"createDriveFolder"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2025-01-19T18:02:14.909Z] [functions] Loaded functions definitions from source: createDriveFolder.
+[debug] [2025-01-19T18:45:26.760Z] DEBUG: File /Users/christheo/Code/truesign-base-2/Intermediate-Astro-Decap-CMS/functions/index.js changed, reloading triggers
+[debug] [2025-01-19T18:45:27.777Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] ⚠  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2025-01-19T18:45:28.388Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^12.7.0",
+    "firebase-functions": "^4.9.0",
+    "googleapis": "^144.0.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-01-19T18:45:28.388Z] Building nodejs source
+[debug] [2025-01-19T18:45:28.388Z] Failed to find version of module node: reached end of search path /Users/christheo/Code/truesign-base-2/Intermediate-Astro-Decap-CMS/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[info] i  functions: You are using a version of firebase-functions SDK (4.9.0) that does not have support for the newest Firebase Extensions features. Please update firebase-functions SDK to >=5.1.0 to use them correctly 
+[debug] [2025-01-19T18:45:28.388Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-01-19T18:45:28.391Z] Found firebase-functions binary at '/Users/christheo/Code/truesign-base-2/Intermediate-Astro-Decap-CMS/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8207
+
+[debug] [2025-01-19T18:45:29.151Z] Got response from /__/functions.yaml {"endpoints":{"createDriveFolder":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"eventTrigger":{"eventType":"providers/firebase.auth/eventTypes/user.create","eventFilters":{"resource":"projects/truesignauth-b7dcd"},"retry":false},"labels":{},"entryPoint":"createDriveFolder"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2025-01-19T18:45:29.160Z] [functions] Loaded functions definitions from source: createDriveFolder.
+[debug] [2025-01-19T18:46:49.870Z] DEBUG: File /Users/christheo/Code/truesign-base-2/Intermediate-Astro-Decap-CMS/functions/index.js changed, reloading triggers
+[debug] [2025-01-19T18:46:50.873Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] ⚠  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2025-01-19T18:46:51.432Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^12.7.0",
+    "firebase-functions": "^4.9.0",
+    "googleapis": "^144.0.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-01-19T18:46:51.432Z] Building nodejs source
+[debug] [2025-01-19T18:46:51.432Z] Failed to find version of module node: reached end of search path /Users/christheo/Code/truesign-base-2/Intermediate-Astro-Decap-CMS/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[info] i  functions: You are using a version of firebase-functions SDK (4.9.0) that does not have support for the newest Firebase Extensions features. Please update firebase-functions SDK to >=5.1.0 to use them correctly 
+[debug] [2025-01-19T18:46:51.433Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-01-19T18:46:51.434Z] Found firebase-functions binary at '/Users/christheo/Code/truesign-base-2/Intermediate-Astro-Decap-CMS/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8417
+
+[debug] [2025-01-19T18:46:52.234Z] Got response from /__/functions.yaml {"endpoints":{"createDriveFolder":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"eventTrigger":{"eventType":"providers/firebase.auth/eventTypes/user.create","eventFilters":{"resource":"projects/truesignauth-b7dcd"},"retry":false},"labels":{},"entryPoint":"createDriveFolder"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2025-01-19T18:46:52.244Z] [functions] Loaded functions definitions from source: createDriveFolder.
+[debug] [2025-01-19T18:46:59.135Z] DEBUG: File /Users/christheo/Code/truesign-base-2/Intermediate-Astro-Decap-CMS/functions/index.js changed, reloading triggers
+[debug] [2025-01-19T18:47:00.152Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] ⚠  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2025-01-19T18:47:00.807Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^12.7.0",
+    "firebase-functions": "^4.9.0",
+    "googleapis": "^144.0.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-01-19T18:47:00.807Z] Building nodejs source
+[debug] [2025-01-19T18:47:00.807Z] Failed to find version of module node: reached end of search path /Users/christheo/Code/truesign-base-2/Intermediate-Astro-Decap-CMS/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[info] i  functions: You are using a version of firebase-functions SDK (4.9.0) that does not have support for the newest Firebase Extensions features. Please update firebase-functions SDK to >=5.1.0 to use them correctly 
+[debug] [2025-01-19T18:47:00.808Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-01-19T18:47:00.809Z] Found firebase-functions binary at '/Users/christheo/Code/truesign-base-2/Intermediate-Astro-Decap-CMS/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8148
+
+[debug] [2025-01-19T18:47:01.804Z] Got response from /__/functions.yaml {"endpoints":{"createDriveFolder":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"eventTrigger":{"eventType":"providers/firebase.auth/eventTypes/user.create","eventFilters":{"resource":"projects/truesignauth-b7dcd"},"retry":false},"labels":{},"entryPoint":"createDriveFolder"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2025-01-19T18:47:01.813Z] [functions] Loaded functions definitions from source: createDriveFolder.
+[debug] [2025-01-19T18:57:27.709Z] DEBUG: File /Users/christheo/Code/truesign-base-2/Intermediate-Astro-Decap-CMS/functions/index.js changed, reloading triggers
+[debug] [2025-01-19T18:57:28.715Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] ⚠  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2025-01-19T18:57:29.720Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^12.7.0",
+    "firebase-functions": "^4.9.0",
+    "googleapis": "^144.0.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-01-19T18:57:29.720Z] Building nodejs source
+[debug] [2025-01-19T18:57:29.720Z] Failed to find version of module node: reached end of search path /Users/christheo/Code/truesign-base-2/Intermediate-Astro-Decap-CMS/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[info] i  functions: You are using a version of firebase-functions SDK (4.9.0) that does not have support for the newest Firebase Extensions features. Please update firebase-functions SDK to >=5.1.0 to use them correctly 
+[debug] [2025-01-19T18:57:29.721Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-01-19T18:57:29.722Z] Found firebase-functions binary at '/Users/christheo/Code/truesign-base-2/Intermediate-Astro-Decap-CMS/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8009
+
+[debug] [2025-01-19T18:57:30.498Z] Got response from /__/functions.yaml {"endpoints":{"createDriveFolder":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"eventTrigger":{"eventType":"providers/firebase.auth/eventTypes/user.create","eventFilters":{"resource":"projects/truesignauth-b7dcd"},"retry":false},"labels":{},"entryPoint":"createDriveFolder"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2025-01-19T18:57:30.506Z] [functions] Loaded functions definitions from source: createDriveFolder.
