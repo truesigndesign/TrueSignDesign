@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -48,16 +48,6 @@ submit.addEventListener("click", function (event) {
         .then((userCredential) => {
             const user = userCredential.user;
             alert("Registration successful!");
-
-            // Send email verification
-            sendEmailVerification(user)
-                .then(() => {
-                    console.log('Verification email sent!');
-                })
-                .catch((error) => {
-                    console.error('Error sending verification email:', error);
-                });
-
             // Redirect the user to a thank you page or dashboard page
             window.location.href = "/dashboard.html";
         })
