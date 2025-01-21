@@ -3,7 +3,7 @@ import sitemap from "@astrojs/sitemap";
 import icon from "astro-icon";
 
 export default defineConfig({
-  site: "https://www.yourwebsite.com", // update me!
+  site: "https://www.truesigndesign.com", // update me!
   integrations: [
     icon(),
     sitemap({
