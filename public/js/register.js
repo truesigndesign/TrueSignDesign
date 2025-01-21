@@ -10,9 +10,7 @@ const firebaseConfig = {
     storageBucket: "truesigndesignauth.firebasestorage.app",
     messagingSenderId: "977508579565",
     appId: "1:977508579565:web:1f83dfce992f0e4b56f4e4"
-  };
-  
-
+};
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -49,7 +47,7 @@ submit.addEventListener("click", function (event) {
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
-            alert("Account created! Please check your email for the confirmation link.");
+            alert("Registration successful!");
 
             // Send email verification
             sendEmailVerification(user)
