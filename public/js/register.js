@@ -3,13 +3,16 @@ import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyA-bEtr6vRMIwXYNX2PR1hCL5-G6aHELUw",
-    authDomain: "truesignauth-b7dcd.firebaseapp.com",
-    projectId: "truesignauth-b7dcd",
-    storageBucket: "truesignauth-b7dcd.firebasestorage.app",
-    messagingSenderId: "131427590984",
-    appId: "1:131427590984:web:fb435ede1d2a1a7e0a497d"
-};
+    apiKey: "AIzaSyBBReqCi904u_Lh0jZdAzB-sEsxfIP4FnM",
+    authDomain: "truesigndesignauth.firebaseapp.com",
+    databaseURL: "https://truesigndesignauth-default-rtdb.firebaseio.com",
+    projectId: "truesigndesignauth",
+    storageBucket: "truesigndesignauth.firebasestorage.app",
+    messagingSenderId: "977508579565",
+    appId: "1:977508579565:web:1f83dfce992f0e4b56f4e4"
+  };
+  
+
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
