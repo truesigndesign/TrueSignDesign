@@ -585,6 +585,134 @@ const optimizedImage = await getOptimizedImage(landingImage)
 </style>
 
   
+<!-- ============================================ -->
+<!--                   Video                      -->
+<!-- ============================================ -->
+
+<section id="video-548">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Explainer</span>
+            <h2 class="cs-title">Onboarding Animation</h2>
+            <p class="cs-text">
+               Feel free to watch this simple and informative explainer video to learn more about our easy onboarding process.
+            </p>
+        </div>
+        <a href="https://www.youtube.com/watch?v=SjYzVp6Dm1U&ab_channel=TrueSignDesign" class="cs-big-link" target="_blank">
+
+            <!--Background Image-->
+            <picture class="cs-background">
+                <source media="(min-width: 1024px)" srcset="/assets/svgs/video-tutorial-29.svg">
+                <source media="(min-width: 601px)" srcset="/assets/svgs/video-tutorial-29.svg">
+                <source media="(max-width: 600px)" srcset="/assets/svgs/video-tutorial-29.svg">
+                <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/video-tutorial-29.svg" alt="meeting" width="1280" height="580">
+            </picture>
+            <!--Play Icon-->
+            <img class="cs-link-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Stats/play-yellow.svg" alt="play icon" width="110" height="110">
+        </a>
+    </div>
+</section>
+                                
+
+<style>
+    /*-- -------------------------- -->
+<---           Video            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #video-548 {
+        padding: var(--sectionPadding);
+        background-color: #f9f9f9;
+    }
+    #video-548 .cs-container {
+        width: 100%;
+        max-width: 80rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* 48px - 64px */
+        gap: clamp(3rem, 6vw, 4rem);
+    }
+    #video-548 .cs-content {
+        /* set text align to left if content needs to be left aligned */
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        /* centers content horizontally, set to flex-start to left align */
+        align-items: center;
+    }
+
+    #video-548 .cs-big-link {
+        width: 100%;
+        /* 430px - 580px */
+        height: clamp(26.875rem, 43vw, 36.25rem);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    #video-548 .cs-big-link:hover .cs-background img {
+        transform: scale(1.1);
+    }
+    #video-548 .cs-background {
+        width: 100%;
+        height: 100%;
+        /* clips the img from overflowing the container on hover */
+        overflow: hidden;
+        display: block;
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        border-radius: 20px;
+    }
+    #video-548 .cs-background:before {
+        /* color overlay */
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: var(--primary);
+        opacity: 0.72;
+        background-blend-mode: multiply;
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        z-index: 10;
+    }
+    #video-548 .cs-background img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        z-index: -1;
+        transition: transform 0.7s;
+    }
+    #video-548 .cs-link-icon {
+        /* 80px - 110px */
+        width: clamp(5rem, 11vw, 6.875rem);
+        height: clamp(5rem, 11vw, 6.875rem);
+        border-radius: 50%;
+        position: absolute;
+        z-index: 10;
+        transition:
+            transform 0.3s,
+            box-shadow 0.3s;
+    }
+    #video-548 .cs-link-icon:hover {
+        transform: scale(1.1);
+        box-shadow: rgba(0, 0, 0, 0.5) 0px 7px 29px 0px;
+    }
+}
+
+                                
+</style>
+
 
 <!-- ============================================ -->
 <!--                 STEP 1               -->
@@ -622,7 +750,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
 @media only screen and (min-width: 0rem) {
     #sbs-867 {
         padding: var(--sectionPadding);
-        background-color: #f9f9f9;
+        
         overflow: hidden; /* Prevent overflow at the section level */
     }
     #sbs-867 .cs-container {
@@ -799,6 +927,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
 @media only screen and (min-width: 0rem) {
     #sbs-r-870 {
         padding: var(--sectionPadding);
+        background-color: #f9f9f9;
        
         overflow: hidden; /* Prevent overflow at the section level */
     }
@@ -1149,6 +1278,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
 @media only screen and (min-width: 0rem) {
     #sbs-r-870 {
         padding: var(--sectionPadding);
+        background-color: #f9f9f9;
     }
     #sbs-r-870 .cs-container {
         width: 100%;
