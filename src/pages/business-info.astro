@@ -55,13 +55,17 @@ title="Business Info"
               <input class="cs-input" required type="email" id="email-2061" name="email">
           </label>
           <label class="cs-label">
-              Business Phone
+              Business Phone *
               <input class="cs-input" type="text" id="phone-2061" name="business-phone">
           </label>
           <label class="cs-label">
               Business Address - If different *
               <input class="cs-input" type="text" id="business-address-2061" name="business-address">
           </label>
+          <label class="cs-label cs-message">
+            Operating Hours and Days
+            <textarea class="cs-input cs-textarea" id="business-story-2061" name="business-story"></textarea>
+        </label>
           <label class="cs-label cs-split">
               Domain Name You'd Like to Use * 
               <input class="cs-input" required type="text" id="domain-name-2061" name="domain-name">
@@ -74,10 +78,10 @@ title="Business Info"
               If yes, who is your domain registrar? *
               <input class="cs-input" type="text" id="domain-registrar-2061" name="domain-registrar">
           </label>
-          <label class="cs-label">
-              List Your Main Services - Start with Best-Selling *
-              <input class="cs-input" type="text" id="main-services-2061" name="main-services">
-          </label>
+          <label class="cs-label cs-message">
+            List Your Main Services - Start with Best-Selling *
+            <textarea class="cs-input cs-textarea" id="business-story-2061" name="business-story"></textarea>
+        </label>
           <label class="cs-label cs-message">
               Tell us about your business story, experience, and what you're passionate about. *
               <textarea class="cs-input cs-textarea" id="business-story-2061" name="business-story"></textarea>
@@ -207,6 +211,7 @@ title="Business Info"
     display: flex;
     justify-content: center;
     grid-column: span 12;
+    margin-top: 2rem;
   }
   #contact-2061 .cs-button-solid {
     font-size: 1rem;
