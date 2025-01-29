@@ -1,13 +1,12 @@
 {
-	"name": "We Specialise In Service Based Business's",
+	"name": "Expert Website Design for Service-Based Businesses | Fast, Professional and Modern",
 	"email": "contact@truesigndesign.com",
-	
-	
 	"address": {
-		"lineOne": "London, N9",
-		"city": "London, United Kingdom",
-		
-		"mapLink": "https://maps.app.goo.gl/YqLwh6JCtesVaoAB9"
+	  "streetAddress": "London, N9",
+	  "addressLocality": "London",
+	  "addressCountry": "United Kingdom",
+	  "mapLink": "https://maps.app.goo.gl/YqLwh6JCtesVaoAB9"
 	},
 	"domain": "www.truesigndesign.com"
-}
+  }
+  
