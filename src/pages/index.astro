@@ -132,7 +132,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
             font-size: (16/16rem);
             line-height: 1.2em;
             text-transform: uppercase;
-            text-align: inherit;
+            text-align: center;
             letter-spacing: 0.1em;
             font-weight: 700;
             color: #767676;
@@ -1192,9 +1192,17 @@ const optimizedImage = await getOptimizedImage(landingImage)
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
   #services-2198 {
+    min-height: 100vh; /* Ensures section stays fully visible in the viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
     padding: var(--sectionPadding);
     background-color: #f9f9f9;
     position: relative;
+    width: 100%;
+    max-width: 100%;
   }
 
   #services-2198 .cs-container {
@@ -1231,8 +1239,10 @@ const optimizedImage = await getOptimizedImage(landingImage)
   #services-2198 .cs-item {
     list-style: none;
     width: 100%;
+    max-width: 90vw; /* Prevents items from going out of viewport */
     display: flex;
     flex-direction: column;
+    align-items: center;
     grid-column: span 12;
   }
 
@@ -1247,7 +1257,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
 
   #services-2198 .cs-picture {
     width: 100%;
-    max-width: 413px; /* Match the image width */
+    max-width: 100%; /* Ensures images don't overflow */
     margin-bottom: 2.75rem;
     border-radius: 1rem;
     overflow: hidden;
@@ -1260,7 +1270,9 @@ const optimizedImage = await getOptimizedImage(landingImage)
   #services-2198 .cs-picture img {
     width: 100%;
     height: auto; /* Maintain aspect ratio */
-    object-fit: contain; /* Ensure full image fits */
+    max-width: 100%; /* Prevents images from exceeding the container */
+    max-height: 70vh; /* Prevents image from being cut off */
+    object-fit: contain; /* Ensures full image fits */
     transition: transform 0.6s, opacity 0.3s;
   }
 
@@ -1299,6 +1311,8 @@ const optimizedImage = await getOptimizedImage(landingImage)
     color: var(--bodyTextColor);
   }
 }
+
+
 
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
