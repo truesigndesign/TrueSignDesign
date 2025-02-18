@@ -36,89 +36,125 @@ title="Business Info"
 
           <label class="cs-label cs-split">
               First Name *
-              <input class="cs-input" required type="text" id="first-name-2061" name="first-name">
+              <input class="cs-input" required type="text" id="first-name-2061" name="first-name" placeholder="Rob">
           </label>
           <label class="cs-label cs-split">
               Last Name *
-              <input class="cs-input" required type="text" id="last-name-2061" name="last-name">
+              <input class="cs-input" required type="text" id="last-name-2061" name="last-name" placeholder="Doe">
           </label>
           <label class="cs-label">
-              Home Address & Postcode
-              <input class="cs-input" type="text" id="address-2061" name="address">
+              Home Address & Postcode *
+              <input class="cs-input" type="text" id="address-2061" name="address" placeholder="23 Street Name J2 3HH">
           </label>
           <label class="cs-label cs-split">
               Business Name *
-              <input class="cs-input" required type="text" id="business-name-2061" name="business-name">
+              <input class="cs-input" required type="text" id="business-name-2061" name="business-name" placeholder="Successful Business Inc">
           </label>
           <label class="cs-label cs-split">
               Business Email *
-              <input class="cs-input" required type="email" id="email-2061" name="email">
+              <input class="cs-input" required type="email" id="email-2061" name="email" placeholder="SuccessBusiness@gmail.com">
           </label>
           <label class="cs-label">
               Business Phone *
-              <input class="cs-input" type="text" id="phone-2061" name="business-phone">
+              <input class="cs-input" type="text" id="phone-2061" name="business-phone" placeholder="+4472453892">
           </label>
           <label class="cs-label">
-              Business Address - If different *
-              <input class="cs-input" type="text" id="business-address-2061" name="business-address">
+              Business Address - If Different *
+              <input class="cs-input" type="text" id="business-address-2061" name="business-address" placeholder="54 Street Name F9 3SA">
           </label>
           <label class="cs-label cs-message">
-            Operating Hours and Days
-            <textarea class="cs-input cs-textarea" id="business-story-2061" name="business-story"></textarea>
+            Operating Hours and Days *
+            <textarea class="cs-input cs-textarea" id="business-story-2061" name="business-story" placeholder="Monday - Friday: 9AM - 5PM,
+Saturday: 10AM - 2PM, 
+Sunday: Closed"></textarea>
         </label>
           <label class="cs-label cs-split">
               Domain Name You'd Like to Use * 
-              <input class="cs-input" required type="text" id="domain-name-2061" name="domain-name">
+              <input class="cs-input" required type="text" id="domain-name-2061" name="domain-name" placeholder="www.Example.com">
           </label>
           <label class="cs-label cs-split">
-              Do You Own the Domain Already? *
-              <input class="cs-input" required type="text" id="domain-owned-2061" name="domain-owned">
-          </label>
-          <label class="cs-label">
-              If yes, who is your domain registrar? *
-              <input class="cs-input" type="text" id="domain-registrar-2061" name="domain-registrar">
-          </label>
-          <label class="cs-label cs-message">
-            List Your Main Services - Start with Best-Selling *
-            <textarea class="cs-input cs-textarea" id="business-story-2061" name="business-story"></textarea>
-        </label>
-          <label class="cs-label cs-message">
-              Tell us about your business story, experience, and what you're passionate about. *
-              <textarea class="cs-input cs-textarea" id="business-story-2061" name="business-story"></textarea>
-          </label>
-          <label class="cs-label">
-              Do you have stats or accomplishments you'd like highlighted? *
-              <input class="cs-input" type="text" id="stats-2061" name="stats">
-          </label>
-          <label class="cs-label">
-              Name the cities or towns to target for SEO. *
-              <input class="cs-input" type="text" id="seo-target-2061" name="seo-target">
-          </label>
-          <label class="cs-label">
-              What makes your business stand out? *
-              <input class="cs-input" type="text" id="business-standout-2061" name="business-standout">
-          </label>
-          <label class="cs-label cs-message">
-              Please provide your social media links, or write 'N/A' if you don’t have any. *
-              <textarea class="cs-input cs-textarea" id="social-media-2061" name="social-media"></textarea>
-          </label>
-          <label class="cs-label cs-message">
-              Share any customer reviews or links to them here, or write 'N/A' if unavailable. *
-              <textarea class="cs-input cs-textarea" id="customer-reviews-2061" name="customer-reviews"></textarea>
-          </label>
-          <label class="cs-label cs-split">
-              Do you have a Logo? *
-              <input class="cs-input" required type="text" id="logo-2061" name="logo">
-          </label>
-          <label class="cs-label cs-split">
-            If Not, Would You Like One Created For £150?
-            <input class="cs-input" type="text" id="logo-creation-2061" name="logo-creation">
+            Do You Own the Domain Already? *
+            <select class="cs-input" required id="domain-owned-2061" name="domain-owned">
+                <option value="" disabled selected>Select an option</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
         </label>
         
           <label class="cs-label">
-              How did you hear about us? *
-              <input class="cs-input" type="text" id="referral-2061" name="referral">
+              If Yes, Who Is Your Domain Registrar? 
+              <input class="cs-input" type="text" id="domain-registrar-2061" name="domain-registrar" placeholder="Include your username and password please">
           </label>
+          <label class="cs-label cs-message">
+            List Your Main Services - Start with Best-Selling *
+            <textarea class="cs-input cs-textarea" id="business-story-2061" name="business-story" placeholder="Describe Your Services Here"></textarea>
+        </label>
+          <label class="cs-label cs-message">
+              Tell us about your business story, experience, and what you're passionate about. *
+              <textarea class="cs-input cs-textarea" id="business-story-2061" name="business-story" placeholder="Tell us about you"></textarea>
+          </label>
+          <label class="cs-label">
+              Do you have stats or accomplishments you'd like highlighted? *
+              <input class="cs-input" type="text" id="stats-2061" name="stats" placeholder="Est. 2019 - Over 300 Happy Customers - 300 Jobs Completed - 7 Years Experience - Etc ">
+          </label>
+          <label class="cs-label cs-message">
+            Important - If you have a service area, name the Cities or Towns to Target for SEO *
+            <textarea class="cs-input cs-textarea" id="business-story-2061" name="business-story" placeholder="Please List as Westminster - London, Clapham - London, Hackney - London, Islington - London - etc"></textarea>
+        </label>
+          <label class="cs-label">
+              Important - What is the number one area or borough we should target for SEO *
+              <input class="cs-input" type="text" id="business-standout-2061" name="business-standout" placeholder="This will be our #1 location to target with keywords">
+          </label>
+          <label class="cs-label cs-message">
+            Important - Does Your Service Area have a Specific Name? *
+            <textarea class="cs-input cs-textarea" id="business-story-2061" name="business-story" placeholder="e.g., Soho - Westminster, Battersea - Wandsworth, Angel - Islington, Brixton - Lambeth"></textarea>
+        </label>
+        <label class="cs-label">
+          Do you offer any unique selling propositions *
+          <input class="cs-input" type="text" id="business-standout-2061" name="business-standout" placeholder="e.g. Guarantees, Warranties, anything that sets you apart">
+      </label>
+      <label class="cs-label">
+        Do you have any colour preferences  *
+        <input class="cs-input" type="text" id="business-standout-2061" name="business-standout" placeholder="Colour codes would be even better">
+    </label>
+          <label class="cs-label cs-message">
+              Please provide your social media links, or write 'N/A' if you don’t have any. *
+              <textarea class="cs-input cs-textarea" id="social-media-2061" name="social-media" placeholder="Facebook: url, Instagram: url, etc"></textarea>
+          </label>
+          <label class="cs-label cs-message">
+              Share any customer reviews or links to them here, or write 'N/A' if unavailable. *
+              <textarea class="cs-input cs-textarea" id="customer-reviews-2061" name="customer-reviews" placeholder="e.g. Yelp: url or simply type them here"></textarea>
+          </label>
+          <label class="cs-label cs-split">
+            Do you have a Logo? *
+            <select class="cs-input" required id="logo-2061" name="logo">
+                <option value="" disabled selected>Select an option</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </label>
+        
+        <label class="cs-label cs-split">
+          How did you hear about us?  
+          <select class="cs-input" required id="logo-creation-2061" name="logo-creation">
+              <option value="" disabled selected>Select an option</option>
+              <option value="advertisement">Advertisement</option>
+              <option value="referral">Referral</option>
+              <option value="google">Google</option>
+              <option value="social-media">Social Media</option>
+              <option value="youtube">YouTube</option>
+          </select>
+      </label>
+      
+        <label class="cs-label">
+          Are you interested in getting a high quality logo for your website? - £120 One Time
+          <select class="cs-input" required id="referral-2061" name="referral">
+              <option value="" disabled selected>Select an option</option>
+              <option value="advertisement">Yes</option>
+              <option value="referral">No</option>
+              
+          </select>
+      </label>      
           <div class="cs-wrapper">
               <button class="cs-button-solid cs-submit" type="submit">Submit</button>
           </div>
@@ -172,6 +208,7 @@ title="Business Info"
     grid-template-columns: repeat(12, 1fr);
     gap: 0.75rem;
   }
+  
   #contact-2061 .cs-label {
     font-size: 1rem;
     font-weight: 700;
