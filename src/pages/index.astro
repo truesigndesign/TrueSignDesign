@@ -20,778 +20,529 @@ const optimizedImage = await getOptimizedImage(landingImage)
 >
 
 
-
-
 <!-- ============================================ -->
 <!--                    Hero                      -->
 <!-- ============================================ -->
 
-<section id="hero-1115">
+<section id="hero-1950">
     <div class="cs-container">
         <div class="cs-content">
-            <span class="cs-topper">Welcome to True Sign Design</span>
-            <h1 class="cs-title">
-                We Specialise In <span style="font-family: 'Penelope', serif; color: #EC9C52;">Service</span> Based Websites
-              </h1>
-            <p class="cs-text">
-                <span class="cs-tick">&#10003;</span> Grow Your Reach - Gain Clients<br>
-                <span class="cs-tick">&#10003;</span> Trades-Health-Cleaning & More<br>
-                <span class="cs-tick">&#10003;</span> 30 Days Money-Back Guarantee 
-                
-              </p>
-            <a href="/contact" class="cs-button-solid">Contact Us   </a>
-        </div>
-        <!--Hero Image-->
-        <!--We need a wrapper div around the image group so the volunteer box can be relatively positioned on mobile to make stacking the design easier -->
-        <div class="cs-image-group-wrapper">
-            <div class="cs-image-group" aria-hidden="true">
-               
-                <!--Non Masked Image-->
-                <picture class="cs-picture cs-picture1">
-                    <!--Mobile Image-->
-                    <source media="(max-width: 600px)" srcset="/assets/svgs/isometric-hero.svg">
-                    <!--Tablet and above Image-->
-                    <source media="(min-width: 601px)" srcset="/assets/svgs/isometric-hero.svg">
-                    <img decoding="async" fetchpriority="high" src="/assets/svgs/isometric-hero.svg" alt="people" width="651" height="523">
-                </picture>
-               
-                
+            <h1 class="cs-title">We Specialise In <span class="span-service">Service</span> Websites</h1>
+            <div class="cs-flex-group">
+                <p class="cs-text">
+                    <span class="cs-tick">&#10003;</span> Grow Your Reach - Gain Clients<br>
+                    <span class="cs-tick">&#10003;</span> Trades-Health-Cleaning & More<br>
+                    <span class="cs-tick">&#10003;</span> 30 Days Money-Back Guarantee <span class="hidden-text">sldj fkklsd jflksdj</span>
+
+                    
+                </p>
+                <a href="/contact" class="cs-button-solid">Start Your Website</a>
             </div>
-        
-        
-           
-        </div>
         </div>
     </div>
+
+    <!-- Background Image, there's a background image in the CSS for the parallax effect you'll need to change as well if you swap out our images -->
+    <picture class="cs-background">
+        <source media="(max-width: 600px)" srcset="/assets/images/hero-building-v2.jpg">
+        <source media="(min-width: 601px)" srcset="/assets/images/hero-building-v2.jpg">
+        <img decoding="async" src="/assets/images/hero-building-v2.jpg" alt="restaurant" width="2250" height="1500" aria-hidden="true">
+    </picture>
 </section>
-                                
 
-<style lang="less">
+
+<style>
     /*-- -------------------------- -->
-<---            Hero            -->
+<---           Hero             -->
 <--- -------------------------- -*/
-
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-    #hero-1115 {
-        /* 200px - 300px top */
-        padding: clamp(12.5rem, 14vw, 12.5rem) (16/16rem) (100/16rem);
+  #hero-1950 {
+    min-height: 100dvh;
+    /* 200px - 300px top */
+    /* 60px - 100px bottom */
+    padding: clamp(12.5rem, 12vw, 18.75rem) 1rem clamp(3.75rem, 8vw, 6.25rem) 1rem;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    z-index: 1;
+  }
 
-        background-color: #ffffff;
-        /* clips the svg wave from overflowing */
-        overflow: hidden;
-        position: relative;
-        z-index: 1;
-
-        &:before {
-            /* textured pattern */
-            content: "";
-            position: absolute;
-            display: block;
-            height: 100%;
-            width: 100%;
-            /* changes to a desktop image at tablet */
-            background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
-            background-size: auto;
-            background-position: center;
-            background-repeat: repeat;
-            filter: blur(2px);
-            opacity: 1;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            /* prevents the mouse from interacting with itand also in dev tool mode */
-            pointer-events: none;
-        }
-
-        .cs-container {
-            width: 100%;
-            max-width: (1280/16rem);
-            margin: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            gap: (48/16rem);
-        }
-
-        .cs-content {
-            max-width: (630/16rem);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        .cs-tick {
-    color: #EC9C52;
+  .hidden-text {
+    
+    opacity: 0;
 }
 
-
-        .cs-topper {
-            font-size: (16/16rem);
-            line-height: 1.2em;
-            text-transform: uppercase;
-            text-align: center;
-            letter-spacing: 0.1em;
-            font-weight: 700;
-            color: #767676;
-            margin-bottom: (4/16rem);
-            display: block;
-        }
-
-        .cs-title {
-            /* 39px - 61px */
-            font-size: clamp(2.4375rem, 5vw, 3.8125rem);
-            font-weight: 900;
-            line-height: 1.2em;
-            text-align: center;
-            /* 23 characters including spaces wide */
-            max-width: 23ch;
-            margin: 0 0 (16/16rem) 0;
-            color: var(--headerColor);
-            position: relative;
-        }
-
-        .cs-text {
-            /* 16px - 20px */
-            font-size: clamp(1rem, 1.5vw, 1.25rem);
-            line-height: 1.5em;
-            text-align: center;
-            width: 100%;
-            max-width: (531/16rem);
-            /* 28px - 40px */
-            margin: 0 0 clamp(1.75rem, 3.92vw, 2.5rem) 0;
-            color: var(--bodyTextColor);
-        }
-
-        .cs-button-solid {
-            font-size: (16/16rem);
-            /* 46px - 56px */
-            line-height: clamp(2.875rem, 5.5vw, 3.5rem);
-            text-decoration: none;
-            font-weight: 700;
-            text-align: center;
-            margin: 0;
-            color: #fff;
-            min-width: (150/16rem);
-            padding: 0 (24/16rem);
-            background-color: var(--primary);
-            border-radius: (4/16rem);
-            display: inline-block;
-            position: relative;
-            z-index: 1;
-            /* prevents padding from adding to the width */
-            box-sizing: border-box;
-
-            &:before {
-                content: "";
-                position: absolute;
-                height: 100%;
-                width: 0%;
-                background: #000;
-                opacity: 1;
-                top: 0;
-                left: 0;
-                z-index: -1;
-                border-radius: (4/16rem);
-                transition: width 0.3s;
-            }
-
-            &:hover {
-                &:before {
-                    width: 100%;
-                }
-            }
-        }
-
-        .cs-image-group-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: (20/16rem);
-            position: relative;
-        }
-
-        .cs-image-group {
-            /* we use ems for everything inside the cs-image-group so they pull their value for em from the cs-image-group container that we set.  This min-max property lets us tie the font size to the view width of the screen and grows proportionally with every pixel wide the screen gets until the value the view width units = .75em, resets at small desktop */
-            font-size: ~"min(2.2vw, .75em)";
-            width: (653/16em);
-            height: (618/16em);
-            position: relative;
-            z-index: 2;
-        }
-
-        .cs-floater {
-            /* 50px - 120px */
-            width: clamp(3.125rem, 8vw, 7.5rem);
-            height: clamp(3.125rem, 8vw, 7.5rem);
-            background-color: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            top: (130/16em);
-            /* changes to -74px at large desktop */
-            left: (-35/16em);
-            transform: rotate(-15deg);
-        }
-
-        .cs-floater-icon {
-            width: (52/16em);
-            height: auto;
-        }
-
-        .cs-picture {
-            width: (651/16em);
-            height: (523/16em);
-            overflow: hidden;
-            display: flex;
-            align-items: flex-end;
-            position: absolute;
-            left: 50%;
-            top: (36/16em);
-            transform: translateX(-50%);
-
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                object-position: top;
-            }
-        }
-
-        .cs-picture1 {
-            /* we set a height on the top image to cut off the bottom of it and hide it with overflow:hidden where the curved bottom picture meets it. The top image is what overlaps the "curve" of the bottom image.  */
-            height: 100%;
-            transform: translateX(-50%);
-            /* clips the bottom left corner of the top image to match the curve of the bottom one because it was too long */
-            border-radius: 0 0 0 25%;
-        }
-
-        .cs-picture2 {
-            border-radius: 0 0 55% 55%;
-        }
-
-        .cs-graphic {
-            width: (586/16em);
-            height: auto;
-            position: absolute;
-            z-index: -1;
-        }
-
-        .cs-graphic1 {
-            top: 0;
-            right: 0;
-        }
-
-        .cs-graphic2 {
-            bottom: 0;
-            left: 0;
-        }
-
-        .cs-donations {
-            /* 12px - 20px */
-            padding: clamp(0.75rem, 2.5vw, 1.25rem);
-            /* prevent padding from affecting height and width */
-            box-sizing: border-box;
-            background-color: #fff;
-            box-shadow: 0px 8px 100px 0px rgba(0, 0, 0, 0.08);
-            border-radius: (12/16rem);
-            display: inline-flex;
-            align-items: center;
-            justify-content: space-between;
-            /* 8px - 12px */
-            gap: clamp(0.5rem, 1.5vw, 0.75rem);
-            position: absolute;
-            top: (-10/16em);
-            right: 0;
-        }
-
-        .cs-donations-icon {
-            /* 12px - 20px */
-            width: clamp(0.75rem, 2vw, 1.25rem);
-            height: auto;
-        }
-
-        .cs-donations-icon-wrapper {
-            /* 32px - 48px */
-            width: clamp(2rem, 4vw, 3rem);
-            height: clamp(2rem, 4vw, 3rem);
-            background-color: var(--primaryLight);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .cs-donations-flex {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            flex-direction: column;
-            gap: (4/16rem);
-        }
-
-        .cs-bar {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            /* 4px - 8px */
-            gap: clamp(0.25rem, 1vw, 0.5rem);
-        }
-
-        .cs-progress {
-            /* 100px - 160px */
-            width: clamp(6.25rem, 8vw, 10rem);
-            /* 4px - 8px */
-            height: clamp(0.25rem, 1vw, 0.5rem);
-            border-radius: (8/16rem);
-            overflow: hidden;
-            background-color: #e8e8e8;
-        }
-
-        .cs-progress-bar {
-            width: var(--progress);
-            height: 100%;
-            background-color: var(--secondary);
-            border-radius: (8/16rem);
-            display: block;
-        }
-
-        .cs-percentage {
-            font-size: (12/16rem);
-            line-height: 1.2em;
-            font-weight: 700;
-            margin: 0;
-            color: #4e4b66;
-            display: block;
-        }
-
-        .cs-volunteer {
-            /* 20px - 24px tpo & bottom */
-            /* 16px - 20px left & right */
-            padding: clamp(1rem, 2vw, 1.25rem) clamp(1.25rem, 2.5vw, 1.5rem);
-            /* prevents padding and border from affecting height and width */
-            box-sizing: border-box;
-            background-color: #fff;
-            border-radius: (12/16rem);
-            box-shadow: 0px 8px 100px 0px rgba(0, 0, 0, 0.08);
-
-            display: inline-flex;
-            justify-content: flex-start;
-            align-items: flex-start;
-            flex-direction: column;
-            /* 8px - 16px */
-            gap: clamp(0.5rem, 2vw, 1rem);
-            position: relative;
-            z-index: -1;
-        }
-
-        .cs-volunteer-flex {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-        }
-
-        .cs-header {
-            /* 12px - 20px */
-            font-size: clamp(0.75rem, 2vw, 1.25rem);
-            line-height: 1.2em;
-            font-weight: 700;
-            margin: 0;
-            color: var(--headerColor);
-        }
-
-        .cs-volunteer-img {
-            /* 36px 48px */
-            width: clamp(2.25rem, 3vw, 3rem);
-            height: auto;
-            margin: 0 (-16/16rem) 0 0;
-            border-radius: 50%;
-            border: 2px solid #fff;
-            background-color: #fff;
-        }
-
-        .cs-volunteer-number {
-            /* 12px - 16px */
-            font-size: clamp(0.75rem, 2vw, 1rem);
-            font-weight: 700;
-            /* 36px 48px */
-            width: clamp(2.25rem, 3vw, 3rem);
-            height: clamp(2.25rem, 3vw, 3rem);
-            background-color: var(--secondary);
-            color: var(--headerColor);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .cs-arrow {
-            /* 60px - 130px */
-            width: clamp(3.75rem, 10.5vw, 8.125rem);
-            height: auto;
-            position: absolute;
-            bottom: 110%;
-            left: (-10/16rem);
-            transform: rotate(-66deg);
-        }
+@media only screen and (max-width: 768px) {
+    .hidden-text {
+        display: none;
     }
 }
 
 
+  
+
+
+  .span-service {
+    color: #EC9C52;
+    font-family: 'Penelope', sans-serif ;
+    
+  }
+  #hero-1950 .cs-container {
+    width: 100%;
+    max-width: 85.5625rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    /* 60px - 180px */
+    gap: clamp(3.75rem, 13vw, 11.25rem);
+  }
+  #hero-1950 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: flex-start;
+  }
+  #hero-1950 .cs-title {
+    /* 39px - 61px */
+    font-size: clamp(2.4375rem, 5vw, 4.2125rem);
+    margin-bottom: 1.75rem;
+    color: #fff;
+  }
+  #hero-1950 .cs-text {
+    /* 16px - 20px */
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    margin-bottom: 1.25rem;
+    color: #fff;
+    opacity: 0.8;
+  }
+  #hero-1950 .cs-flex-group {
+    max-width: 30rem;
+  }
+  #hero-1950 .cs-button-solid {
+    font-size: 1rem;
+    font-weight: 700;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    margin: 0;
+    /* 32px - 48px */
+    padding: 0 clamp(1rem, 4vw, 2rem);
+    background-color: var(--primary);
+    color: #fff;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    border-radius: 1rem;
+  }
+  #hero-1950 .cs-button-solid:before {
+    content: '';
+    width: 0%;
+    height: 100%;
+    background: #000;
+    opacity: 1;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 0.3s;
+    border-radius: 1rem;
+  }
+  #hero-1950 .cs-button-solid:hover:before {
+    width: 100%;
+    border-radius: 1rem;
+  }
+  #hero-1950 .cs-background {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+  }
+  #hero-1950 .cs-background:before {
+    /* Overlay */
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(26, 26, 26, 0.86) 10.79%, rgba(26, 26, 26, 0) 30.32%, rgba(26, 26, 26, 0.86) 55.84%);
+    /* prevents the cursor from interacting with it */
+    pointer-events: none;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  #hero-1950 .cs-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-position: 51% center; /* Adjust the position of the image inside the picture */
+
+  }
+}
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
-    #hero-1115 {
-        .cs-image-group {
-            font-size: ~"min(1.13vw, 1em)";
-            /* pushes down to create the space for the cs-volunteer to drop down 68px, since its positioned relative to the cs-image-group-wrapper div at bottom 0, the marign-bottom on the cs-image-group pushes down on the wrapper div, making the cs-volunteer drop down with it since it is positioned to the bottom of the wrapper div */
-            margin-bottom: (68/16rem);
-        }
-
-        .cs-donations {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .cs-volunteer {
-            position: absolute;
-            bottom: 0;
-            left: (-115/16rem);
-            bottom: 0;
-            z-index: 10;
-        }
-
-        .cs-arrow {
-            bottom: 95%;
-            left: (38/16rem);
-            transform: rotate(0);
-            z-index: -1;
-        }
-
-        
-        .cs-picture {
-            width: 59vw; /* Base size */
-            max-width: 54rem; /* Cap the size on larger screens */
-            height: auto; /* Maintain aspect ratio */
-            position: absolute; /* Allow free positioning */
-            top: 50%; /* Center vertically */
-            left: 50%; /* Center horizontally */
-            transform: translate(-50%, -50%); /* Keep it perfectly centered */
-        }
-    }
-}
-
-/* Small Desktop - 1024px */
-@media only screen and (min-width: 64rem) {
-    #hero-1115 {
-        text-align: left;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-        .cs-container {
-            flex-direction: row;
-            justify-content: space-between;
-            
-            
-        }
-
-        
-
-        .cs-content {
-            width: 40vw;
-            flex: none;
-            align-items: flex-start;
-        }
-
-        .cs-title {
-            max-width: 14ch; /* Ensure the title stays on one line */
-        }
-
-        .cs-title,
-        .cs-text {
-            text-align: left;
-        }
-
-        .cs-picture {
-            width: 48vw; /* Base size */
-            max-width: 46rem; /* Cap the size on larger screens */
-            height: auto; /* Maintain aspect ratio */
-            position: absolute; /* Allow free positioning */
-            top: 48%; /* Center vertically */
-            left: 30%; /* Center horizontally */
-            transform: translate(-50%, -50%); /* Keep it perfectly centered */
-        }
-
-        
-    }
-}
-
-@media only screen and (max-height: 719px) and (min-width: 64rem) {
-    .cs-picture {
-        width: 40vw !important; /* Make the picture smaller */
-        max-width: 38rem !important; /* Cap the maximum size */
-       
-    }
-}
-
-
-/* Large Desktop - 1400px */
-@media only screen and (min-width: 87.5rem) {
-    #hero-1115 {
-        height: 100vh; /* Full viewport height */
-        display: flex; /* Enable Flexbox */
-        flex-direction: column; /* Stack items vertically */
-        justify-content: center; /* Center content vertically */
-        
-        .cs-image-group-wrapper {
-            /* 48px - 160px */
-            right: ~"calc(clamp(2rem, 3vw, 10rem)*-1)";
-        }
-
-        .cs-image-group {
-            margin: 0;
-            z-index: 10;
-        }
-
-        .cs-floater {
-            left: (-74/16rem);
-        }
-
-        .cs-volunteer {
-            left: (-321/16rem);
-            bottom: (20/16rem);
-            z-index: -1;
-        }
-
-        .cs-arrow {
-            left: (200/16rem);
-        }
-        
-    }
-}
-
-/* Large Desktop - 1900px and up */
-@media only screen and (min-width: 93rem) {
-    #hero-1115 {
-        .cs-title {
-            font-size: clamp(3rem, 5.5vw, 4.5rem); /* Slightly increase title size */
-        }
-    }
-}
-
-                             
+  #hero-1950 .cs-content {
+    text-align: left;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    gap: 2rem;
     
+
+
+  }
+  #hero-1950 .cs-title {
+    width: 55%;
+    max-width: 39.375rem;
+    margin-bottom: 0;
+    /* prevents flexbox from squishing it */
+    flex: none;
+  }
+  #hero-1950 .cs-flex-group {
+    max-width: 30rem;
+  }
+}
+/* Large Desktop Parallax Effect - 100px */
+@media only screen and (min-width: 100rem) {
+  #hero-1950 .cs-background {
+    background: url("/assets/images/hero-building-v2.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* creates the parallax effect */
+    background-attachment: fixed;
+  }
+
+  
+  #hero-1950 .cs-background img {
+    display: none;
+  }
+}
+                                
 </style>
 
     
 <!-- ============================================ -->
-<!--                  What We Do                    -->
+<!--                  Services                    -->
 <!-- ============================================ -->
 
-    <section id="services-1130">
-        <div class="cs-container">
-            <div class="cs-content">
-                <span class="cs-topper">What We Do</span>
-                <h2 class="cs-title">Your Guiding Sign for Success</h2>
-                <p class="cs-text">
-                    At True Sign Design, we create websites that help your business grow with modern designs and fast performance.
-                </p>
+<section id="services-1628">
+    <div class="cs-container">
+        <div class="cs-content">
+            <div class="cs-flex">
+                <span class="cs-topper">Our Services</span>
+                <h2 class="cs-title">Your Guiding Sign For Success</h2>
             </div>
-            <ul class="cs-card-group">
-                <li class="cs-item">
-                    <div class="cs-image-group">
-                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/images/web-design4.png" alt="icon" width="48" height="48">
-                        <img class="cs-graphic" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/charity-shape.svg" alt="graphic" width="100" height="103">
-                    </div>
-                    <h3 class="cs-h3">Design & Development 
-                    </h3>  
+            <p class="cs-text">
+                At True Sign Design, we give small-to-medium-sized businesses an edge with fully custom websites built for performance. By steering clear of page builders like Wordpress, we eliminate the usual headaches, no slow load times, security risks, or constant upkeep. Paired with our unlimited edits service, you get ongoing flexibility and peace of mind, so you can focus on growing your business while we handle the rest.
+            </p>
+        </div>                  
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <a href="/contact" class="cs-link">
+                    <picture class="cs-picture">
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="/assets/images/custom-code.jpg">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="/assets/images/custom-code.jpg">
+                        <img loading="lazy" decoding="async" src="/assets/images/custom-code.jpg" alt="room" width="413" height="420">
+                    </picture>
+                    <h3 class="cs-h3">Custom Coded With Top Page Speed Scores</h3>
                     <p class="cs-item-text">
-                        Hand coded websites built for speed, security, and easy updates. No slow page builders, just clean, efficient code for your business growth.
-
-
+                        If your site takes more than 3 seconds to load you can lose up to 50% of your traffic. Our sites take one second ensuring clients stay engaged.
                     </p>
-                </li>
-                <li class="cs-item">
-                    <div class="cs-image-group">
-                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/images/calendar.png" alt="icon" width="48" height="48">
-                        <img class="cs-graphic" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/charity-shape.svg" alt="graphic" width="100" height="103">
-                    </div>
-                    <h3 class="cs-h3">Monthly Pricing</h3> <br>
+                    <span class="cs-fake-link">
+                        Get Started
+                        <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
+                    </span>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a href="/contact" class="cs-link">
+                    <picture class="cs-picture">
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="https://images.unsplash.com/photo-1579389083395-4507e98b5e67?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="https://images.unsplash.com/photo-1579389083395-4507e98b5e67?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1579389083395-4507e98b5e67?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="room" width="413" height="420">
+                    </picture>
+                    <h3 class="cs-h3">Unlimited Support, Edits And Maintenance</h3>
                     <p class="cs-item-text">
-                        An all-in-one monthly   package for your website, including hosting, updates, SEO, Security & more. Ensuring smooth performance and growth without any worries
+                        Need an image replaced or a service updated? Contact us and and we'll reoptimise it for Google without any <br>issues.
                     </p>
-                </li>
-                <li class="cs-item">
-                    <div class="cs-image-group">
-                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/images/growth.png" alt="icon" width="48" height="48">
-                        <img class="cs-graphic" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/charity-shape.svg" alt="graphic" width="100" height="103">
-                    </div>
-                    <h3 class="cs-h3">Gain Leads</h3> <br>
+                    <span class="cs-fake-link">
+                        Get Started
+                        <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
+                    </span>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a href="/contact" class="cs-link">
+                    <picture class="cs-picture">
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="/assets/images/checkout.jpg">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="/assets/images/checkout.jpg">
+                        <img loading="lazy" decoding="async" src="/assets/images/checkout.jpg" alt="room" width="413" height="420">
+                    </picture>
+                    <h3 class="cs-h3">Monthly Payment, No Upfront Costs </h3>
                     <p class="cs-item-text">
-                        We optimize your website to attract and capture leads, ensuring it’s fast, efficient, and easy for potential customers to find your business.
+                        We believe our services should be available to everyone, allowing business owners to experience our value without worrying about high costs.
                     </p>
-                </li>
-                <li class="cs-item">
-                    <div class="cs-image-group">
-                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/images/commerce.png" alt="icon" width="48" height="48">
-                        <img class="cs-graphic" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/charity-shape.svg" alt="graphic" width="100" height="103">
-                    </div>
-                    <h3 class="cs-h3">Client Growth
-                    </h3>
+                    <span class="cs-fake-link">
+                        Get Started
+                        <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
+                    </span>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a href="/contact" class="cs-link">
+                    <picture class="cs-picture">
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="https://images.unsplash.com/photo-1550082094-8e76633b0ab9?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="https://images.unsplash.com/photo-1550082094-8e76633b0ab9?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1550082094-8e76633b0ab9?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="room" width="413" height="420">
+                    </picture>
+                    <h3 class="cs-h3">Free Redesign and Customer Discounts</h3>
                     <p class="cs-item-text">
-                        <br>With seamless navigation and optimized user experience, this will create a great first impression, helping your business grow steadily and confidently.
-                    </p>
-                </li>
-            </ul>
-        </div>
-    </section>
+                        We make sure our clients are well cared for with a free redesign 12 months after ownership and a discounted monthly rate if they choose to stay with us.</p>
+                    <span class="cs-fake-link">
+                        Get Started
+                        <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
                                 
 
+<style>
+    /*-- -------------------------- -->
+<---          Services          -->
+<--- -------------------------- -*/
 
-    <style>
-        /*-- -------------------------- -->
-    <---         What We Do           -->
-    <--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #services-1628 {
+    padding: var(--sectionPadding);
+    background-color: #f7f7f7;
+  }
+  #services-1628 .cs-container {
+    width: 100%;
+    /* changes to 1280px at tablet */
+    max-width: 34.375em;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #services-1628 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: flex-start;
+  }
+  #services-1628 .cs-title {
+    max-width: 20ch;
+    font-weight:700 !important;
     
-    /* Mobile - 360px */
-    @media only screen and (min-width: 0rem) {
-        #services-1130 {
-            padding: var(--sectionPadding);
-            background-color: #f9f9f9;
-            
-        }
-        #services-1130 .cs-container {
-            width: 100%;
-            max-width: 80rem;
-            margin: auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            /* 48px - 64px */
-            gap: clamp(3rem, 6vw, 4rem);
-            
-        }
-        #services-1130 .cs-content {
-            /* set text align to left if content needs to be left aligned */
-            text-align: center;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            /* centers content horizontally, set to flex-start to left align */
-            align-items: center;
-        }
     
-        #services-1130 .cs-topper {
-            color: #767676;
-        }
-        #services-1130 .cs-card-group {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            /* 16px - 20px */
-            gap: clamp(1rem, 2.3vw, 1.25rem);
-        }
-        #services-1130 .cs-item {
-            width: 100%;
-            text-align: center;
-            list-style: none;
-            margin: 0;
-            /* 24px - 32px */
-            padding: clamp(1.5rem, 3vw, 2rem);
-            background-color: #fff;
-            border: 1px solid #e8e8e8;
-            border-radius: 1rem;
-            /* prevents padding and border from affecting height and width */
-            box-sizing: border-box;
-            grid-column: span 12;
-            grid-row: span 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            z-index: 1;
-            transition:
-                box-shadow 0.3s,
-                border-color 0.3s;
-        }
-        #services-1130 .cs-item:hover {
-            box-shadow: 0px 4px 120px 0px rgba(0, 0, 0, 0.12);
-            border-color: transparent;
-        }
-        #services-1130 .cs-item:hover .cs-h3 {
-            color: var(--primary);
-        }
-        #services-1130 .cs-image-group {
-            width: 6.25rem;
-            height: auto;
-            /* 20px - 24px */
-            margin: 0 0 clamp(1.25rem, 2.5vw, 1.5rem);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            /* prevents flexbox from squishing it */
-            flex: none;
-            position: relative;
-        }
-        #services-1130 .cs-icon {
-            width: 3rem;
-            height: auto;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-        #services-1130 .cs-graphic {
-            width: 100%;
-            height: auto;
-        }
-        #services-1130 .cs-h3 {
-            /* 20px - 25px */
-            font-size: clamp(1.25rem, 2.5vw, 1.5625rem);
-            line-height: 1.2em;
-            font-weight: bold;
-            text-align: inherit;
-            margin: 0 0 0.75rem 0;
-            color: var(--headerColor);
-            transition: color 0.3s;
-        }
-        #services-1130 .cs-item-text {
-            /* 14px - 16px */
-            font-size: clamp(0.875rem, 1.5vw, 1rem);
-            line-height: 1.5em;
-            max-width: 28.125rem;
-            margin: 0;
-            padding: 0;
-            color: var(--bodyTextColor);
-        }
-    }
-    /* Tablet - 768px */
-    @media only screen and (min-width: 48rem) {
-        #services-1130 .cs-item {
-            text-align: left;
-            align-items: flex-start;
-            grid-column: span 6;
-            
-        }
-    }
-    /* Desktop - 1024px */
-    @media only screen and (min-width: 64rem) {
-        #services-1130 .cs-item {
-            grid-column: span 3;
-            
-        }
-    }
+  }
+  #services-1628 .cs-text {
+    max-width: 40rem;
+    position: relative;
+    z-index: 1;
+  }
+  #services-1628 .cs-text:after {
+    /* divider line */
+    content: "";
+    width: 100%;
+    height: 1px;
+    margin-top: 1.5rem;
+    background: var(--primary);
+    opacity: 1;
+    display: block;
+    position: relative;
+  }
+  #services-1628 .cs-chevron {
+    --chevronColor: var(--primary);
+    width: 3rem;
+    height: auto;
+  }
+  #services-1628 .cs-card-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    /* 16px - 20px */
+    column-gap: clamp(1rem, 2.5vw, 1.25rem);
+    /* 28px - 40px */
+    row-gap: clamp(1.75rem, 2.5vw, 2.5rem);
+  }
+  #services-1628 .cs-item {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    grid-column: span 12;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #services-1628 .cs-item:hover .cs-picture img {
+    opacity: .5;
+    transform: scale(1.2);
+  }
+  #services-1628 .cs-link {
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #services-1628 .cs-picture {
+    width: 100%;
+    height: 15rem;
+    margin-bottom: 1.5rem;
+    background-color: #000;
+    overflow: hidden;
+    display: block;
+    position: relative;
     
-                                    
-    </style>
+  }
+  #services-1628 .cs-picture img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform .6s, opacity .3s;
+    
+    
+  }
+
+
+  #services-1628 .cs-item:nth-child(1) .cs-picture img {
+    object-position: 0% 20%; /* Adjust horizontally (10%) and vertically (20%) */
+  }
+
+  #services-1628 .cs-item:nth-child(2) .cs-picture img {
+    object-position: top; /* Move the second image to the bottom right */
+  }
+
+  #services-1628 .cs-item:nth-child(3) .cs-picture img {
+    object-position: center center; /* Move the third image to the center */
+  }
+
+  #services-1628 .cs-item:nth-child(4) .cs-picture img {
+    object-position: top center; /* Move the fourth image to the top center */
+  }
+
+
+  #services-1628 .cs-h3 {
+    font-size: 1.25rem;
+    line-height: 1.2em;
+    font-weight: 600 !important;
+    text-align: left;
+    margin: 0 0 0.75rem 0;
+    color: var(--headerColor);
+  }
+  #services-1628 .cs-item-text {
+    font-size: 1rem;
+    line-height: 1.5em;
+    text-align: left;
+    margin: 0 0 1.5rem 0;
+    color: var(--bodyTextColor);
+  }
+  #services-1628 .cs-fake-link {
+    font-size: 1rem;
+    line-height: 1.2em;
+    font-weight: 700;
+    margin: 0;
+    margin-top: auto;
+    color: var(--primary);
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  #services-1628 .cs-fake-link:hover .cs-icon {
+    transform: translateX(0.5rem);
+  }
+  #services-1628 .cs-icon {
+    width: 1.25rem;
+    height: auto;
+    display: block;
+    transition: transform .3s;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #services-1628 .cs-container {
+    max-width: 80rem;
+  }
+  #services-1628 .cs-content {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  #services-1628 .cs-flex {
+    text-align: left;
+    width: 40vw;
+    max-width: 40rem;
+    flex: none;
+  }
+  #services-1628 .cs-title {
+    margin: 0;
+    
+  }
+  #services-1628 .cs-text {
+    padding: 0.75rem 0 0.75rem 1.5rem;
+  }
+  #services-1628 .cs-text:after {
+    width: 1px;
+    height: 100%;
+    margin: 0 1.5rem 0 0;
+    order: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  #services-1628 .cs-item {
+    grid-column: span 6;
+  }
+  #services-1628 .cs-picture {
+    /* 240px - 420px */
+    height: clamp(15rem, 33vw, 26.25rem);
+  }
+}
+/* Large Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+  #services-1628 .cs-item {
+    grid-column: span 3;
+  }
+}
+                                
+</style>
     
 
 
@@ -800,13 +551,13 @@ const optimizedImage = await getOptimizedImage(landingImage)
 <!-- ============================================ -->
 
 <section id="sbs-1585"> 
-     <div class="cs-container">
+    <div class="cs-container">
         <picture class="cs-picture">
             <!--Mobile Image-->
-            <source media="(max-width: 600px)" srcset="/assets/images/laptop-mockup-studio.jpg">
+            <source media="(max-width: 600px)" srcset="/assets/images/offer-photo.jpg">
             <!--Tablet and above Image-->
-            <source media="(min-width: 601px)" srcset="/assets/images/laptop-mockup-studio.jpg">
-            <img loading="lazy" decoding="async" src="/assets/images/laptop-mockup-studio.jpg" alt="models" width="586" height="690">
+            <source media="(min-width: 601px)" srcset="/assets/images/offer-photo.jpg">
+            <img loading="lazy" decoding="async" src="/assets/images/offer-photo.jpg" alt="models" width="586" height="690">
         </picture>
         <div class="cs-content">
             <span class="cs-topper">What We Offer</span>
@@ -820,14 +571,14 @@ const optimizedImage = await getOptimizedImage(landingImage)
                         </h3>
                     </div>
                     <p class="cs-item-text">
-                        Our hand-coded websites load fast, achieving Google scores that bring more visitors to your site.
+                        Our hand-coded websites load fast, achieving Google speed scores that bring more visitors to your site.
                     </p>
                 </li>
                 <li class="cs-item">
                     <div class="wrapper">
                         <span class="cs-item-number">02</span>
                         <h3 class="cs-h3">
-                            Designed Just For You
+                            Designed For You
                         </h3>
                     </div>
                     <p class="cs-item-text">
@@ -838,18 +589,18 @@ const optimizedImage = await getOptimizedImage(landingImage)
                     <div class="wrapper">
                         <span class="cs-item-number">03</span>
                         <h3 class="cs-h3">
-                            On Page Edits
+                            Unlimited On Page Edits
                         </h3>
                     </div>
                     <p class="cs-item-text">
-                         If you need to change a photo or update some information, we'll take care of it for you and make sure its fully optimised for search engines!
+                        If you need to change a photo or update some information, we'll take care of it for you and make sure its fully optimised for search engines.
                     </p>
                 </li>
                 <li class="cs-item">
                     <div class="wrapper">
                         <span class="cs-item-number">04</span>
                         <h3 class="cs-h3">
-                           Hosting & Security
+                        Hosting & Security
                         </h3>
                     </div>
                     <p class="cs-item-text">
@@ -864,18 +615,18 @@ const optimizedImage = await getOptimizedImage(landingImage)
                         </h3>
                     </div>
                     <p class="cs-item-text">
-                        We use on-page SEO to optimize your content, meta tags, and structure, helping bring in more customers.
+                        We optimize your website with on-page SEO, using meta tags and effective structures to increase your visibility and bring in more customers.
                     </p>
                 </li>
                 <li class="cs-item">
                     <div class="wrapper">
                         <span class="cs-item-number">06</span>
                         <h3 class="cs-h3">
-                          Here To Help
+                        Here To Help
                         </h3>
                     </div>
                     <p class="cs-item-text">
-                         You’ll always have 24/7 access to someone who knows your website inside out and can help you with any questions or issues.
+                        You’ll always have access to someone who knows your website inside out and can help you with any questions or issues.
                     </p>
                 </li>
             </ul>
@@ -1114,61 +865,61 @@ const optimizedImage = await getOptimizedImage(landingImage)
 
 
 <!-- ============================================ -->
-<!--                  Portfolio                -->
+<!--                  Services                    -->
 <!-- ============================================ -->
 
 <section id="services-2198">
     <div class="cs-container">
         <div class="cs-content">
-            <span class="cs-topper">Our Portfolio</span>
+            <span class="cs-topper">Our Portfolio </span>
             <h2 class="cs-title">Find Our Latest Work Here</h2>
         </div>                  
         <ul class="cs-card-group">
-            <li class="cs-item cs-item-3">
+            <li class="cs-item">
                 <a href="https://zhroofing.com/" class="cs-link" target="_blank">
                     <picture class="cs-picture">
                         <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="/assets/images/small-roofing.png">
+                        <source media="(max-width: 600px)" srcset="/assets/images/home-mockup-1.jpg">
                         <!--Tablet and above Image-->
-                        <source media="(min-width: 601px)" srcset="/assets/images/small-roofing.png">
-                        <img loading="lazy" decoding="async" src="/assets/images/small-roofing.png" alt="ZH Roofing" width="413" height="340">
+                        <source media="(min-width: 601px)" srcset="/assets/images/home-mockup-1.jpg">
+                        <img loading="lazy" decoding="async" src="/assets/images/home-mockup-1.jpg" alt="wedding photography" width="413" height="340">
                     </picture>
                     <div class="cs-flex">
                         <h3 class="cs-h3">ZH Roofing</h3>
                         <span class="cs-number">01</span>
                     </div>
                     <p class="cs-item-text">
-                        SureTop Roofing wanted a site to match their reputation for reliability. We designed a professional platform that showcases their roofing services effectively.
+                        ZH Roofing wanted a site to match their reputation for reliability. We designed a professional platform that showcases their roofing services effectively.
                     </p>
                 </a>
             </li>
-            
-            <li class="cs-item cs-item-2">
-                <a href="http://dentiview.org/" class="cs-link" target="_blank">
+            <li class="cs-item">
+                <a href="https://dentiview.org/" class="cs-link" target="_blank">
                     <picture class="cs-picture">
                         <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="/assets/images/dentiview-small-update.png">
+                        <source media="(max-width: 600px)" srcset="/assets/images/home-mockup-2.jpg">
                         <!--Tablet and above Image-->
-                        <source media="(min-width: 601px)" srcset="/assets/images/dentiview-small-update.png">
-                        <img loading="lazy" decoding="async" src="/assets/images/dentiview-small-update.png" alt="DentiView" width="413" height="340">
+                        <source media="(min-width: 601px)" srcset="/assets/images/home-mockup-2.jpg">
+                        <img loading="lazy" decoding="async" src="/assets/images/home-mockup-2.jpg" alt="wedding photography" width="413" height="340">
                     </picture>
                     <div class="cs-flex">
                         <h3 class="cs-h3">DentiView</h3>
                         <span class="cs-number">02</span>
                     </div>
                     <p class="cs-item-text">
-                        DentiView needed a clean and modern website to reflect their dental expertise. Our design focuses on professionalism and patient trust. 
+                        DentiView needed a clean and modern website to reflect their dental expertise. Our design focuses on professionalism and patient trust.
                     </p>
                 </a>
             </li>
-            <li class="cs-item cs-item-1">
-                <a href="http://golfgreeners.com/" class="cs-link" target="_blank">
+            <li class="cs-item">
+                <a href="https://golfgreeners.com/" class="cs-link" target="_blank">
+
                     <picture class="cs-picture">
                         <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="/assets/images/small-golf.png">
+                        <source media="(max-width: 600px)" srcset="/assets/images/home-mockup-3.jpg">
                         <!--Tablet and above Image-->
-                        <source media="(min-width: 601px)" srcset="/assets/images/small-golf.png">
-                        <img loading="lazy" decoding="async" src="/assets/images/small-golf.png" alt="Golf Greeners" width="413" height="340">
+                        <source media="(min-width: 601px)" srcset="/assets/images/home-mockup-3.jpg">
+                        <img loading="lazy" decoding="async" src="/assets/images/home-mockup-3.jpg" alt="wedding photography" width="413" height="340">
                     </picture>
                     <div class="cs-flex">
                         <h3 class="cs-h3">Golf Greeners</h3>
@@ -1179,111 +930,117 @@ const optimizedImage = await getOptimizedImage(landingImage)
                     </p>
                 </a>
             </li>
-            
         </ul>
     </div>
 </section>
+                                
 
 <style>
     /*-- -------------------------- -->
-<---        Services          -->
+<---          Services          -->
 <--- -------------------------- -*/
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
   #services-2198 {
-    min-height: 100vh; /* Ensures section stays fully visible in the viewport */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centers vertically */
-    align-items: center; /* Centers horizontally */
-    overflow-x: hidden; /* Prevents horizontal scrolling */
     padding: var(--sectionPadding);
-    background-color: #f9f9f9;
+    background-color: #FDFAF8;
     position: relative;
-    width: 100%;
-    max-width: 100%;
   }
-
   #services-2198 .cs-container {
     width: 100%;
+    /* changes to 1280px at tablet */
     max-width: 44rem;
     margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* 48px - 64px */
     gap: clamp(3rem, 6vw, 4rem);
   }
-
   #services-2198 .cs-content {
+    /* set text align to left if content needs to be left aligned */
     text-align: center;
     width: 100%;
     display: flex;
     flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
     align-items: center;
   }
-
   #services-2198 .cs-title {
     margin: 0;
   }
-
   #services-2198 .cs-card-group {
     width: 100%;
+    max-width: 25rem;
     margin: 0;
     padding: 0;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    gap: 2rem;
+    row-gap: 2rem;
   }
-
   #services-2198 .cs-item {
     list-style: none;
     width: 100%;
-    max-width: 90vw; /* Prevents items from going out of viewport */
     display: flex;
     flex-direction: column;
-    align-items: center;
     grid-column: span 12;
   }
-
+  #services-2198 .cs-item:hover .cs-picture:before {
+    background-color: var(--primary);
+  }
+  #services-2198 .cs-item:hover .cs-picture img {
+    opacity: 0.3;
+  }
   #services-2198 .cs-link {
     text-align: center;
     text-decoration: none;
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-
   #services-2198 .cs-picture {
     width: 100%;
-    max-width: 100%; /* Ensures images don't overflow */
+    /* 240px - 340px */
+    height: clamp(15rem, 30vw, 21.25rem);
     margin-bottom: 2.75rem;
-    border-radius: 1rem;
-    overflow: hidden;
-    position: relative;
+    background-color: #000;
     display: flex;
     justify-content: center;
-    align-items: center;
+    position: relative;
   }
-
+  #services-2198 .cs-picture::before {
+    content: "";
+    width: 100%;
+    height: 1.25rem;
+    margin: 0 2rem;
+    
+    display: block;
+    position: relative;
+    top: 100%;
+    bottom: 0;
+    z-index: 10;
+    transition: background-color 0.3s;
+  }
   #services-2198 .cs-picture img {
     width: 100%;
-    height: auto; /* Maintain aspect ratio */
-    max-width: 100%; /* Prevents images from exceeding the container */
-    max-height: 70vh; /* Prevents image from being cut off */
-    object-fit: contain; /* Ensures full image fits */
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
     transition: transform 0.6s, opacity 0.3s;
   }
-
   #services-2198 .cs-flex {
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: flex-end;
   }
-
   #services-2198 .cs-number {
+    /* 49px - 72px */
     font-size: 3rem;
     font-weight: 900;
     line-height: 1.2em;
@@ -1294,7 +1051,6 @@ const optimizedImage = await getOptimizedImage(landingImage)
     position: absolute;
     z-index: 0;
   }
-
   #services-2198 .cs-h3 {
     font-size: 1.25rem;
     font-weight: 700;
@@ -1303,7 +1059,6 @@ const optimizedImage = await getOptimizedImage(landingImage)
     color: var(--headerColor);
     z-index: 1;
   }
-
   #services-2198 .cs-item-text {
     font-size: 1rem;
     line-height: 1.5em;
@@ -1311,64 +1066,25 @@ const optimizedImage = await getOptimizedImage(landingImage)
     color: var(--bodyTextColor);
   }
 }
-
-
-
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
   #services-2198 .cs-container {
     max-width: 80rem;
-    padding: 0 2rem;
   }
-
   #services-2198 .cs-card-group {
     max-width: none;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
-    gap: clamp(1rem, 2.5vw, 1.25rem); /* Adjust gaps between items */
+    /* 16px - 20px */
+    column-gap: clamp(1rem, 2.5vw, 1.25rem);
   }
-
   #services-2198 .cs-item {
-    grid-column: span 1; /* Each item takes one column */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    grid-column: span 4;
   }
-
   #services-2198 .cs-picture {
-    width: 100%; /* Ensure full width in grid */
-    max-width: 413px; /* Keep images aligned */
-    margin-bottom: 1.5rem;
-    border-radius: 1rem;
-    overflow: hidden;
-    position: relative;
-  }
-
-  #services-2198 .cs-picture img {
-    width: 100%; /* Ensure it fits its container */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: contain; /* Prevent clipping */
-    transition: opacity 0.3s ease;
-  }
-
-  #services-2198 .cs-picture:hover img {
-    opacity: 0.8; /* Hover effect */
-  }
-
-  #services-2198 .cs-item h3 {
-    font-size: 1.25rem;
-    margin: 0.5rem 0;
-  }
-
-  #services-2198 .cs-item p {
-    font-size: 1rem;
-    line-height: 1.5rem;
-    text-align: center;
+    margin-bottom: 3.25rem;
   }
 }
-
+                                
 </style>
-
 
 <!-- ============================================ -->
 <!--              Side By Side Reverse            -->
@@ -1700,7 +1416,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
         </div>
         <ul class="cs-card-group">
             <li class="cs-item">
-                <a href="" class="cs-link">
+                <a href="/our-process#video-548" class="cs-link">
                     <picture class="cs-picture">
                         <source media="(max-width: 600px)"
                             srcset="/assets/svgs/order-confirm.svg">
@@ -1720,7 +1436,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
                 </a>
             </li>
             <li class="cs-item">
-                <a href="" class="cs-link">
+                <a href="/our-process#video-548" class="cs-link">
                     <picture class="cs-picture">
                         <source media="(max-width: 600px)"
                             srcset="/assets/svgs/setup.svg">
@@ -1735,12 +1451,12 @@ const optimizedImage = await getOptimizedImage(landingImage)
                         5 Minute Setup
                     </h3>
                     <p class="cs-item-text">
-                        After selecting your plan, you’ll sign a simple contract and access your client portal. From there, just fill out a quick form, upload some photos and you’re good to go.
+                        Once thats done, you’ll sign a simple contract, enter payment details and access your client portal. From there, just fill out a quick form, upload some photos and you’re good to go.
                     </p>
                 </a>
             </li>
             <li class="cs-item">
-                <a href="" class="cs-link">
+                <a href="/our-process#video-548" class="cs-link">
                     <picture class="cs-picture">
                         <source media="(max-width: 600px)"
                             srcset="/assets/svgs/work.svg">
@@ -1760,7 +1476,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
                 </a>
             </li>
             <li class="cs-item">
-                <a href="" class="cs-link">
+                <a href="/our-process#video-548" class="cs-link">
                     <picture class="cs-picture">
                         <source media="(max-width: 600px)"
                             srcset="/assets/svgs/launch.svg">
@@ -2017,372 +1733,209 @@ const optimizedImage = await getOptimizedImage(landingImage)
            transform: rotateX(180deg);
        }
    }
-   </style>
-   
+</style>
 
-
- 
     
 
 
 <!-- ============================================ -->
-<!--                  Pricing                     -->
+<!--                   Pricing                    -->
 <!-- ============================================ -->
 
-<section id="pricing-357">
+<section id="pricing-1260">
     <div class="cs-container">
         <div class="cs-content">
-            <span class="cs-topper">Pricing Plans</span>
-            <h2 class="cs-title">Affordable & Simple</h2>
+            <span class="cs-topper">Pricing</span>
+            <h2 class="cs-title">Clear & Affordable Pricing</h2>
             <p class="cs-text">
                 Unlike other providers, we build your website for full ownership. <br>
-                Our 24-month plan includes hosting, maintenance, updates, support & more, with the option to opt out after 12 months.
+                Our 24-month plan includes design, development, hosting, <br>maintenance, updates & support, with the flexibility to opt <br> out after 12 months.
+                <br> <br><span class="bold-30">30 Day Money Back Guarantee</span>
             </p>
-           <br> <h3>30-Day-Back-Guarantee</h3>
+            <a href="/contact" class="cs-button-solid">Contact Us</a>
         </div>
         <ul class="cs-card-group">
-             <!-- Option 1 -->
-             <li class="cs-item">
-                <h3 class="cs-h3">Standard</h3>
-                <p class="cs-item-text">
-                    All-In-One Package
-                </p>
-                <div class="cs-option-group">
-                    <span class="cs-price">£140<span class="cs-small">/month</span></span>
-                </div>
-                <span class="cs-included">Package Includes</span>
+            <li class="cs-item">
+                <span class="cs-popular-tag">Recommended</span>
+                <picture class="cs-picture">
+                    <img class="cs-picture-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/badge.svg" alt="checkmark" width="44" height="44">
+                </picture>
+                <span class="cs-package">Standard</span>
+                <span class="cs-price">
+                    £140
+                    <span class="cs-duration">/month</span>
+                </span>
+                <!-- <p class="cs-item-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida, ex in commodo euismod, justo nisi bibendum libero,
+                </p> -->
                 <ul class="cs-ul">
                     <li class="cs-li">
-                        <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/round-check.svg" alt="checkmark" width="18" height="18">
                         Design & Development
                     </li>
-                    <li class="cs-li ">
-                        <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
-                        5-Page Static Website
                     <li class="cs-li">
-                        <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
-                        Secure Hosting & Protection
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/round-check.svg" alt="checkmark" width="18" height="18">
+                        5-Page Static Website
                     </li>
                     <li class="cs-li">
-                        <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/round-check.svg" alt="checkmark" width="18" height="18">
                         Unlimited Stock Images
                     </li>
-                    <li class="cs-li ">
-                        <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
-                        On-Page Updates 
+                    <li class="cs-li">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/round-check.svg" alt="checkmark" width="18" height="18">
+                        On-Page Updates
                     </li>
-                    <li class="cs-li ">
-                        <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                    <li class="cs-li">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/round-check.svg" alt="checkmark" width="18" height="18">
                         Google Optimised On Page SEO
                     </li>
-                    <li class="cs-li ">
-                        <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                    <li class="cs-li">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/round-check.svg" alt="checkmark" width="18" height="18">
                         Google Business Profile Set Up
                     </li>
-                    <li class="cs-li ">
-                        <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
-                        Hosting, Domain, SSL certificate, and 1x Business Email - Domain Extra £20 Per Year
+                    <li class="cs-li">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/round-check.svg" alt="checkmark" width="18" height="18">
+                        Domain, SSL certificate, and 1x Business Email - Domain Extra £20 Per Year
                     </li>
-                    <li class="cs-li ">
-                        <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
-                        +100 Extra Per Page/Monthly
+                    <li class="cs-li">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/round-check.svg" alt="checkmark" width="18" height="18">
+                        +£100 Fee Per Page After 5
                     </li>
-                   
-                    
-                    <li class="cs-li cs-disabled">
-                        <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                    <li class="cs-li">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/round-check.svg" alt="checkmark" width="18" height="18">
                         Blog Included
                     </li>
+                    
                 </ul>
-                <a href="/contact" class="cs-button-solid">Get Started</a>
+                <a href="/contact" class="cs-button-transparent">Get Started    </a>
             </li>
-            
-            <!-- Option 2 -->
             <li class="cs-item cs-popular">
-                <h3 class="cs-h3">Premium</h3>
-                <p class="cs-item-text">
-                    All-In-One Package
-                </p>
-                <div class="cs-option-group">
-                    <span class="cs-price">£180<span class="cs-small">/month</span></span>
-                </div>
-                <span class="cs-included">Package Includes</span>
+                <span class="cs-popular-tag">Recommended</span>
+                <picture class="cs-picture">
+                    <img class="cs-picture-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/badge.svg" alt="checkmark" width="44" height="44">
+                </picture>
+                <span class="cs-package">Premium</span>
+                <span class="cs-price">
+                    £180
+                    <span class="cs-duration">/month</span>
+                </span>
+                <!-- <p class="cs-item-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida, ex in commodo euismod, justo nisi bibendum libero,
+                </p> -->
                 <ul class="cs-ul">
                     <li class="cs-li">
-                        <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/round-check.svg" alt="checkmark" width="18" height="18">
                         Design & Development
                     </li>
-                    
-                    <li class="cs-li ">
-                        <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                    <li class="cs-li">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/round-check.svg" alt="checkmark" width="18" height="18">
                         8-Page Static Website
                     </li>
                     <li class="cs-li">
-                        <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
-                        Secure Hosting & Protection
-                    </li>
-                    <li class="cs-li">
-                        <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/round-check.svg" alt="checkmark" width="18" height="18">
                         Unlimited Stock Images
                     </li>
                     <li class="cs-li">
-                        <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
-                        On-Page Updates 
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/round-check.svg" alt="checkmark" width="18" height="18">
+                        On-Page Updates
                     </li>
                     <li class="cs-li">
-                        <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/round-check.svg" alt="checkmark" width="18" height="18">
                         Google Optimised On Page SEO
                     </li>
-                    <li class="cs-li ">
-                        <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                    <li class="cs-li">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/round-check.svg" alt="checkmark" width="18" height="18">
                         Google Business Profile Set Up
                     </li>
-                    <li class="cs-li ">
-                        <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
-                        Hosting, Domain, SSL certificate, and 1x Business Email - Included
+                    <li class="cs-li">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/round-check.svg" alt="checkmark" width="18" height="18">
+                        Domain, SSL certificate, and 1x Business Email - Domain Extra £20 Per Year
                     </li>
-                    <li class="cs-li ">
-                        <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
-                        +100 Extra Per Page/Monthly
+                    <li class="cs-li">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/round-check.svg" alt="checkmark" width="18" height="18">
+                        +£100 Fee Per Page After 8
                     </li>
-                    
-                   
-                    
-                    
-                
-                    <li class="cs-li ">
-                        <img class="cs-li-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Pricing/check-blue.svg" alt="code stitch icon" width="20" height="20">
+                    <li class="cs-li">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/round-check.svg" alt="checkmark" width="18" height="18">
                         Blog Included
                     </li>
                 </ul>
-                <a href="/contact" class="cs-button-solid">Get Started</a>
+                <a href="/contact" class="cs-button-transparent">Get Started</a>
             </li>
-           
-            
         </ul>
-        
-       
+        <picture class="cs-waves-wrapper">
+            <img class="cs-waves" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/svg-waves.svg" alt="waves" width="743" height="708">
+        </picture>
     </div>
 </section>
-             
                                 
 
 <style>
     /*-- -------------------------- -->
-/*          Pricing           -->
-/* -------------------------- -*/
+<---          Pricing           -->
+<--- -------------------------- -*/
 
-/* Mobile */
+/* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-    #pricing-357 {
+    #pricing-1260 {
         padding: var(--sectionPadding);
-        background-color: #ffffff;
+        /* clips svg graphic from overflowing the section */
+        overflow: hidden;
         position: relative;
         z-index: 1;
     }
 
-    #pricing-357:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-       
-        background-repeat: repeat;
-        background-size: auto;
-        filter: blur(1px); /* Apply the 1px blur */
-        z-index: -1;
-        opacity: 1;
-        pointer-events: none;
+    .bold-30 {
+
+        font-weight: 700;
     }
-
-
-    #pricing-357 .cs-container {
+    #pricing-1260 .cs-container {
         width: 100%;
-        max-width: 80rem;
+        /* changes to 1280px at desktop */
+        max-width: 34.375em;
         margin: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
-        /* 48px - 64px */
+        /* 48px - 64px, changes to 20px at large desktop */
         gap: clamp(3rem, 6vw, 4rem);
+        position: relative;
     }
-    #pricing-357 .cs-content {
+    #pricing-1260 .cs-item:first-child .cs-li:last-child .cs-icon {
+    filter: grayscale(80%) brightness(100%);
+    
+}
+
+#pricing-1260 .cs-item:first-child .cs-li:last-child {
+    opacity: 0.5;
+}
+
+
+
+
+    
+    #pricing-1260 .cs-content {
         /* set text align to left if content needs to be left aligned */
-        text-align: center;
+        text-align: left;
         width: 100%;
+        max-width: 40.1875rem;
+        margin-right: auto;
         display: flex;
         flex-direction: column;
         /* centers content horizontally, set to flex-start to left align */
-        align-items: center;
-    }
-
-    #pricing-357 .cs-card-group {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column; /* Stack cards vertically */
-        align-items: center;
-        gap: 2rem; /* Consistent spacing between cards */
-    }
-    #pricing-357 .cs-item {
-        list-style: none;
-        /* 20px - 32px top & bottom */
-        /* 16px - 32px left & right */
-        padding: clamp(1.25rem, 3vw, 2rem) clamp(1rem, 2.4vw, 2rem);
-        width: 100%;
-        max-width: 25.8125rem;
-        border-radius: 1rem;
-        background: #fff;
-        border: 1px solid #e8e8e8;
-        /* prevents padding from adding to height and width */
-        box-sizing: border-box;
-    }
-    #pricing-357 .cs-popular {
-        background: var(--primary);
-        position: relative;
-        /* clips the popular tag */
-        overflow: hidden;
-        /* send to the top */
-        order: 0;
-    }
-    #pricing-357 .cs-popular:before {
-        /* Most Popular Tag */
-        content: "Popular";
-        font-size: 0.875rem;
-        text-align: center;
-        line-height: 1.8125em;
-        font-weight: 700;
-        width: 10.625rem;
-        padding: 0 0.75rem;
-        color: var(--bodyTextColorWhite);
-        background-color: var(--secondary);
-        position: absolute;
-        display: block;
-        top: 1.25rem;
-        right: -3.75rem;
-        transform: rotate(42deg);
-    }
-    #pricing-357 .cs-popular .cs-h3,
-    #pricing-357 .cs-popular .cs-item-text,
-    #pricing-357 .cs-popular .cs-price,
-    #pricing-357 .cs-popular .cs-included,
-    #pricing-357 .cs-popular .cs-li,
-    #pricing-357 .cs-popular .cs-small {
-        color: var(--bodyTextColorWhite);
-    }
-    #pricing-357 .cs-popular .cs-button-solid {
-        background-color: #fff;
-        color: var(--primary);
-        transition: color 0.3s;
-    }
-    #pricing-357 .cs-popular .cs-button-solid:before {
-        background-color: black;
-    }
-    #pricing-357 .cs-popular .cs-button-solid:hover {
-        color: #fff;
-    }
-    #pricing-357 .cs-popular .cs-li-img {
-        /* turns the check mark white */
-        filter: brightness(900%);
-    }
-    #pricing-357 .cs-h3 {
-        font-size: 1.25rem;
-        line-height: 1.2em;
-        font-weight: 700;
-        margin: 0 0 0.25rem;
-        padding: 0;
-        color: var(--headerColor);
-    }
-    #pricing-357 .cs-item-text {
-        font-size: 0.875rem;
-        line-height: 1.5em;
-        /* 16px - 24px */
-        margin: 0 0 clamp(1rem, 2vw, 1.5rem);
-        padding: 0;
-        color: var(--bodyTextColor);
-    }
-    #pricing-357 .cs-option-group {
-        position: relative;
-    }
-    #pricing-357 .cs-option-group:after {
-        /* top right box */
-        content: "";
-        width: 100%;
-        height: 1px;
-        /* 32px - 40px */
-        margin-bottom: clamp(2rem, 4vw, 2.5rem);
-        background: linear-gradient(
-            90deg,
-            rgba(232, 232, 232, 0.2) 0%,
-            #e8e8e8 53.78%,
-            rgba(232, 232, 232, 0.2) 100%
-        );
-        opacity: 1;
-        position: relative;
-        display: block;
-    }
-    #pricing-357 .cs-price {
-        font-size: 3.0625rem;
-        line-height: 1.2em;
-        font-weight: 700;
-        margin-bottom: 1.5rem;
-        color: var(--headerColor);
-        /* spans are inline, need to add block for margin to work */
-        display: block;
-    }
-    #pricing-357 .cs-small {
-        font-size: 0.875rem;
-        font-weight: 400;
-        color: #4e4b66;
-    }
-    #pricing-357 .cs-included {
-        font-size: 1rem;
-        line-height: 1.5em;
-        font-weight: 700;
-        /* 16px - 24px */
-        margin-bottom: clamp(1rem, 3vw, 1.5rem);
-        color: var(--headerColor);
-        display: block;
-    }
-    #pricing-357 .cs-ul {
-        padding: 0;
-        margin: 0;
-        /* 32px - 40px */
-        margin-bottom: clamp(2rem, 4vw, 2.5rem);
-    }
-    #pricing-357 .cs-li {
-        /* 14px - 16px */
-        font-size: clamp(0.875rem, 1.5vw, 1rem);
-        line-height: 1.5em;
-        list-style: none;
-        padding: 0;
-        margin: 0 0 0.75rem;
-        color: var(--bodyTextColor);
-        display: flex;
-        justify-content: flex-start;
         align-items: flex-start;
     }
-    #pricing-357 .cs-li:last-of-type {
-        margin-bottom: 0;
+
+    #pricing-1260 .cs-text {
+        margin-bottom: 1rem;
     }
-    #pricing-357 .cs-disabled {
-        /* fades out list items that are disabled from the price tier */
-        filter: grayscale(1);
-        opacity: 0.3;
+    #pricing-1260 .cs-text:last-of-type {
+        margin-bottom: 2rem;
     }
-    #pricing-357 .cs-li-img {
-        width: 1.25rem;
-        height: auto;
-        margin-top: 0.1875rem;
-        margin-right: 0.5rem;
-    }
-    #pricing-357 .cs-button-solid {
+    #pricing-1260 .cs-button-solid {
         font-size: 1rem;
         /* 46px - 56px */
-        line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+        line-height: clamp(2.875em, 5.5vw, 3.5em);
         text-decoration: none;
         font-weight: 700;
         text-align: center;
@@ -2391,6 +1944,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
         min-width: 9.375rem;
         padding: 0 1.5rem;
         background-color: var(--primary);
+        overflow: hidden;
         border-radius: 0.25rem;
         display: inline-block;
         position: relative;
@@ -2398,7 +1952,238 @@ const optimizedImage = await getOptimizedImage(landingImage)
         /* prevents padding from adding to the width */
         box-sizing: border-box;
     }
-    #pricing-357 .cs-button-solid:before {
+    #pricing-1260 .cs-button-solid:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        background: #000;
+        opacity: 1;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: width 0.3s;
+    }
+    #pricing-1260 .cs-button-solid:hover:before {
+        width: 100%;
+    }
+    #pricing-1260 .cs-card-group {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        /* prevents flexbox from squishing it */
+        flex: none;
+    }
+    #pricing-1260 .cs-item {
+        text-align: left;
+        list-style: none;
+        width: 100%;
+        margin: 0;
+        padding: 1.5rem 1.5rem;
+        background-color: #fff;
+        border: 1px solid #dad9e3;
+        border-radius: 1.5rem 0 0 0;
+        /* prevents padding and border from affecting height and width */
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        position: relative;
+        z-index: 1;
+    }
+    #pricing-1260 .cs-item.cs-popular {
+        background-color: #ffffff;
+        border-radius: 0 0 1.5rem 0;
+        
+    }
+    #pricing-1260 .cs-item.cs-popular .cs-popular-tag {
+        display: inline-flex;
+    }
+    #pricing-1260 .cs-item.cs-popular .cs-package,
+    #pricing-1260 .cs-item.cs-popular .cs-price,
+    #pricing-1260 .cs-item.cs-popular .cs-duration,
+    #pricing-1260 .cs-item.cs-popular .cs-item-text,
+    #pricing-1260 .cs-item.cs-popular .cs-li {
+        color: var(--bodyTextColorWhite);
+    }
+    #pricing-1260 .cs-item.cs-popular .cs-item-text,
+    #pricing-1260 .cs-item.cs-popular .cs-li {
+        opacity: 0.8;
+    }
+    #pricing-1260 .cs-item.cs-popular .cs-icon {
+        filter: none;
+        opacity: 1;
+    }
+    #pricing-1260 .cs-item.cs-popular .cs-button-transparent {
+        background-color: var(--primary);
+        color: var(--bodyTextColorWhite);
+        border: none;
+        transition: color 0.3s;
+    }
+    #pricing-1260 .cs-item.cs-popular .cs-button-transparent:before {
+        background-color: #fff;
+    }
+    #pricing-1260 .cs-item.cs-popular .cs-button-transparent:hover {
+        color: var(--primary);
+    }
+    #pricing-1260 .cs-popular-tag {
+        font-size: 0.875rem;
+        line-height: 1.2em;
+        text-align: center;
+        width: auto;
+        margin: 0;
+        padding: 0.25rem 0.75rem;
+        box-sizing: border-box;
+        color: #ff9b7d;
+        overflow: hidden;
+        border-radius: 0.25rem;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        /* same as cs-item padding top */
+        top: 1.5rem;
+        right: 1.5rem;
+        z-index: 1;
+    }
+    #pricing-1260 .cs-popular-tag:before {
+        /* background color overlay */
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: var(--primary);
+        opacity: 0.16;
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    #pricing-1260 .cs-picture {
+        width: 4.75rem;
+        height: 4.75rem;
+        margin-bottom: 1.5rem;
+        border-radius: 50%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    #pricing-1260 .cs-picture:before {
+        /* background color */
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: var(--primary);
+        opacity: 0.2;
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+    }
+    #pricing-1260 .cs-package {
+        font-size: 1.25rem;
+        line-height: 1.2em;
+        text-align: inherit;
+        font-weight: 700;
+        margin: 0 0 0.5rem 0;
+        color: var(--headerColor);
+        display: block;
+    }
+    #pricing-1260 .cs-price {
+        font-size: 2.4375rem;
+        line-height: 1.2em;
+        text-align: inherit;
+        font-weight: 900;
+        margin: 0 0 0.75rem;
+        color: var(--headerColor);
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    #pricing-1260 .cs-duration {
+        font-size: 0.875rem;
+        line-height: 1.5em;
+        font-weight: 400;
+        margin: 0;
+        color: var(--headerColor);
+    }
+    #pricing-1260 .cs-item-text {
+        /* 14px - 16px */
+        font-size: clamp(0.875rem, 1.5vw, 1rem);
+        line-height: 1.5em;
+        text-align: inherit;
+        margin: 0 0 2rem;
+        color: var(--bodyTextColor);
+    }
+    #pricing-1260 .cs-ul {
+        margin: 0 0 2rem;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    #pricing-1260 .cs-li {
+        /* 14px - 16px */
+        font-size: clamp(0.875rem, 1.5vw, 1rem);
+        list-style: none;
+        line-height: 1.5em;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        color: var(--bodyTextColor);
+        display: flex;
+        justify-content: flex-start;
+        /* push everything to the top so if the li goes to two lines the icon stays at the top */
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    #pricing-1260 .cs-li.cs-disabled {
+        opacity: 0.5;
+    }
+    #pricing-1260 .cs-li.cs-disabled .cs-icon {
+        filter: grayscale(1) brightness(300%);
+    }
+    #pricing-1260 .cs-icon {
+    filter: none;
+    opacity: 1;
+}
+
+
+    #pricing-1260 .button-solid {
+        width: 100%;
+    }
+    #pricing-1260 .cs-button-transparent {
+        font-size: 1rem;
+        /* 46px - 56px */
+        line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+        text-decoration: none;
+        font-weight: 700;
+        text-align: center;
+        margin: 0;
+        color: var(--primary);
+        min-width: 9.375rem;
+        padding: 0 1.5rem;
+        background-color: transparent;
+        border: 1px solid var(--primary);
+        border-radius: 0.25rem;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        /* prevents padding from adding to the width */
+        box-sizing: border-box;
+        transition:
+            color 0.3s,
+            border-color 0.3s,
+            background-color 0.3s;
+    }
+    #pricing-1260 .cs-button-transparent:before {
         content: "";
         position: absolute;
         height: 100%;
@@ -2411,54 +2196,114 @@ const optimizedImage = await getOptimizedImage(landingImage)
         border-radius: 0.25rem;
         transition: width 0.3s;
     }
-    #pricing-357 .cs-button-solid:hover:before {
+    #pricing-1260 .cs-button-transparent:hover {
+        color: #fff;
+        border-color: #000;
+        background-color: #000;
+    }
+    #pricing-1260 .cs-button-transparent:hover:before {
         width: 100%;
     }
-    #pricing-357 .cs-button-solid {
-        /* cs-button-solid override */
+    #pricing-1260 .cs-waves-wrapper {
+        width: 100vw;
+        height: 60%;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        z-index: -1;
+        transform: translateX(-50%);
+    }
+    #pricing-1260 .cs-waves-wrapper img {
         width: 100%;
-        margin: 0 0 1rem 0;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
     }
 }
-/* Tablet 768px */
+/* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
-    #pricing-357 .cs-card-group {
+    #pricing-1260 .cs-container {
+        max-width: 80rem;
+        /* remove the position so the svg waves wrapper can be positioned relative to the section container for tablet so it hugs the right edge of the screen. We set it back to relative at 1024px so it can then be positioned relative to the container again so it hugs the right edge of the container with the pricing cards */
+        position: initial;
+    }
+    #pricing-1260 .cs-card-group {
         flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
         flex-wrap: nowrap;
-        justify-content: space-evenly; /* Ensure even spacing */
     }
-    #pricing-357 .cs-item {
-        width: 100%;
-        max-width: 30rem; /* Ensure consistent card width */
-        flex: 1; /* Equal width for both cards */
-        margin: 0 1rem; /* Add space between cards */
+    #pricing-1260 .cs-item {
+        width: 50%;
+        border-radius: 1.5rem 0 0 1.5rem;
     }
-    #pricing-357 .cs-popular {
-        order: unset;
+    #pricing-1260 .cs-item.cs-popular {
+        border-radius: 0 1.5rem 1.5rem 0;
+    }
+    #pricing-1260 .cs-waves-wrapper {
+        /* changes to 740px at large desktop */
+        width: 55vw;
+        height: 100%;
+        left: auto;
+        right: 0;
+        bottom: auto;
+        top: 0;
+        transform: none;
     }
 }
-
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #pricing-1260 .cs-container {
+        max-width: 80rem;
+        position: relative;
+        z-index: 1;
+    }
+    #pricing-1260 .cs-waves-wrapper {
+        height: 140%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+/* Large Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+    #pricing-1260 .cs-container {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1.25rem;
+    }
+    #pricing-1260 .cs-card-group {
+        width: 62%;
+        max-width: 46.25rem;
+    }
+    #pricing-1260 .cs-waves-wrapper {
+        max-width: 46.25rem;
+        width: 100%;
+    }
+}
+                                
 </style>
 
 
 
-
-
-
-
-
-
 <!-- ============================================ -->
-<!--                    FAQ                       -->
+<!--                     FAQ                      -->
 <!-- ============================================ -->
 
-<section id="faq-326">
+<section id="faq-709">
     <div class="cs-container">
+        <picture class="cs-picture">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="https://images.unsplash.com/photo-1558402681-459490272726?q=80&w=2400&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+            <!--Tablet and above Image-->
+            <source media="(min-width: 601px)" srcset="https://images.unsplash.com/photo-1558402681-459490272726?q=80&w=2400&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+            <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1558402681-459490272726?q=80&w=2400&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="rocks" width="650" height="740" aria-hidden="true">
+        </picture>
         <div class="cs-content">
-            <span class="cs-topper">FAQ’s</span>
+            <span class="cs-topper">Asked questions</span>
             <h2 class="cs-title">Frequently Asked Questions</h2>
-        </div>
-        <div class="cs-flex-group">
             <ul class="cs-faq-group">
                 <!-- Active class added as default -->
                 <li class="cs-faq-item active">
@@ -2468,260 +2313,332 @@ const optimizedImage = await getOptimizedImage(landingImage)
                         </span>
                     </button>
                     <p class="cs-item-p">
-                        We offer an All-in-One Solution for Home & Local Businesses. Its a service that handles all things technical every month, so  you can focus on your new customers worry free. <br><br>  Design, Development, Ongoing Support, Updates/Optimisation for Google, Online Hosting & Security from Hacking, all inside of One Package.
-                    </p>
-                </li>
-              
-                <li class="cs-faq-item">
-                    <button class="cs-button">
-                        <span class="cs-button-text">
-                           Do you offer Money Back Guarantee?
-                        </span>
-                    </button>
-                    <p class="cs-item-p">
-                       Yes you can request your money back for any reason within the first 30 days
+                        We offer an All-in-One Solution for Home & Local Businesses. Its a service that handles all things technical every month, so you can focus on your new customers worry free. <br> <br>
+
+                        Design, Development, Ongoing Support, Updates/Optimisation for Google, Online Hosting & Security, all inside of One Package.
                     </p>
                 </li>
                 <li class="cs-faq-item">
                     <button class="cs-button">
                         <span class="cs-button-text">
-                            How long does it take to get my website up and running?
+                            Couldn't I just use a Site Builder like Wordpress?
                         </span>
                     </button>
                     <p class="cs-item-p">
-                        While many companies take up to three months, after onboarding we can have your site up and running within just 30 days 
+                        You could, just like buying a suit off the rack instead of going to a tailor. It might seem quicker and cheaper, but it often means settling for something that doesn’t quite work and constantly needs fixing. <br> <br>
+
+                    At True Sign Design, we take the tailor-made approach. We Custom Code your website from scratch to match your business's style, showcase what makes you unique, and give you a professional online presence you can feel confident about.
                     </p>
                 </li>
                 <li class="cs-faq-item">
                     <button class="cs-button">
                         <span class="cs-button-text">
-                          Can you give me a quick rundown of how the subscription works?
+                            What is Pagespeed Score? 
                         </span>
                     </button>
                     <p class="cs-item-p">
-                        You’ll pay a small monthly fee every month for 24 months, but your site and benefits will start from day one.  </p>
+                        A Pagespeed score measures how fast and efficient your website is, rated from 0 to 100 by Google. Most site builders such as Wordpress land at around 40–50, while our custom sites consistently score between 90–100. <br> <br>
+
+                        That means faster load times, better search rankings, and a smoother experience that keeps visitors engaged and helps your business grow.
+                    </p>
                 </li>
-               
                 <li class="cs-faq-item">
-                  <button class="cs-button">
-                      <span class="cs-button-text">
-                          Do I own the website?
-                      </span>
-                  </button>
-                  <p class="cs-item-p">
-                   Yes. After 24 months we can send you the files of code if you want. <br><br> We recommend continuing with our affordable support package , this allows us to take care of everything technical and leave you worry free.
-              </li>
-              
-               <li class="cs-faq-item">
                     <button class="cs-button">
                         <span class="cs-button-text">
-                            What is the support package?
+                            Do You Offer a 30 Day Money Back Guarantee?
                         </span>
                     </button>
                     <p class="cs-item-p">
-                        We offer this to our customers that have completed their inital 24 months. <br><br> It offers the same value but at a lower price & it allows us to make sure everything is running smoothly every month. If you stay with this package for 12 months, it includes a free complete redesign, keeping your website fresh for clients.
+                        Yes you can request your money back for any reason within the first 30 days.
+                    </p>
                 </li>
-              
-            <li class="cs-faq-item">
-                <button class="cs-button">
-                    <span class="cs-button-text">
-                        Do you offer E-Commerce?
-                    </span>
-                </button>
-                <p class="cs-item-p">
-                    We don't currently offer E-Commerce at this time, however we're looking to add this to our services in the future. <br><br>Our main goal is to create user friendly sites to help local businesses grow and thrive.
-            </li>
+                <li class="cs-faq-item">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            Can you give me a quick run down of how the subscription works?
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                        You’ll pay a small monthly fee every month for 24 months with the option to opt out after 12; but your site and benefits will start from day one.
+                    </p>
+                </li>
+                <li class="cs-faq-item">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            Do I Own The Website?
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                        Yes. After 24 months we can send you the files of code if you'd like. <br> <br>
+
+                        We recommend continuing with our affordable support package , this allows us to take care of everything technical and leave you worry free.
+                    </p>
+                </li>
+                <li class="cs-faq-item">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            What is The Support Package?
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                        We offer this to our customers that have completed their inital 24 months. <br> <br>
+
+                        It offers the same value but at a lower price & it allows us to make sure everything is running smoothly every month. If you stay with this package for 12 months after ownership, it includes a free complete redesign, keeping your website fresh for clients.
+                    </p>
+                </li>
+                <li class="cs-faq-item">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            Do You Offer E Commerce?
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                        We don't currently offer E-Commerce at this time, however we're looking to add this to our services in the future.
+
+                        <br> <br>
+
+                        Our main goal is to create user friendly static sites to help local businesses grow and thrive.
+                    </p>
+                </li>
+            </ul>
         </div>
     </div>
-  </section>
-                                
-  
-  <style>
-    /*-- -------------------------- -->
-  <---            FAQ             -->
-  <--- -------------------------- -*/
-  
-  /* Mobile - 360px */
-  @media only screen and (min-width: 0rem) {
-      #faq-326 {
-        background-color: #f9f9f9;
-          padding: var(--sectionPadding);
-          
-      }
-      #faq-326 .cs-container {
-          width: 100%;
-          max-width: 43.75rem;
-          margin: auto;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          /* 48px - 64px */
-          gap: clamp(3rem, 6vw, 4rem);
-      }
-      #faq-326 .cs-content {
-          /* set text align to left if content needs to be left aligned */
-          text-align: center;
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-          /* centers content horizontally, set to flex-start to left align */
-          align-items: center;
-      }
-  
-      #faq-326 .cs-title {
-          margin: 0;
-      }
-      #faq-326 .cs-faq-group {
-          padding: 0;
-          margin: 0;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-direction: column;
-          gap: 0.75rem;
-      }
-      #faq-326 .cs-faq-item {
-          list-style: none;
-          width: 100%;
-          background-color: #f7f7f7;
-          /* clips all corners of the button that overlap the rounded border */
-          overflow: hidden;
-          border-radius: 0.75rem;
-          transition: border-bottom 0.3s;
-      }
-      #faq-326 .cs-faq-item.active .cs-button {
-    background-color: var(--primary); /* Existing style */
-    color: #ffffff; /* Change text to white */
-}
-
-      #faq-326 .cs-faq-item.active .cs-button:before {
-          background-color: var(--secondaryLight);
-          transform: rotate(315deg);
-      }
-      #faq-326 .cs-faq-item.active .cs-button:after {
-          background-color: var(--secondaryLight);
-          transform: rotate(-315deg);
-      }
-      #faq-326 .cs-faq-item.active .cs-item-p {
-          height: auto;
-          /* 20px - 24px top & bottom */
-          /* 16px - 24px left & right */
-          padding: clamp(1.25rem, 1.3vw, 1.5rem) clamp(1rem, 2vw, 1.5rem);
-          opacity: 1;
-      }
-      #faq-326 .cs-button {
-          font-size: 1rem;
-          line-height: 1.2em;
-          text-align: left;
-          font-weight: bold;
-          /* 16px - 20px */
-          padding: clamp(1rem, 1.3vw, 1.25rem);
-          background-color: #f7f7f7;
-          border: none;
-          color: var(--headerColor);
-          display: block;
-          width: 100%;
-          position: relative;
-          transition:
-              background-color 0.3s,
-              color 0.3s;
-      }
-      #faq-326 .cs-button:hover {
-          cursor: pointer;
-      }
-      #faq-326 .cs-button:before {
-          /* left line */
-          content: "";
-          width: 0.5rem;
-          height: 0.125rem;
-          background-color: var(--headerColor);
-          opacity: 1;
-          border-radius: 50%;
-          position: absolute;
-          display: block;
-          top: 50%;
-          right: 1.5rem;
-          transform: rotate(45deg);
-          /* animate the transform from the left side of the x axis, and the center of the y */
-          transform-origin: left center;
-          transition: transform 0.5s;
-      }
-      #faq-326 .cs-button:after {
-          /* right line */
-          content: "";
-          width: 0.5rem;
-          height: 0.125rem;
-          background-color: var(--headerColor);
-          opacity: 1;
-          border-radius: 50%;
-          position: absolute;
-          display: block;
-          top: 50%;
-          right: 1.3125rem;
-          transform: rotate(-45deg);
-          /* animate the transform from the right side of the x axis, and the center of the y */
-          transform-origin: right center;
-          transition: transform 0.5s;
-      }
-      #faq-326 .cs-button-text {
-          width: 80%;
-          display: block;
-      }
-      #faq-326 .cs-item-p {
-          /* 14px - 16px */
-          font-size: clamp(0.875rem, 1.5vw, 1rem);
-          line-height: 1.5em;
-          width: 90%;
-          height: 0;
-          margin: 0;
-          /* 16px - 24px */
-          padding: 0 clamp(1rem, 2vw, 1.5rem);
-          opacity: 0;
-          color: var(--bodyTextColor);
-          /* clips the text so it doesn't show up */
-          overflow: hidden;
-          transition:
-              opacity 0.3s,
-              padding-bottom 0.3s;
-      }
-  }
-  
-                                  
-  </style>
-  
-  <section id="faq-326">
-
+    <img class="cs-graphic" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fswoosh.svg" alt="swoosh" width="361" height="487" aria-hidden="true">
 </section>
+                                
+
+<style>
+    /*-- -------------------------- -->
+<---            FAQ             -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #faq-709 {
+        position: relative;
+        overflow: hidden;
+        background-color: #f7f7f7;
+    }
+    #faq-709 .cs-container {
+        width: 100%;
+        max-width: 80rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* 40px - 48px */
+        gap: clamp(2.5rem, 5vw, 3rem);
+    }
+    #faq-709 .cs-content {
+        text-align: left;
+        max-width: 33.8125rem;
+        /* move section padding to the cs-content so we can make the cs-picture full width */
+        padding: var(--sectionPadding);
+        padding-top: 0;
+        /* prevents padding and border from affecting height and width */
+        box-sizing: border-box;
+    }
+
+    #faq-709 .cs-title {
+        /* 20 characters wide including spaces */
+        max-width: 20ch;
+        margin: 0 0 1.5rem 0;
+    }
+    #faq-709 .cs-faq-group {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    #faq-709 .cs-faq-item {
+        list-style: none;
+        width: 100%;
+        border-bottom: 1px solid #e8e8e8;
+        transition: border-bottom 0.3s;
+    }
+    #faq-709 .cs-faq-item.active {
+        border-color: var(--primaryLight);
+    }
+    #faq-709 .cs-faq-item.active .cs-button {
+        color: var(--primary);
+    }
+    #faq-709 .cs-faq-item.active .cs-button:before {
+        background-color: var(--primaryLight);
+        transform: rotate(315deg);
+    }
+    #faq-709 .cs-faq-item.active .cs-button:after {
+        background-color: var(--primaryLight);
+        transform: rotate(-315deg);
+    }
+    #faq-709 .cs-faq-item.active .cs-item-p {
+        height: auto;
+        /* 20px - 24px bottom */
+        padding: 0 0 clamp(1rem, 2vw, 1.5rem) 0;
+        opacity: 1;
+    }
+    #faq-709 .cs-button {
+        /* 16px - 20px */
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        line-height: 1.2em;
+        text-align: left;
+        font-weight: bold;
+        /* 16px - 24px */
+        padding: clamp(1rem, 2.3vw, 1.5rem) 0;
+        border: none;
+        background: transparent;
+        color: var(--headerColor);
+        display: block;
+        width: 100%;
+        position: relative;
+        transition:
+            background-color 0.3s,
+            color 0.3s;
+    }
+    #faq-709 .cs-button:hover {
+        cursor: pointer;
+    }
+    #faq-709 .cs-button:before {
+        /* left line */
+        content: "";
+        width: 0.5rem;
+        height: 0.125rem;
+        background-color: var(--headerColor);
+        opacity: 1;
+        border-radius: 50%;
+        position: absolute;
+        display: block;
+        top: 45%;
+        right: 0.25rem;
+        transform: rotate(45deg);
+        /* animate the transform from the left side of the x axis, and the center of the y */
+        transform-origin: left center;
+        transition: transform 0.5s;
+    }
+    #faq-709 .cs-button:after {
+        /* right line */
+        content: "";
+        width: 0.5rem;
+        height: 0.125rem;
+        background-color: var(--headerColor);
+        opacity: 1;
+        border-radius: 50%;
+        position: absolute;
+        display: block;
+        top: 45%;
+        right: 0.0625rem;
+        transform: rotate(-45deg);
+        /* animate the transform from the right side of the x axis, and the center of the y */
+        transform-origin: right center;
+        transition: transform 0.5s;
+    }
+    #faq-709 .cs-button-text {
+        width: 90%;
+        display: block;
+    }
+    #faq-709 .cs-item-p {
+        /* 14px - 16px */
+        font-size: clamp(0.875rem, 1.5vw, 1rem);
+        line-height: 1.5em;
+        width: 90%;
+        max-width: 33.8125rem;
+        height: 0;
+        margin: 0;
+        padding: 0;
+        opacity: 0;
+        color: var(--bodyTextColor);
+        /* clips the text so it doesn't show up */
+        overflow: hidden;
+        transition:
+            opacity 0.3s,
+            padding-bottom 0.3s;
+    }
+    #faq-709 .cs-graphic {
+        width: 22.5625rem;
+        height: auto;
+        opacity: 0.5;
+        display: none;
+        position: absolute;
+        left: -11.25rem;
+        bottom: 1.875rem;
+        /* flips it horizontally */
+        transform: scaleX(-1);
+    }
+    #faq-709 .cs-picture {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 16rem;
+        z-index: 1;
+    }
+    #faq-709 .cs-picture img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: 0% 16%; /* Customize this to adjust the image position */
+
+    }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #faq-709 {
+        /* moved seciton padding back to the section */
+        padding: var(--sectionPadding);
+    }
+    #faq-709 .cs-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    #faq-709 .cs-picture {
+        width: 50%;
+        max-width: 40.625rem;
+        /* 500px - 750px */
+        height: clamp(31.25rem, 68vw, 46.875rem);
+        /* sends it to the right in the 2nd position */
+        order: 2;
+    }
+    #faq-709 .cs-content {
+        width: 55%;
+        padding: 0;
+    }
+}
+/* Desktop - 1600px */
+@media only screen and (min-width: 100rem) {
+    #faq-709 .cs-graphic {
+        display: block;
+    }
+}
+                                
+</style>
 
 <script>
     function initializeFAQ() {
-      const faqItems = Array.from(document.querySelectorAll('.cs-faq-item'));
-  
-      faqItems.forEach((item) => {
-        const onClick = () => {
-          faqItems.forEach((otherItem) => {
-            if (otherItem !== item) {
-              otherItem.classList.remove('active');
-            }
-          });
-          item.classList.toggle('active');
-        };
-  
-        // Remove any existing event listeners to avoid duplicates
-        item.removeEventListener('click', item._onClick);
-        item._onClick = onClick; // Store the function reference for future removal
-        item.addEventListener('click', onClick);
-      });
-    }
-  
-    // Initialize on first load
-    initializeFAQ();
-  
-    // Reinitialize on navigation
-    document.addEventListener('astro:after-swap', initializeFAQ);
-  </script>
+        const faqItems = Array.from(document.querySelectorAll('.cs-faq-item'));
 
-  
+        faqItems.forEach((item) => {
+            const onClick = () => {
+                item.classList.toggle('active');
+            };
+
+            // Remove any existing event listeners to prevent duplicates
+            item.removeEventListener('click', item._onClick);
+            item._onClick = onClick; // Store reference for future removal
+            item.addEventListener('click', onClick);
+        });
+    }
+
+    // Initialize on first load
+    document.addEventListener("DOMContentLoaded", initializeFAQ);
+
+    // Reinitialize when navigating (for SPA frameworks)
+    document.addEventListener('astro:after-swap', initializeFAQ);
+</script>
 
 
 
@@ -2882,6 +2799,8 @@ const optimizedImage = await getOptimizedImage(landingImage)
 
                                 
 </style>
+
+
   <CTA />
 </BaseLayout>
 

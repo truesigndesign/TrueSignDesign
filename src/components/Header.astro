@@ -40,20 +40,12 @@ import navData from "../data/navData.json";
                     <li class="cs-li">
                         <a href="/contact/" class={`cs-li-link ${currentPath === '/contact/' ? 'cs-active' : ''}`}>Contact</a>
                     </li>
-                    <!-- <li class="cs-li">
-                        <a href="/reviews/" class={`cs-li-link ${currentPath === '/reviews/' ? 'cs-active' : ''}`}>Reviews</a>
-                    </li> -->
-                    <!-- <li class="cs-li mobile-only">
-                        <a href="/contact/" class={`cs-li-link ${currentPath === '/contact/' ? 'cs-active' : ''}`}>Contact</a>
-                    </li> -->
-                    <li class="cs-li">
-                        <!-- Additional items if needed -->
-                    </li>
+                    
                 </ul>
             </div>
         </nav>
         <!-- Contact Us Button for Desktop -->
-        <!-- <a href="/contact/" class="cs-button-solid cs-nav-button desktop-only">Contact Us</a> -->
+        <a href="/contact/" class="cs-button-solid cs-nav-button desktop-only">Contact Us</a>
     </div>
 </header>
 
@@ -110,6 +102,7 @@ html {
           height 0.5s,
           opacity 0.5s;
   }
+  
   #cs-navigation.cs-active:before {
       height: 150vh;
       opacity: 1;
@@ -345,6 +338,13 @@ html {
       display: flex;
       justify-content: space-between;
       align-items: center;
+  }
+  #cs-navigation .cs-li a[href="/contact/"] {
+    display: none; /* Hide the regular contact link on desktop */
+  }
+
+  #cs-navigation .cs-button-solid.cs-nav-button {
+    display: inline-block; /* Show the contact button on desktop */
   }
   #cs-navigation .cs-toggle {
       display: none;
